@@ -7,14 +7,20 @@
       style="background-image: url(src/assets/images/img-dev.jpg)"
     ></div>
     <div class="home-description">
-      <h1 class="text-uppercase poppins-font">
-        Me chamo<span>André Pedroso</span> <span>Dev Front-end</span>
-      </h1>
+      <h1>Me chamo<span>André Pedroso</span> <span>Dev Front-end</span></h1>
       <p class="open-sans-font">
         I'm a Tunisian based web designer &amp; front‑end developer focused on
         crafting clean &amp; user‑friendly experiences, I am passionate about
         building excellent software that improves the lives of those around me.
       </p>
+      <router-link to="/sobre" custom v-slot="{ navigate }">
+        <button @click="navigate" role="link">
+          <span>Mais sobre</span>
+          <font-awesome-icon icon="fa-solid fa-arrow-right" />
+        </button>
+      </router-link>
+
+      <img src="src/assets/images/logo_lines.svg" />
     </div>
   </div>
 </template>
@@ -48,8 +54,11 @@
   max-width: 550px;
   position: absolute;
   bottom: auto;
-  top: 28%;
+  top: 10%;
+  right: auto;
+  left: 42%;
   & h1 {
+    @apply uppercase;
     font-size: 51px;
     line-height: 62px;
     font-weight: 700;
@@ -66,6 +75,66 @@
   }
   & p {
     color: var(--black);
+    margin: 15px 0 28px;
+    font-size: 16px;
+    line-height: 35px;
+  }
+  & button {
+    border: 1px solid var(--primary);
+    overflow: hidden;
+    display: inline-block;
+    line-height: 1.4;
+    border-radius: 35px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    transition: all 0.25s ease-in-out;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    padding: 16px 70px 16px 35px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--black);
+    background-color: transparent;
+    margin-bottom: 3rem;
+
+    & :before {
+      z-index: -1;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform: translateX(100%);
+      transition: all 0.3s ease-out;
+      background-color: var(--primary);
+    }
+    &:hover {
+      :before {
+        transform: translateX(0);
+      }
+    }
+    & svg {
+      background-color: var(--primary);
+      position: absolute;
+      right: -1px;
+      top: -1px;
+      bottom: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      padding: 0.5rem;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
   }
 }
 </style>

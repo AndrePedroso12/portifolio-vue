@@ -24,14 +24,16 @@ import { useRoute } from "vue-router";
 import { useColor } from "@/assets/color";
 const route = useRoute();
 const colorsComposable = useColor();
-
 const currentPage = computed(() => route.name?.toString());
+
+const emit = defineEmits(["isRedirecting"]);
 
 const isCurrentPage = (itemName: string) => {
   return itemName === currentPage.value;
 };
 
 function redirectTo(page: string) {
+  emit("isRedirecting");
   router.push({
     path: "/" + page.toLocaleLowerCase(),
     name: page,

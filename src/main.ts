@@ -28,6 +28,7 @@ import {
   faBriefcase,
   faComments,
   faLightbulb,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faUserSecret,
@@ -35,7 +36,8 @@ library.add(
   faUser,
   faBriefcase,
   faComments,
-  faLightbulb
+  faLightbulb,
+  faArrowRight
 );
 
 /* import font awesome icon component */
