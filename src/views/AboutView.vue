@@ -1,9 +1,11 @@
 <template>
   <div class="about">
-    <h1>Hi! I am About Page</h1>
+    <Title title="Sobre " title_white="mim" back-text="currículo" />
   </div>
 </template>
 
-<style>
+<script setup lang="ts">
+import Title from "@/components/Title.vue";
+</script>
 
-</style>
+<style lang="scss" scoped></style>
