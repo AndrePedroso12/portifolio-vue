@@ -1,4 +1,3 @@
-<script setup lang="ts"></script>
 <template>
   <div class="flex justify-end">
     <div class="color-block"></div>
@@ -24,6 +23,8 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts"></script>
 
 <style lang="scss" scoped>
 .color-block {
