@@ -57,7 +57,7 @@ export const colors = {
     "modal-backdrop": "#9ca3af",
   },
   dark: {
-    background: "#111111",
+    background: "#000",
     black: "#ffff",
     white: "#111111",
     moduleStatusRed: "#522f2f",

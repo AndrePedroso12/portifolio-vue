@@ -57,7 +57,7 @@ header {
   transition: opacity 0.3s;
   -webkit-transition: opacity 0.3s;
   transform: translateY(-50%);
-  z-index: 2;
+  z-index: 3;
   & ul.nav-bar {
     margin: 0;
     padding: 0;
