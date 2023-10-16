@@ -30,7 +30,9 @@ import {
   faLightbulb,
   faArrowRight,
   faEnvelope,
+  faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp, faGithub } from "@fortawesome/free-brands-svg-icons";
 library.add(
   faUserSecret,
   faHouse,
@@ -39,7 +41,10 @@ library.add(
   faComments,
   faLightbulb,
   faArrowRight,
-  faEnvelope
+  faEnvelope,
+  faWhatsapp,
+  faGithub,
+  faPaperPlane
 );
 
 /* import font awesome icon component */

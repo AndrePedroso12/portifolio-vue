@@ -2,17 +2,19 @@
   <div class="flex justify-end">
     <div class="overlay"></div>
     <div class="home-description">
-      <h1>Me chamo<span>André Pedroso</span> <span>Dev Front-end</span></h1>
+      <h1>André Pedroso <span>Dev Front-end</span></h1>
       <p class="open-sans-font">
         I'm a Tunisian based web designer &amp; front‑end developer focused on
         crafting clean &amp; user‑friendly experiences, I am passionate about
         building excellent software that improves the lives of those around me.
       </p>
       <router-link to="/sobre" custom v-slot="{ navigate }">
-        <button @click="navigate" role="link">
-          <span>Mais sobre</span>
-          <font-awesome-icon icon="fa-solid fa-arrow-right" />
-        </button>
+        <Button
+          @click="navigate"
+          role="link"
+          title="Saiba Mais"
+          :icon="'fa-arrow-right'"
+        />
       </router-link>
     </div>
     <img class="logo" src="src/assets/images/logo_lines.svg" />
@@ -21,7 +23,9 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Button from "@/components/Button.vue";
+</script>
 
 <style lang="scss" scoped>
 .logo {
@@ -47,8 +51,8 @@
   -moz-box-shadow: 0px 0px 34px 3px rgba(45, 255, 196, 0.43);
   box-shadow: 0px 0px 34px 3px rgba(45, 255, 196, 0.43);
   border: 19px solid #00ffa8;
-  width: 35rem;
-  height: 35rem;
+  width: 42%;
+  height: 67%;
   border-radius: 100%;
   position: absolute;
   left: 32%;
@@ -61,8 +65,8 @@
     -moz-box-shadow: inset 0px 0px 34px 3px rgba(45, 255, 196, 0.43);
     box-shadow: inset 0px 0px 34px 3px rgba(45, 255, 196, 0.43);
     border: 19px solid #00ffa8;
-    width: 35rem;
-    height: 35rem;
+    width: 106%;
+    height: 106%;
     border-radius: 100%;
     position: absolute;
     left: -3%;
@@ -75,7 +79,7 @@
   max-width: 550px;
   position: absolute;
   bottom: auto;
-  top: 46%;
+  top: 58%;
   right: auto;
   left: 42%;
   z-index: 3;
@@ -108,63 +112,6 @@
     position: absolute;
     right: -27%;
     bottom: -84%;
-  }
-  & button {
-    border: 1px solid var(--primary);
-    overflow: hidden;
-    display: inline-block;
-    line-height: 1.4;
-    border-radius: 35px;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-align: center;
-    cursor: pointer;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    transition: all 0.25s ease-in-out;
-    text-transform: uppercase;
-    position: absolute;
-    z-index: 1;
-    padding: 16px 70px 16px 35px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--black);
-    background-color: transparent;
-    bottom: -110%;
-
-    & :before {
-      z-index: -1;
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      transform: translateX(100%);
-      transition: all 0.3s ease-out;
-      background-color: var(--primary);
-    }
-    &:hover {
-      :before {
-        transform: translateX(0);
-      }
-    }
-    & svg {
-      background-color: var(--primary);
-      position: absolute;
-      right: -1px;
-      top: -1px;
-      bottom: 0;
-      width: 2.5rem;
-      height: 2.5rem;
-      display: flex;
-      padding: 0.5rem;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-    }
   }
 }
 

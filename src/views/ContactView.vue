@@ -15,17 +15,39 @@
         </div>
       </div>
       <div class="contact-button">
-        <font-awesome-icon icon="fa-solid fa-envelope" />
+        <font-awesome-icon icon="fa-brands fa-whatsapp" />
         <div>
           <p>Whatsapp</p>
           <a href="">+55 19 99816-1087</a>
         </div>
       </div>
+
+      <ul class="social">
+        <li>
+          <a href="">
+            <font-awesome-icon icon="fa-brands fa-github" />
+          </a>
+        </li>
+      </ul>
     </div>
+
     <div class="form">
       <form>
-        <input type="text" name="name" placeholder="Seu Nome" />
-        <input type="text" name="name" placeholder="E-mail" />
+        <div class="div1">
+          <input type="text" name="name" placeholder="Seu Nome" />
+        </div>
+        <div class="div2">
+          <input type="text" name="name" placeholder="E-mail" />
+        </div>
+        <div class="div3">
+          <input type="text" name="name" placeholder="Assunto" />
+        </div>
+        <div class="div4">
+          <textarea type="text" name="name" placeholder="Mensagem" />
+        </div>
+        <div class="div5">
+          <Button title="Enviar Email" icon="fa-paper-plane" />
+        </div>
       </form>
     </div>
   </div>
@@ -33,6 +55,7 @@
 
 <script setup lang="ts">
 import Title from "@/components/Title.vue";
+import Button from "@/components/Button.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -47,6 +70,7 @@ import Title from "@/components/Title.vue";
       text-transform: uppercase;
       font-weight: 500;
       font-size: 30px;
+      margin-bottom: 15px;
     }
     & .contact-button {
       display: flex;
@@ -65,11 +89,50 @@ import Title from "@/components/Title.vue";
         font-weight: 500;
       }
     }
+    & .social li a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      line-height: 42px;
+      text-align: center;
+      color: #fff;
+      transition: 0.3s;
+      font-size: 17px;
+      margin: 0 6px;
+      background: #2b2a2a;
+      border-radius: 50%;
+    }
   }
 
   & .form {
-    width: 30%;
-    & input {
+    width: 60%;
+    margin-left: 3rem;
+    & form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+    }
+
+    & .div1 {
+      grid-area: 1 / 1 / 2 / 2;
+      padding-right: 15px;
+    }
+    & .div2 {
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    & .div3 {
+      grid-area: 2 / 1 / 3 / 3;
+    }
+    & .div4 {
+      grid-area: 3 / 1 / 5 / 3;
+    }
+    & .div5 {
+      grid-area: 5 / 2 / 6 / 3;
+    }
+    & input,
+    textarea {
       border: 1px solid #111;
       width: 100%;
       background: #252525;
@@ -78,6 +141,22 @@ import Title from "@/components/Title.vue";
       border-radius: 30px;
       outline: none !important;
       transition: 0.3s;
+      margin-bottom: 30px;
+    }
+    & textarea {
+      height: 100%;
+    }
+  }
+
+  & button {
+    top: auto;
+    bottom: auto;
+    right: 8%;
+    margin-top: 2rem;
+    & deep:svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      padding: 1rem;
     }
   }
 }
