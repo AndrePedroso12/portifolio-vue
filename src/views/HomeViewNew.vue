@@ -34,6 +34,7 @@ import Button from "@/components/Button.vue";
   top: 2rem;
   width: 36rem;
   opacity: 10%;
+  filter: drop-shadow(12px 12px 5px #ffff);
 }
 .picture {
   z-index: 1;
@@ -51,8 +52,8 @@ import Button from "@/components/Button.vue";
   -moz-box-shadow: 0px 0px 34px 3px rgba(45, 255, 196, 0.43);
   box-shadow: 0px 0px 34px 3px rgba(45, 255, 196, 0.43);
   border: 19px solid #00ffa8;
-  width: 42%;
-  height: 67%;
+  width: 40vw;
+  height: 40vw;
   border-radius: 100%;
   position: absolute;
   left: 32%;
