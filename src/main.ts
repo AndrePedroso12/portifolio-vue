@@ -19,6 +19,10 @@ import { createPinia } from "pinia";
 const pinia = createPinia();
 app.use(pinia);
 
+//VueUseMotion
+import { MotionPlugin } from "@vueuse/motion";
+app.use(MotionPlugin);
+
 /* import the fontawesome core */
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
@@ -32,7 +36,11 @@ import {
   faEnvelope,
   faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
-import { faWhatsapp, faGithub } from "@fortawesome/free-brands-svg-icons";
+import {
+  faWhatsapp,
+  faGithub,
+  faVuejs,
+} from "@fortawesome/free-brands-svg-icons";
 library.add(
   faUserSecret,
   faHouse,
@@ -44,7 +52,8 @@ library.add(
   faEnvelope,
   faWhatsapp,
   faGithub,
-  faPaperPlane
+  faPaperPlane,
+  faVuejs
 );
 
 /* import font awesome icon component */

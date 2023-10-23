@@ -1,18 +1,104 @@
 <template>
   <div class="about">
-    <section id="section1" class="fullpage">
+    <section id="section1" class="hero fullpage">
       <Title title="Sobre " title_white="mim" back-text="currículo" />
 
-      <h1>Section 1</h1>
+      <div class="video-wrap">
+        <video autoplay playsinline loop muted id="video-bg">
+          <source
+            src="https://tactusmarketing.com/wp-content/uploads/tactus-waves-hero.mp4"
+            type="video/mp4"
+          />
+          <source
+            src="https://tactusmarketing.com/wp-content/uploads/tactus-waves-hero.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+      <div class="position-absolute w-100 gradient-overlay"></div>
+      <div
+        class="content position-relative text-center mb-5"
+        v-motion-fade-visible
+      >
+        <h1 class="hero-title blend">
+          Where Creativity
+          <br />
+          &amp; Strategy Meet
+        </h1>
+      </div>
     </section>
     <section id="section2" class="fullpage">
-      <h1>Section 2</h1>
+      <div class="grid grid-cols-2">
+        <div class="dev-image">
+          <img
+            src="src/assets/images/sobre-mim.png"
+            alt=""
+            v-motion-slide-visible-once-bottom
+            :delay="700"
+          />
+        </div>
+        <div class="description" v-motion-slide-visible-right :delay="900">
+          <h3>André Pedroso <span>Dev Front-end</span></h3>
+          <p class="glass-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+            cursus neque in maximus elementum. Fusce condimentum justo sit amet
+            nisl mollis, in bibendum nisi rhoncus. Fusce sed risus eros. Donec
+            erat ipsum, tempus sed cursus ac, volutpat et risus. Maecenas mattis
+            commodo neque, non malesuada mauris vulputate nec. Vivamus laoreet
+            dui nec dui scelerisque aliquam. Fusce turpis est, efficitur eget
+            nulla quis, ultricies tincidunt massa. Proin fermentum et sem
+            ultricies fermentum. Cras eu augue imperdiet, tincidunt enim a,
+            euismod dui. Mauris nec euismod lorem. Quisque vitae purus
+            condimentum, malesuada lacus in, blandit est.
+          </p>
+        </div>
+      </div>
     </section>
     <section id="section3" class="fullpage">
-      <h1>Section 3</h1>
+      <div class="grid grid-cols-2">
+        <div class="description" v-motion-slide-visible-left :delay="900">
+          <p>Experiência</p>
+          <div class="number-board">
+            <div class="number-item">
+              <span class="number">09</span>
+              <span>Anos de experiência</span>
+            </div>
+            <div class="number-item">
+              <span class="number">09</span>
+              <span>Anos de experiência</span>
+            </div>
+            <div class="number-item">
+              <span class="number">09</span>
+              <span>Anos de experiência</span>
+            </div>
+            <div class="number-item">
+              <span class="number">09</span>
+              <span>Anos de experiência</span>
+            </div>
+          </div>
+          <Button title="Enviar Email" icon="fa-paper-plane" />
+        </div>
+        <div class="note-image">
+          <img
+            src="src/assets/images/notebook-mockup.png"
+            alt=""
+            v-motion-slide-visible-bottom
+          />
+        </div>
+      </div>
     </section>
     <section id="section4" class="fullpage">
-      <h1>Section 4</h1>
+      <div class="description" v-motion-slide-visible-left :delay="900">
+        <p>Conhecimentos em programação</p>
+        <div class="icon-box">
+          <div class="icon-item">
+            <span class="icon"
+              ><font-awesome-icon icon="fa-brands fa-vuejs"
+            /></span>
+            <span>Vue</span>
+          </div>
+        </div>
+      </div>
     </section>
     <section id="section5" class="fullpage">
       <h1>Section 5</h1>
@@ -33,7 +119,7 @@
 
 <script setup lang="ts">
 import Title from "@/components/Title.vue";
-
+import Button from "@/components/Button.vue";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 
 const inMove = ref(false);
@@ -54,7 +140,7 @@ const calculateSectionOffsets = () => {
 };
 
 // Handle the 'mousewheel' event for other browsers
-const handleMouseWheel = (e) => {
+const handleMouseWheel = (e: Event) => {
   if (e.wheelDelta < 30 && !inMove.value) {
     moveUp();
   } else if (e.wheelDelta > 30 && !inMove.value) {
@@ -66,7 +152,7 @@ const handleMouseWheel = (e) => {
 };
 
 // Handle the 'DOMMouseScroll' event for Firefox
-const handleMouseWheelDOM = (e) => {
+const handleMouseWheelDOM = (e: Event) => {
   if (e.detail > 0 && !inMove.value) {
     moveUp();
   } else if (e.detail < 0 && !inMove.value) {
@@ -97,7 +183,7 @@ const moveUp = () => {
 };
 
 // Scrolls to the passed section id if the section exists and the delay is over
-const scrollToSection = (id, force = false) => {
+const scrollToSection = (id: number, force = false) => {
   if (inMove.value && !force) return false;
 
   activeSection.value = id;
@@ -117,13 +203,13 @@ const scrollToSection = (id, force = false) => {
 };
 
 // Handles the 'touchstart' event on mobile devices
-const touchStart = (e) => {
+const touchStart = (e: Event) => {
   e.preventDefault();
   touchStartY.value = e.touches[0].clientY;
 };
 
 // Handles the 'touchmove' event on mobile devices
-const touchMove = (e) => {
+const touchMove = (e: Event) => {
   if (inMove.value) return false;
   e.preventDefault();
 
@@ -167,8 +253,189 @@ onBeforeUnmount(() => {
   height: 100vh;
   width: 100%;
 }
+#section1 {
+  & .hero-title {
+    font-size: 8vw;
+    line-height: 1em;
+    font-weight: 900;
+  }
+  & .blend {
+    mix-blend-mode: difference !important;
+    color: var(--black);
+    position: relative;
+    z-index: 2;
+  }
+  & .video-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  & #video-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    background-position: center center;
+    background-size: cover;
+    object-fit: cover;
+    transform: rotate(180deg);
+  }
+}
+
 #section2 {
-  background-color: blue;
+  position: relative;
+  border-bottom-left-radius: 15vw;
+  z-index: 2;
+  background-color: var(--white);
+  & .dev-image {
+    & img {
+      bottom: 0;
+      position: absolute;
+      margin-left: 10%;
+      width: 40vw;
+    }
+  }
+
+  & .description {
+    width: 75%;
+    margin-top: 41%;
+    & .glass-text {
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.01);
+      box-shadow: 0px 1px 40px 0px rgba(13, 207, 172, 0.2) inset,
+        0px 4px 18px 0px rgba(8, 88, 64, 0.3) inset,
+        0px 98px 100px -48px rgba(0, 253, 192, 0.3) inset,
+        0px -82px 68px -64px rgba(14, 114, 96, 0.3) inset,
+        0px 7px 11px -4px #fff inset,
+        0px 39px 56px -36px rgba(255, 255, 255, 0.5) inset;
+      backdrop-filter: blur(12.5px);
+      padding: 1rem;
+      color: white;
+    }
+
+    & h3 {
+      @apply uppercase;
+      font-size: 51px;
+      line-height: 62px;
+      font-weight: 700;
+      margin: 0 0 25px;
+      padding-left: 37px;
+      display: flex;
+      flex-direction: column;
+      color: var(--black);
+      border-left: 9px solid var(--primary);
+
+      & span:first-of-type {
+        color: var(--primary);
+      }
+    }
+  }
+}
+
+#section3 {
+  background-color: var(--primary);
+  position: relative;
+  border-bottom-right-radius: 15vw;
+  z-index: 1;
+  &:before {
+    content: "";
+    background-color: var(--primary);
+    position: absolute;
+    top: -24vh;
+    z-index: 0;
+    left: 0;
+    width: 15vw;
+    height: 15vw;
+  }
+  & .description {
+    margin: auto;
+    & p {
+      @apply uppercase;
+      font-size: 51px;
+      line-height: 62px;
+      font-weight: 700;
+      margin: 0 0 25px;
+      padding-left: 37px;
+      color: var(--white);
+      border-left: 9px solid var(--white);
+    }
+    & .number-board {
+      @apply grid grid-cols-2 gap-4 rounded-3xl p-7;
+      border: 4px solid var(--white);
+      & .number-item {
+        @apply flex rounded-3xl p-5;
+        color: var(--white);
+        flex-direction: column;
+        border: 4px solid var(--white);
+      }
+      & .number {
+        font-weight: 900;
+        font-size: 60px;
+        margin-left: 1rem;
+        &:after {
+          content: "+";
+          font-weight: 400;
+          font-size: 35px;
+          position: absolute;
+        }
+      }
+      & span:last-of-type {
+        @apply uppercase pl-24;
+        text-align: left;
+        width: 80%;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 10%;
+          border-top: 3px solid black;
+          width: 77px;
+        }
+      }
+    }
+    & button {
+      color: var(--white);
+      bottom: -18%;
+      border-color: var(--white);
+      & deep:svg {
+        background-color: var(--white);
+        color: var(--black);
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+#section4 {
+  background-color: var(--black);
+  position: relative;
+  &:before {
+    content: "";
+    background-color: var(--black);
+    position: absolute;
+    top: -24vh;
+    z-index: 0;
+    right: 0;
+    width: 15vw;
+    height: 15vw;
+  }
+  & .description {
+    margin: auto;
+    & p {
+      @apply uppercase;
+      font-size: 51px;
+      line-height: 62px;
+      font-weight: 700;
+      margin: 0 0 25px;
+      padding-left: 37px;
+      color: var(--white);
+      border-left: 9px solid var(--white);
+    }
+  }
 }
 
 .sections-menu {
