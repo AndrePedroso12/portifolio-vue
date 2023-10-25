@@ -40,6 +40,12 @@ import {
   faWhatsapp,
   faGithub,
   faVuejs,
+  faHtml5,
+  faCss3Alt,
+  faReact,
+  faJsSquare,
+  faUikit,
+  faWordpress,
 } from "@fortawesome/free-brands-svg-icons";
 library.add(
   faUserSecret,
@@ -53,7 +59,13 @@ library.add(
   faWhatsapp,
   faGithub,
   faPaperPlane,
-  faVuejs
+  faVuejs,
+  faHtml5,
+  faCss3Alt,
+  faReact,
+  faJsSquare,
+  faUikit,
+  faWordpress
 );
 
 /* import font awesome icon component */

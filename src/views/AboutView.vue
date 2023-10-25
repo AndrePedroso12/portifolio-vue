@@ -16,14 +16,11 @@
         </video>
       </div>
       <div class="position-absolute w-100 gradient-overlay"></div>
-      <div
-        class="content position-relative text-center mb-5"
-        v-motion-fade-visible
-      >
+      <div class="content position-relative text-center mb-5">
         <h1 class="hero-title blend">
-          Where Creativity
+          Criatividade
           <br />
-          &amp; Strategy Meet
+          &amp; Estrategia
         </h1>
       </div>
     </section>
@@ -56,26 +53,14 @@
     </section>
     <section id="section3" class="fullpage">
       <div class="grid grid-cols-2">
-        <div class="description" v-motion-slide-visible-left :delay="900">
+        <div
+          class="description"
+          ref="target"
+          v-motion-slide-visible-left
+          :delay="700"
+        >
           <p>Experiência</p>
-          <div class="number-board">
-            <div class="number-item">
-              <span class="number">09</span>
-              <span>Anos de experiência</span>
-            </div>
-            <div class="number-item">
-              <span class="number">09</span>
-              <span>Anos de experiência</span>
-            </div>
-            <div class="number-item">
-              <span class="number">09</span>
-              <span>Anos de experiência</span>
-            </div>
-            <div class="number-item">
-              <span class="number">09</span>
-              <span>Anos de experiência</span>
-            </div>
-          </div>
+          <NumbersAbout v-if="targetIsVisible" />
           <Button title="Enviar Email" icon="fa-paper-plane" />
         </div>
         <div class="note-image">
@@ -83,25 +68,22 @@
             src="src/assets/images/notebook-mockup.png"
             alt=""
             v-motion-slide-visible-bottom
+            :delay="500"
           />
         </div>
       </div>
     </section>
     <section id="section4" class="fullpage">
-      <div class="description" v-motion-slide-visible-left :delay="900">
-        <p>Conhecimentos em programação</p>
-        <div class="icon-box">
-          <div class="icon-item">
-            <span class="icon"
-              ><font-awesome-icon icon="fa-brands fa-vuejs"
-            /></span>
-            <span>Vue</span>
-          </div>
-        </div>
+      <div class="description">
+        <p v-motion-slide-visible-left>Conhecimentos em programação</p>
+        <ProgramingLanguages />
       </div>
     </section>
     <section id="section5" class="fullpage">
-      <h1>Section 5</h1>
+      <div class="description">
+        <p v-motion-slide-visible-left>Conhecimentos em Web Desing</p>
+        <WebDesing />
+      </div>
     </section>
     <div class="sections-menu">
       <span
@@ -120,7 +102,13 @@
 <script setup lang="ts">
 import Title from "@/components/Title.vue";
 import Button from "@/components/Button.vue";
+import NumbersAbout from "@/components/NumbersAbout.vue";
+import ProgramingLanguages from "@/components/ProgramingLanguages.vue";
+import WebDesing from "@/components/WebDesing.vue";
 import { ref, onMounted, onBeforeUnmount } from "vue";
+import { useElementVisibility } from "@vueuse/core";
+const target = ref(null);
+const targetIsVisible = useElementVisibility(target);
 
 const inMove = ref(false);
 const inMoveDelay = 400;
@@ -128,7 +116,6 @@ const activeSection = ref(0);
 const offsets = ref([]);
 const touchStartY = ref(0);
 
-// Calcaulates the absolute offsets of each section on the page and pushes it into the offsets array
 const calculateSectionOffsets = () => {
   const sections = document.getElementsByTagName("section");
   const length = sections.length;
@@ -287,11 +274,11 @@ onBeforeUnmount(() => {
 #section2 {
   position: relative;
   border-bottom-left-radius: 15vw;
-  z-index: 2;
+  z-index: 3;
   background-color: var(--white);
   & .dev-image {
     & img {
-      bottom: 0;
+      bottom: 1px;
       position: absolute;
       margin-left: 10%;
       width: 40vw;
@@ -338,7 +325,7 @@ onBeforeUnmount(() => {
   background-color: var(--primary);
   position: relative;
   border-bottom-right-radius: 15vw;
-  z-index: 1;
+  z-index: 2;
   &:before {
     content: "";
     background-color: var(--primary);
@@ -361,40 +348,7 @@ onBeforeUnmount(() => {
       color: var(--white);
       border-left: 9px solid var(--white);
     }
-    & .number-board {
-      @apply grid grid-cols-2 gap-4 rounded-3xl p-7;
-      border: 4px solid var(--white);
-      & .number-item {
-        @apply flex rounded-3xl p-5;
-        color: var(--white);
-        flex-direction: column;
-        border: 4px solid var(--white);
-      }
-      & .number {
-        font-weight: 900;
-        font-size: 60px;
-        margin-left: 1rem;
-        &:after {
-          content: "+";
-          font-weight: 400;
-          font-size: 35px;
-          position: absolute;
-        }
-      }
-      & span:last-of-type {
-        @apply uppercase pl-24;
-        text-align: left;
-        width: 80%;
-        position: relative;
-        &::before {
-          content: "";
-          position: absolute;
-          left: 10%;
-          border-top: 3px solid black;
-          width: 77px;
-        }
-      }
-    }
+
     & button {
       color: var(--white);
       bottom: -18%;
@@ -413,6 +367,8 @@ onBeforeUnmount(() => {
 #section4 {
   background-color: var(--black);
   position: relative;
+  border-bottom-left-radius: 15vw;
+  z-index: 1;
   &:before {
     content: "";
     background-color: var(--black);
@@ -425,15 +381,55 @@ onBeforeUnmount(() => {
   }
   & .description {
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: 100%;
     & p {
       @apply uppercase;
       font-size: 51px;
       line-height: 62px;
       font-weight: 700;
       margin: 0 0 25px;
-      padding-left: 37px;
+      padding-left: 4rem;
       color: var(--white);
-      border-left: 9px solid var(--white);
+      text-decoration-line: underline;
+    }
+  }
+}
+
+#section5 {
+  background-color: var(--primary);
+  position: relative;
+  border-bottom-right-radius: 15vw;
+  z-index: 0;
+  &:before {
+    content: "";
+    background-color: var(--primary);
+    position: absolute;
+    top: -24vh;
+    z-index: 0;
+    left: 0;
+    width: 15vw;
+    height: 15vw;
+  }
+  & .description {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: 100%;
+    & p {
+      @apply uppercase;
+      font-size: 51px;
+      line-height: 62px;
+      font-weight: 700;
+      margin: 0 0 25px;
+      padding-left: 4rem;
+      color: var(--white);
+      text-decoration-line: underline;
     }
   }
 }
