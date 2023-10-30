@@ -1,5 +1,5 @@
 <template>
-  <div class="languages_box">
+  <div class="weddesing_box">
     <div class="description" v-motion-slide-visible-right :delay="700">
       <p class="title" v-if="title">
         {{ title }}
@@ -17,26 +17,32 @@
     <div class="icon_box" v-motion-pop-visible :delay="500">
       <div
         class="icon_item"
-        :class="languages.name"
-        v-for="languages in Programings"
-        @click="onHover(languages.name, languages.description)"
+        :class="desing.name"
+        v-for="desing in Desings"
+        @click="onHover(desing.name, desing.description)"
       >
         <span class="icon">
-          <font-awesome-icon
-            :icon="['fa-brands', languages.icon]"
-            :color="languages.color"
-        /></span>
-        <span :style="{ color: languages.color }">{{ languages.name }}</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="64"
+            height="72"
+            viewBox="0 0 64 72"
+            :fill="desing.color"
+          >
+            <path :d="desing.icon" />
+          </svg>
+        </span>
+        <span :style="{ color: desing.color }">{{ desing.name }}</span>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useProgramingStore } from "@/stores";
+import { useWebDesingStore } from "@/stores";
 
-const ProgramingStore = useProgramingStore();
-const Programings = ProgramingStore.$state.programing;
+const DesingStore = useWebDesingStore();
+const Desings = DesingStore.$state.desing;
 
 const title = ref("");
 const LanguageDescription = ref("");
@@ -53,7 +59,7 @@ function onHover(name: string, description: string) {
 </script>
 
 <style lang="scss" scoped>
-.languages_box {
+.weddesing_box {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
   display: grid;
@@ -96,19 +102,20 @@ function onHover(name: string, description: string) {
       left: 35%;
       bottom: -2rem;
     }
-    &.HTML5 {
+    &.Figma {
       box-shadow: 10px 10px 15px 0px rgba(255, 255, 255, 0.1) inset,
-        0px -5px 25px 0px rgba(230, 76, 24, 0.35) inset;
-      &:before {
-        background: linear-gradient(233deg, #ff0000 1.43%, #ff5a00 91.6%);
-      }
-    }
-    &.CSS3 {
-      box-shadow: 10px 10px 13px 0px rgba(255, 255, 255, 0.1) inset,
-        0px -5px 25px 0px rgba(41, 101, 241, 0.35) inset;
+        0px -5px 25px 0px #ff7262 inset;
 
       &:before {
-        background: linear-gradient(64deg, #264de4 21.64%, #c0d1f9 69.31%);
+        background: linear-gradient(64deg, #a259ff 21.64%, #1abcfe 69.31%);
+      }
+    }
+    &.xd {
+      box-shadow: 10px 10px 13px 0px rgba(255, 255, 255, 0.1) inset,
+        0px -5px 25px 0px rgba(71, 1, 55, 0.35) inset;
+
+      &:before {
+        background: linear-gradient(64deg, #e074ef 21.64%, #470137 69.31%);
       }
     }
     &.Vue {
