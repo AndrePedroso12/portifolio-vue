@@ -24,12 +24,11 @@
         <span class="icon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="64"
-            height="72"
-            viewBox="0 0 64 72"
-            :fill="desing.color"
+            :width="desing.width"
+            :height="desing.height"
+            :viewBox="desing.viewBox"
           >
-            <path :d="desing.icon" />
+            <path v-for="path in desing.icon" :d="path" :fill="desing.color" />
           </svg>
         </span>
         <span :style="{ color: desing.color }">{{ desing.name }}</span>
@@ -102,7 +101,7 @@ function onHover(name: string, description: string) {
       left: 35%;
       bottom: -2rem;
     }
-    &.Figma {
+    &.figma {
       box-shadow: 10px 10px 15px 0px rgba(255, 255, 255, 0.1) inset,
         0px -5px 25px 0px #ff7262 inset;
 
@@ -118,53 +117,52 @@ function onHover(name: string, description: string) {
         background: linear-gradient(64deg, #e074ef 21.64%, #470137 69.31%);
       }
     }
-    &.Vue {
+    &.photoshop {
       box-shadow: 10px 10px 20px 0px rgba(255, 255, 255, 0.1) inset,
-        0px -5px 25px 0px rgba(65, 184, 131, 0.35) inset;
+        0px -5px 25px 0px rgba(38, 77, 228, 0.35) inset;
 
       &:before {
-        background: linear-gradient(64deg, #52fdd1 21.64%, #27ae60 69.31%);
+        background: linear-gradient(64deg, #264de4 21.64%, #99f 69.31%);
       }
     }
-    &.React {
+    &.illustrator {
       box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.1) inset,
-        0px -5px 25px 0px rgba(74, 213, 255, 0.35) inset;
+        0px -5px 25px 0px rgba(223, 167, 24, 0.35) inset;
+
       &:before {
-        background: linear-gradient(64deg, #113a46 21.64%, #4ad5ff 69.31%);
+        background: linear-gradient(64deg, #300 21.64%, #d8a91e 69.31%);
       }
     }
-    &.JavaScript {
+    &.premiere {
       box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.1) inset,
-        0px -5px 25px 0px rgba(247, 223, 30, 0.35) inset;
+        0px -5px 25px 0px rgba(205, 4, 255, 0.35) inset;
 
       &:before {
-        background: linear-gradient(233deg, #ff7a00 1.43%, #f7df1e 91.6%);
+        background: linear-gradient(64deg, #e4e4e4 21.64%, #e021ff 69.31%);
       }
     }
-    &.Wordpress {
+    &.effects {
       box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 0.1) inset,
-        0px -5px 25px 0px rgba(33, 117, 155, 0.35) inset;
+        0px -5px 25px 0px rgba(16, 16, 220, 0.35) inset;
 
       &:before {
-        background: linear-gradient(233deg, #21759b 1.43%, #c3dde9 91.6%);
+        background: linear-gradient(87deg, #9598f9 9.63%, #5201ff 85.76%);
       }
     }
-    &.Loja {
-      box-shadow: 10px 10px 15px 0px rgba(255, 255, 255, 0.1) inset,
-        0px -5px 25px 0px rgba(43, 196, 194, 0.35) inset;
 
-      &:before {
-        background: linear-gradient(64deg, #b5eae9 21.64%, #2bc4c2 69.31%);
-      }
-    }
     & .icon {
-      font-size: 76px;
-      text-align: center;
       height: 7rem;
-      padding-top: 0.5rem;
+      padding-top: 1.5rem;
+      & svg {
+        margin: auto;
+        width: 5rem;
+      }
     }
     & span:last-of-type {
       margin-bottom: 0.5rem;
+    }
+    &:last-of-type .icon svg {
+      width: 6rem;
     }
   }
 }

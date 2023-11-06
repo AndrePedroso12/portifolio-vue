@@ -75,6 +75,7 @@ function onHover(name: string, description: string) {
   & .icon_item {
     @apply flex flex-col rounded-3xl uppercase;
     overflow: hidden;
+    cursor: pointer;
     width: 9rem;
     text-align: center;
     font-family: Open Sans;
