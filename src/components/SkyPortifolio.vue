@@ -1,5 +1,5 @@
 <template>
-  <div class="parallax">
+  <div class="parallax" ref="listEl">
     <div class="parallax__layer parallax__layer__0">
       <img src="src/assets/images/parallax/mountBg.webp" />
     </div>
@@ -23,9 +23,15 @@
     </div>
 
     <div class="parallax__cover">
-      <div class="parallax__cover-text">
+      <div
+        class="parallax__cover-text"
+        v-motion-fade-visible
+        :delay="500"
+        style="transform: none"
+      >
         <p>Em projetos</p>
       </div>
+      <slot name="text"> </slot>
     </div>
   </div>
 </template>
@@ -87,7 +93,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    height: 2000px;
+    height: fit-content;
     z-index: 2;
     box-shadow: 0px -20px 20px 20px #fff;
     & p {
@@ -101,7 +107,6 @@
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      // color: green;
       left: 0%;
       text-align: center;
       font-size: 6rem;
@@ -116,12 +121,8 @@
         color: var(--primary);
         position: absolute;
         z-index: -1;
-        opacity: 0.5;
+        transition: opacity 0.3s ease; /* Add a transition effect for smooth opacity changes */
       }
-    }
-    &-text {
-      position: sticky;
-      top: 6rem;
     }
   }
 }
