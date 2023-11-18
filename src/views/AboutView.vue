@@ -37,16 +37,23 @@
         <div class="description" v-motion-slide-visible-right :delay="900">
           <h3>André Pedroso <span>Dev Front-end</span></h3>
           <p class="glass-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            cursus neque in maximus elementum. Fusce condimentum justo sit amet
-            nisl mollis, in bibendum nisi rhoncus. Fusce sed risus eros. Donec
-            erat ipsum, tempus sed cursus ac, volutpat et risus. Maecenas mattis
-            commodo neque, non malesuada mauris vulputate nec. Vivamus laoreet
-            dui nec dui scelerisque aliquam. Fusce turpis est, efficitur eget
-            nulla quis, ultricies tincidunt massa. Proin fermentum et sem
-            ultricies fermentum. Cras eu augue imperdiet, tincidunt enim a,
-            euismod dui. Mauris nec euismod lorem. Quisque vitae purus
-            condimentum, malesuada lacus in, blandit est.
+            Meu nome é André Luiz Pedroso, e iniciei minha carreira como
+            Desenvolvedor Front-End em 2015, atuando em uma pequena agência de
+            publicidade em Jaguariúna, SP. Ao longo dos anos, evoluí minha
+            carreira e, atualmente, colaboro com agências e clientes de grande e
+            médio porte, tanto no Brasil quanto internacionalmente.<br /><br />
+            Tenho uma vasta experiência em diversas linguagens e frameworks de
+            programação, incluindo Vue, React, Bootstrap, Tailwind, Javascript,
+            HTML5, CSS3, Wordpress e Loja Integrada. Além disso, cultivo um
+            sólido conhecimento em Design UI/UX, garantindo que meus projetos
+            não apenas funcionem eficientemente, mas também ofereçam uma
+            experiência visualmente atraente e intuitiva para os usuários.<br /><br />
+            Com mais de oito anos dedicados ao desenvolvimento Front-End, minha
+            abordagem versátil e adaptável me permite enfrentar uma variedade de
+            desafios, desde a criação de lojas online até o design e
+            implementação de websites empresariais. Estou comprometido em
+            continuar me aprimorando e explorando novas tecnologias para
+            oferecer soluções inovadoras aos meus clientes.
           </p>
         </div>
       </div>
@@ -287,7 +294,7 @@ onBeforeUnmount(() => {
 
   & .description {
     width: 75%;
-    margin-top: 41%;
+    margin-top: 15%;
     & .glass-text {
       border-radius: 7px;
       background: rgba(255, 255, 255, 0.01);

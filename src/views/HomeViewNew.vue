@@ -4,9 +4,9 @@
     <div class="home-description">
       <h1>André Pedroso <span>Dev Front-end</span></h1>
       <p class="open-sans-font">
-        I'm a Tunisian based web designer &amp; front‑end developer focused on
-        crafting clean &amp; user‑friendly experiences, I am passionate about
-        building excellent software that improves the lives of those around me.
+        Meu nome é André Luiz Pedroso, sou Desenvolvedor Front-End com mais de 8
+        anos de experiência, concentrando-me principalmente no desenvolvimento
+        de lojas online, websites empresariais e landing pages.
       </p>
       <router-link to="/sobre" custom v-slot="{ navigate }">
         <Button
@@ -108,7 +108,7 @@ import Button from "@/components/Button.vue";
     color: var(--black);
     margin: 15px 0 28px;
     font-size: 12px;
-    line-height: 35px;
+    line-height: 22px;
     width: 21rem;
     position: absolute;
     right: -27%;

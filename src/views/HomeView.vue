@@ -8,9 +8,9 @@
     <div class="home-description">
       <h1>Me chamo<span>André Pedroso</span> <span>Dev Front-end</span></h1>
       <p class="open-sans-font">
-        I'm a Tunisian based web designer &amp; front‑end developer focused on
-        crafting clean &amp; user‑friendly experiences, I am passionate about
-        building excellent software that improves the lives of those around me.
+        Sou Desenvolvedor Front-End com mais de 8 anos de experiência,
+        concentrando-me principalmente no desenvolvimento de lojas online,
+        websites empresariais e landing pages.
       </p>
       <router-link to="/sobre" custom v-slot="{ navigate }">
         <button @click="navigate" role="link">
