@@ -12,19 +12,12 @@
         class="project-item"
         @click="openProject(project)"
       >
-        <Project>
-          <template #name>
-            {{ project.title }}
-          </template>
-          <template #subtitle> {{ project.subtitle }} </template>
-        </Project>
+        <Project :project="project" />
       </div>
     </div>
   </div>
 
   <ProjectModal :selectedProject="selectedProject" />
-
-  <button class="btn" onclick="my_modal_3.showModal()">open modal</button>
 </template>
 
 <script setup lang="ts">
@@ -49,6 +42,7 @@ const selectedProject = ref({
   title: "",
   subtitle: "",
   mainImage: "",
+  mobileImage: "",
   description: "",
   images: [
     {
@@ -80,7 +74,6 @@ function openProject(project: any) {
   overflow: hidden;
   border-radius: 6px;
   transition: filter 0.3s ease-out, opacity 0.3s ease-out;
-  border: solid black 1px;
 }
 
 .projects:nth-of-type(1) {

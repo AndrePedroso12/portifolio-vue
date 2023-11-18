@@ -2,19 +2,27 @@
   <div class="project">
     <figure class="project-image">
       <img
-        src="https://images.unsplash.com/photo-1582754976305-9870cf0102be?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"
+        :src="
+          project.mainImage
+            ? project.mainImage
+            : 'https://images.unsplash.com/photo-1582754976305-9870cf0102be?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ'
+        "
         alt=""
       />
     </figure>
     <h2 class="project-title">
-      <slot name="name"> </slot>
+      {{ project.title }}
       <br />
-      <small><slot name="subtitle"> </slot></small>
+      <small>{{ project.subtitle }}</small>
     </h2>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const props = defineProps<{
+  project: any;
+}>();
+</script>
 
 <style scoped lang="scss">
 .project {
@@ -23,6 +31,7 @@
   display: flex;
   align-items: flex-end;
   position: relative;
+  background: black;
   &-image {
     position: absolute;
     top: 0;
@@ -40,8 +49,9 @@
       display: block;
       -o-object-fit: cover;
       object-fit: cover;
+      object-position: bottom;
       mix-blend-mode: multiply;
-      opacity: 1;
+      opacity: 0.4;
     }
   }
   &-title {

@@ -25,51 +25,36 @@
         <div class="mockup-phone">
           <div class="camera"></div>
           <div class="display">
-            <div class="artboard artboard-demo phone-1">
-              <img :src="props.selectedProject.mainImage" alt="" />
+            <div
+              class="artboard artboard-demo phone-1"
+              :style="{
+                'background-image':
+                  'url(' + props.selectedProject.mobileImage + ')',
+              }"
+            >
+              <!-- <img :src="props.selectedProject.mobileImage" alt="" /> -->
             </div>
           </div>
         </div>
-        <p class="mb-5 w-3/6">
-          {{ props.selectedProject.description }}
-        </p>
+        <div class="text w-3/6">
+          <p class="mb-5">{{ props.selectedProject.description }}</p>
+          <a
+            v-if="props.selectedProject.website"
+            :href="props.selectedProject.website"
+            >Acesse o website</a
+          >
+        </div>
       </div>
 
       <div class="images">
-        <div class="mockup-window border bg-base-300">
-          <div class="flex justify-center bg-base-200">
-            <img :src="props.selectedProject.mainImage" alt="" />
-            <p>descrição</p>
-          </div>
-        </div>
-        <div class="mockup-window border bg-base-300">
-          <div class="flex justify-center bg-base-200">
-            <img :src="props.selectedProject.mainImage" alt="" />
-            <p>descrição</p>
-          </div>
-        </div>
-        <div class="mockup-window border bg-base-300">
-          <div class="flex justify-center bg-base-200">
-            <img :src="props.selectedProject.mainImage" alt="" />
-            <p>descrição</p>
-          </div>
-        </div>
-        <div class="mockup-window border bg-base-300">
-          <div class="flex justify-center bg-base-200">
-            <img :src="props.selectedProject.mainImage" alt="" />
-            <p>descrição</p>
-          </div>
-        </div>
-        <div class="mockup-window border bg-base-300">
-          <div class="flex justify-center bg-base-200">
-            <img :src="props.selectedProject.mainImage" alt="" />
-            <p>descrição</p>
-          </div>
-        </div>
-        <div class="mockup-window border bg-base-300">
-          <div class="flex justify-center bg-base-200">
-            <img :src="props.selectedProject.mainImage" alt="" />
-            <p>descrição</p>
+        <div
+          class="mockup-window border bg-base-300"
+          v-for="image in selectedProject.images"
+        >
+          <div class="mockup-window-toolbar"></div>
+          <div class="flex justify-center bg-base-200 relative h-full">
+            <img :src="image.url" alt="" />
+            <p>{{ image.description }}</p>
           </div>
         </div>
       </div>
@@ -127,9 +112,30 @@ button.btn {
   display: flex;
   flex-direction: row;
   & .phone-1 {
-    & img {
-      object-fit: fill;
-      height: 100%;
+    position: relative;
+    background-position-y: 0;
+    background-size: cover;
+    animation: autoScroll-phone-mobile 15s ease-out infinite;
+  }
+  & .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  & a {
+    background-color: var(--primary);
+    color: black;
+    font-weight: 700;
+    border-radius: 30px;
+    padding: 1rem;
+    transition: ease-in-out 0.6s;
+    :hover {
+      scale: 1.1;
+      background-color: white;
+      outline: 1px solid white;
+      outline-offset: 10px;
+      box-shadow: 0 0 4px 4px #52fdd138;
     }
   }
 }
@@ -143,7 +149,7 @@ button.btn {
   & p {
     position: absolute;
     width: 100%;
-    height: 84%;
+    height: 100%;
     background-color: #00000085;
     text-align: center;
     color: white;
@@ -155,8 +161,29 @@ button.btn {
     transition: 0.3s;
   }
   & .mockup-window {
+    height: 20rem;
     :hover p {
       opacity: 1;
+    }
+    &:before {
+      z-index: 4;
+      position: absolute;
+    }
+    &-toolbar {
+      background: #1d232a;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      top: 0;
+      height: 3rem;
+    }
+    & img {
+      // animation: autoScroll-phone-desktop 30s ease-out infinite;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 28px;
     }
   }
 }
@@ -186,4 +213,72 @@ button.btn {
     top: 0;
   }
 }
+
+@keyframes autoScroll-phone-mobile {
+  0%,
+  20% {
+    background-position-y: 0;
+  }
+
+  25% {
+    background-position-y: 27%; /* -500px / 1800px */
+  }
+  50% {
+    background-position-y: 55%; /* -1000px / 1800px */
+  }
+  75% {
+    background-position-y: 83%; /* -1500px / 1800px */
+  }
+  90% {
+    background-position-y: 100%; /* -1800px / 1800px */
+  }
+  100% {
+    background-position-y: 0;
+  }
+}
+
+@keyframes autoScroll-phone-desktop {
+  0%,
+  14.28% {
+    bottom: auto;
+  }
+  28.56%,
+  42.84% {
+    bottom: -80%;
+  }
+  57.12%,
+  71.4% {
+    bottom: -50%;
+  }
+  85.68% {
+    bottom: 0;
+  }
+  100% {
+    bottom: auto;
+  }
+}
+// @keyframes autoScroll-phone-desktop {
+//   0% {
+//     top: 48px;
+//   }
+//   20% {
+//     top: 48px;
+//   }
+//   25% {
+//     transform: translate(0%, -500px);
+//   }
+//   50% {
+//     transform: translate(0%, -1000px);
+//   }
+//   75% {
+//     transform: translate(0%, -1500px);
+//   }
+//   90% {
+//     transform: none;
+//     bottom: -300px;
+//   }
+//   100% {
+//     top: 48px;
+//   }
+// }
 </style>
