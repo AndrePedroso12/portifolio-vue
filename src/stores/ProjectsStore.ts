@@ -70,6 +70,7 @@ export const useProjectStore = defineStore("projectsList", {
         title: "Netcoffee",
         subtitle: "Loja de cafés e insumos",
         mainImage: "",
+        mobileImage: "",
         description: "",
         images: [
           {
@@ -81,24 +82,59 @@ export const useProjectStore = defineStore("projectsList", {
       {
         title: "Cheirinho Pet",
         subtitle: "Marca / Loja de Perfumes Pet",
-        mainImage: "",
-        description: "",
+        mainImage:
+          "src/assets/images/projects/cheirinho-pet/main-image-cheirinho-pet.webp",
+        mobileImage:
+          "src/assets/images/projects/cheirinho-pet/mobile-cheirinho-pet.webp",
+        website: "https://www.cheirinhopet.com.br",
+        description: `Em 2023, fui encarregado de desenvolver o e-commerce da Cheirinho Pet como um projeto direto para a empresa. Fui responsável por criar o design, UI/UX e o conceito do site, baseando-me no conteúdo já existente no Instagram da marca. O site, construído na plataforma da Loja Integrada, oferece uma experiência de compra eficiente e amigável para os usuários.
+
+        Uma característica distintiva do projeto é a mudança dinâmica de cores nas páginas de produtos, alinhando-se com as categorias específicas do inventário e seguindo a paleta utilizada no layout do site. Esta abordagem não apenas adiciona um elemento visual atrativo, mas também facilita a navegação, destacando a diversidade de produtos oferecidos pela Cheirinho Pet.
+        
+        Destacando-se no aspecto social, a Cheirinho Pet estabeleceu parcerias com diversas instituições de caridade. A cada compra realizada, a empresa compromete-se a doar 1 real para ajudar animais em situação de rua. Essa iniciativa reforça o compromisso da marca com o bem-estar animal, proporcionando aos clientes não apenas produtos de alta qualidade, mas também a oportunidade de contribuir para uma causa nobre.
+        `,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/cheirinho-pet/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/cheirinho-pet/2.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/cheirinho-pet/3.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/cheirinho-pet/4.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/cheirinho-pet/5.webp",
+            description: "Home do site",
           },
         ],
       },
       {
         title: "Anjara",
         subtitle: "Loja / Marca de perfumes para lojas",
-        mainImage: "",
-        description: "",
+        mainImage: "src/assets/images/projects/anjara/main-image-anjara.webp",
+        mobileImage: "src/assets/images/projects/anjara/mobile-anjara.webp",
+        description: `Entre 2022 e o início de 2023, fui o responsável exclusivo pela criação do e-commerce da marca Anjara, utilizando a plataforma Loja Integrada. A Anjara, especializada em perfumes para ambientes, direciona-se principalmente a lojas e escritórios, destacando-se como uma marca mono produto.
+
+        Assumindo o projeto desde sua concepção, desenvolvi individualmente o layout do e-commerce, UI/UX, identidade da empresa, esquema de cores e outros elementos, buscando transmitir visualmente a essência única da marca, que tinha apenas o logo quando iniciamos a colaboração.
+        
+        Apesar de estar hospedado na plataforma Loja Integrada, o objetivo principal do e-commerce é incentivar os consumidores a entrar em contato com os vendedores para obter preços mais vantajosos. O design é intencionalmente simples, focando nos benefícios dos produtos Anjara e em como eles podem aprimorar ambientes comerciais. Este projeto destaca a singularidade do produto enquanto proporciona uma experiência de compra direta para os clientes interessados.`,
+        website: "https://www.sintaanjara.com",
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/anjara/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/anjara/2.webp",
+            description: "Pagina de produto",
           },
         ],
       },
@@ -165,6 +201,7 @@ export const useProjectStore = defineStore("projectsList", {
         title: "Liquigás",
         subtitle: "Nome da promoção",
         mainImage: "",
+        mobileImage: "",
         description: "",
         images: [
           {
@@ -177,6 +214,7 @@ export const useProjectStore = defineStore("projectsList", {
         title: "Ibra",
         subtitle: "Laboratório de Analise de solos",
         mainImage: "",
+        mobileImage: "",
         description: "",
         images: [
           {
@@ -189,6 +227,7 @@ export const useProjectStore = defineStore("projectsList", {
         title: "Sun Protect",
         subtitle: "Loja de Insulfims",
         mainImage: "",
+        mobileImage: "",
         description: "",
         images: [
           {
@@ -197,23 +236,11 @@ export const useProjectStore = defineStore("projectsList", {
           },
         ],
       },
-      {
-        title: "Cachorro Magro",
-        subtitle: "Restaurante especializado em costelas",
-        mainImage: "",
-        description: "",
-        images: [
-          {
-            url: "",
-            description: "",
-          },
-        ],
-      },
-
       {
         title: "Rock in Rio e C&A",
         subtitle: "Nome da promoção",
         mainImage: "",
+        mobileImage: "",
         description: "",
         images: [
           {
@@ -226,6 +253,7 @@ export const useProjectStore = defineStore("projectsList", {
         title: "Nissin",
         subtitle: "Nome da promoção",
         mainImage: "",
+        mobileImage: "",
         description: "",
         images: [
           {
@@ -238,6 +266,20 @@ export const useProjectStore = defineStore("projectsList", {
         title: "Sym",
         subtitle: "Nome da promoção",
         mainImage: "",
+        mobileImage: "",
+        description: "",
+        images: [
+          {
+            url: "",
+            description: "",
+          },
+        ],
+      },
+      {
+        title: "Bytz",
+        subtitle: "Nome da promoção",
+        mainImage: "",
+        mobileImage: "",
         description: "",
         images: [
           {
@@ -248,38 +290,41 @@ export const useProjectStore = defineStore("projectsList", {
       },
       {
         title: "Claro Brasil",
-        subtitle: "Nome da promoção",
-        mainImage: "",
-        description: "",
+        subtitle: "Promoção Ta na Claro ta na Copa",
+        mainImage: "src/assets/images/projects/claro/main-image-claro.jpg",
+        mobileImage: "src/assets/images/projects/claro/mobile-claro.png",
+        description: `Em 2021, enquanto trabalhava na Fenix System, tive a responsabilidade de desenvolver o site para a Promoção "Tá na Claro, Tá na Copa", em preparação para a aguardada Copa do Mundo do Qatar em 2022. A parceria com a Claro Brasil envolveu a implementação do site com base no design proporcionado pelo talentoso time de marketing da empresa.
+        O site apresentava uma abordagem dinâmica com três fases distintas, automatizando as mudanças com base nas datas cadastradas na API da promoção. Essa funcionalidade proporcionou uma experiência interativa e personalizada aos usuários, alinhada aos eventos específicos da Copa do Mundo.
+        
+        Uma característica única do projeto foi a integração direta com o aplicativo da Claro. Os usuários ganhavam bilhetes automaticamente em suas contas Claro e podiam visualizá-los no site. Cada bilhete gerava uma experiência de "raspadinha virtual", permitindo que os participantes simulassem o ato de raspar um bilhete com o mouse ou tela sensível ao toque para descobrir se haviam sido premiados.`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/claro/1.jpg",
+            description: "Home da primeira fase da promoção",
           },
-        ],
-      },
-
-      {
-        title: "Bytz",
-        subtitle: "Nome da promoção",
-        mainImage: "",
-        description: "",
-        images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/claro/claro-ultima-fase.png",
+            description: "Home da ultima fase da promoção",
           },
-        ],
-      },
-      {
-        title: "Castelo",
-        subtitle: "Nome da promoção",
-        mainImage: "",
-        description: "",
-        images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/claro/2.jpg",
+            description: "Página de ganhadores",
+          },
+          {
+            url: "src/assets/images/projects/claro/3.jpg",
+            description: "Página de opt-in / cadastro",
+          },
+          {
+            url: "src/assets/images/projects/claro/4.jpg",
+            description: "Página de Meus bilhetes",
+          },
+          {
+            url: "src/assets/images/projects/claro/6.jpg",
+            description: "Interação de raspar o bilhete",
+          },
+          {
+            url: "src/assets/images/projects/claro/7.jpg",
+            description: "Resultado do bilhete premiado",
           },
         ],
       },
@@ -287,6 +332,7 @@ export const useProjectStore = defineStore("projectsList", {
         title: "Elma Chips",
         subtitle: "Nome da promoção",
         mainImage: "",
+        mobileImage: "",
         description: "",
         images: [
           {
@@ -299,6 +345,7 @@ export const useProjectStore = defineStore("projectsList", {
         title: "Fisk",
         subtitle: "Nome da promoção",
         mainImage: "",
+        mobileImage: "",
         description: "",
         images: [
           {
@@ -310,10 +357,9 @@ export const useProjectStore = defineStore("projectsList", {
       {
         title: "Delicia",
         subtitle: "Promoção Cozinha de MasterChef",
-        mainImage:
-          "src/assets/images/projects/delicia/main-image-delicia-min.jpg",
+        mainImage: "src/assets/images/projects/delicia/main-image-delicia.jpg",
         mobileImage: "src/assets/images/projects/delicia/mobile-delicia.jpg",
-        description: `"Em meados de 2022, tive a oportunidade de contribuir para o desenvolvimento do site da Promoção "Cozinha de MasterChef" da Margarina Delícia, uma iniciativa da Seara Alimentos, proprietária da marca Delícia. Este projeto foi realizado enquanto eu estava integrado à equipe da Fenix System. No site, os participantes podiam cadastrar os códigos de barras dos produtos participantes, proporcionando-lhes a chance de concorrer a prêmios para aprimorar sua cozinha. A plataforma incluía páginas específicas, como a de cadastro, onde os usuários inseriam suas informações, a de registro dos códigos de barras para participação na promoção, e uma página para visualizar os bilhetes gerados, onde podiam verificar se algum deles havia sido premiado. Foi um projeto envolvente e prático, concentrado na interação direta com os consumidores, incentivando a participação ativa na promoção e proporcionando uma experiência fácil e intuitiva para os usuários."`,
+        description: `Em meados de 2022, tive a oportunidade de contribuir para o desenvolvimento do site da Promoção "Cozinha de MasterChef" da Margarina Delícia, uma iniciativa da Seara Alimentos, proprietária da marca Delícia. Este projeto foi realizado enquanto eu estava integrado à equipe da Fenix System. No site, os participantes podiam cadastrar os códigos de barras dos produtos participantes, proporcionando-lhes a chance de concorrer a prêmios para aprimorar sua cozinha. A plataforma incluía páginas específicas, como a de cadastro, onde os usuários inseriam suas informações, a de registro dos códigos de barras para participação na promoção, e uma página para visualizar os bilhetes gerados, onde podiam verificar se algum deles havia sido premiado. Foi um projeto envolvente e prático, concentrado na interação direta com os consumidores, incentivando a participação ativa na promoção e proporcionando uma experiência fácil e intuitiva para os usuários.`,
         images: [
           {
             url: "src/assets/images/projects/delicia/1.jpg",
@@ -342,6 +388,7 @@ export const useProjectStore = defineStore("projectsList", {
         title: "Blog Dot Cosmeticos",
         subtitle: "Blog de uma loja de cosmeticos",
         mainImage: "",
+        mobileImage: "",
         description: "",
         images: [
           {
@@ -353,12 +400,28 @@ export const useProjectStore = defineStore("projectsList", {
       {
         title: "Blog DSS",
         subtitle: "Blog de uma distribuidora sexshop",
-        mainImage: "",
-        description: "",
+        mainImage:
+          "src/assets/images/projects/blog-dss/main-image-blog-dss.jpg",
+        mobileImage: "src/assets/images/projects/blog-dss/mobile-blog-dss.png",
+        website: "https://blog.distribuidorasexshop.com.br",
+        description: `Em 2022, durante meu período na Agência Delucca, tive o prazer de desenvolver o site para o Blog da Distribuidora SexShop DSS. O principal objetivo do site era direcionar os visitantes para a loja oficial da DSS, promovendo seus produtos de forma atrativa. A principal autora do blog, Waleviska Saniele, liderava a produção de conteúdo.
+        O site foi construído utilizando WordPress, visando facilitar a edição e publicação de posts pela equipe da Distribuidora SexShop DSS. Essa escolha permitiu que a autora e a equipe de marketing gerenciassem o conteúdo de maneira eficiente, mantendo o blog atualizado e envolvente para atrair novos clientes para a loja online. Foi um projeto que combinou funcionalidade e praticidade para atender às necessidades específicas da Distribuidora SexShop DSS.`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/blog-dss/1.jpg",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/blog-dss/2.jpg",
+            description: "Post simples do blog",
+          },
+          {
+            url: "src/assets/images/projects/blog-dss/3.jpg",
+            description: "Pagina sobre a escritora",
+          },
+          {
+            url: "src/assets/images/projects/blog-dss/4.jpg",
+            description: "Pagina de pesquisa por posts",
           },
         ],
       },
