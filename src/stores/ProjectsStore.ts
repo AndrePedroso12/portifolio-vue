@@ -211,15 +211,41 @@ export const useProjectStore = defineStore("projectsList", {
         ],
       },
       {
-        title: "Ibra",
+        title: "Ibra Megalab",
         subtitle: "Laboratório de Analise de solos",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
+        mainImage: "src/assets/images/projects/ibra/main-image-ibra.webp",
+        mobileImage: "src/assets/images/projects/ibra/mobile-ibra.webp",
+        website: "https://ibramegalab.ag",
+        description: `
+        Em 2023, durante meu tempo na Agência Delucca, tive a oportunidade de desenvolver o site para a Ibra Megalab, uma empresa especializada em análise de solos. O site foi cuidadosamente projetado para destacar os serviços especializados oferecidos pela empresa, com um enfoque particular na análise de solos para plantações.
+        
+        Optei por construir o site na plataforma WordPress, aproveitando a versatilidade da plataforma, especialmente para integrar um blog informativo sobre solos e práticas agrícolas. Essa seção permitia à Ibra Megalab compartilhar conhecimentos e estabelecer autoridade no setor.
+        
+        Além disso, o site foi projetado com uma seção dedicada para que os usuários pudessem solicitar orçamentos e entrar em contato diretamente com a empresa. Essa funcionalidade facilitou a interação entre a Ibra Megalab e seus clientes em potencial, proporcionando uma experiência mais acessível e personalizada.`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/ibra/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/ibra/2.webp",
+            description: "Página de Serviços",
+          },
+          {
+            url: "src/assets/images/projects/ibra/3.webp",
+            description: "Página de posts",
+          },
+          {
+            url: "src/assets/images/projects/ibra/4.webp",
+            description: "Página de Orçamentos / Contato",
+          },
+          {
+            url: "src/assets/images/projects/ibra/5.webp",
+            description: "Pagina de locais dos laboratórios",
+          },
+          {
+            url: "src/assets/images/projects/ibra/6.webp",
+            description: "Pagina de Sobre Nós",
           },
         ],
       },
