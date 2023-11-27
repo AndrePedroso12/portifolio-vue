@@ -69,13 +69,27 @@ export const useProjectStore = defineStore("projectsList", {
       {
         title: "Netcoffee",
         subtitle: "Loja de cafés e insumos",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
+        mainImage:
+          "src/assets/images/projects/netcoffee/main-image-netcoffee.webp",
+        mobileImage:
+          "src/assets/images/projects/netcoffee/mobile-netcoffee.webp",
+        description: `Entre 2021 e 2023, durante meu emprego na Agência Delucca, contribuí significativamente para o site da Netcoffee, um fornecedor de cafés e insumos para empresas. Embora não tenha participado desde o início, dediquei grande parte do meu tempo à manutenção contínua e à criação de páginas de produtos.
+
+        Destaquei-me na implementação de páginas de produtos específicos, conferindo a cada um design diferenciado e conteúdo personalizado. Essa abordagem visava não apenas promover os produtos, mas também proporcionar uma experiência envolvente aos visitantes.
+        
+        Particularmente, minha atuação foi crucial na manutenção do site, especialmente em relação a promoções sazonais, integração de novas funcionalidades e na otimização da captura de leads. Essas atividades visavam melhorar a experiência do usuário, impulsionar as vendas e manter o site alinhado com as necessidades dinâmicas do mercado de cafés corporativos.`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/netcoffee/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/netcoffee/2.webp",
+            description: "Página de produto",
+          },
+          {
+            url: "src/assets/images/projects/netcoffee/3.webp",
+            description: "Página de categorias",
           },
         ],
       },
