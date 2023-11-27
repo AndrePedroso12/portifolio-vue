@@ -199,14 +199,31 @@ export const useProjectStore = defineStore("projectsList", {
       },
       {
         title: "Liquigás",
-        subtitle: "Nome da promoção",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
+        subtitle: "Promoção Copa na Cozinha",
+        mainImage:
+          "src/assets/images/projects/liquigas/main-image-liquigas.webp",
+        mobileImage: "src/assets/images/projects/liquigas/mobile-liquigas.webp",
+        description: `Em meados de 2021, durante meu período na Fenix System, tive a oportunidade de desenvolver o site para a Promoção "Copa na Cozinha", uma iniciativa da empresa Liquigás em antecipação à Copa de 2022. O projeto visava promover a marca e envolver os clientes de maneira temática e animada.
+
+        O site foi concebido como um ambiente totalmente temático, com campos de futebol substituindo os tradicionais campos de texto, traves de gol decorando iframes de vídeos do YouTube e bolas de futebol incorporadas nos textos. A animação, inteiramente realizada com CSS, criou uma atmosfera dinâmica e envolvente, alinhada ao espírito esportivo da promoção.
+        
+        Na página de cadastro, implementei um elemento criativo: uma bola de futebol giratória que reagia às informações inseridas pelo usuário, acompanhada por ícones representativos. Essa abordagem interativa adicionou um toque lúdico ao processo de cadastro, tornando-o mais atraente e estimulando a participação na promoção "Copa na Cozinha".`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/liquigas/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/liquigas/2.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/liquigas/3.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/liquigas/4.webp",
+            description: "Home do site",
           },
         ],
       },
@@ -252,65 +269,153 @@ export const useProjectStore = defineStore("projectsList", {
       {
         title: "Sun Protect",
         subtitle: "Loja de Insulfims",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
+        mainImage:
+          "src/assets/images/projects/sun-protect/main-image-sun-protect.webp",
+        mobileImage:
+          "src/assets/images/projects/sun-protect/mobile-sun-protect.webp",
+        description: `Entre 2021 e 2022, durante meu período na Agência Delucca, tive a responsabilidade de desenvolver o site para a marca de Insulfim Sun Protect. O projeto consistiu em um e-commerce especializado, oferecendo aos clientes uma experiência personalizada na escolha de insulfim para seus projetos.
+
+        O site permitia aos clientes não apenas escolher a visibilidade, dimensão e espessura do insulfim, mas também oferecia uma variedade de ferramentas para instaladores. Essa abordagem abrangente visava atender às diversas necessidades de profissionais e consumidores finais.
+        
+        Cada página de produto foi projetada com atenção aos detalhes, fornecendo descrições abrangentes. Incluí caixas de perguntas para esclarecer dúvidas, imagens ilustrativas para uma compreensão visual e dicas de instalação para orientar os clientes. Esses elementos adicionais visavam enriquecer a experiência do usuário e garantir que os clientes tomassem decisões informadas sobre suas compras.`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/sun-protect/1.webp",
+            description: "Home do Site",
+          },
+          {
+            url: "src/assets/images/projects/sun-protect/2.webp",
+            description: "Página de produtos",
+          },
+          {
+            url: "src/assets/images/projects/sun-protect/3.webp",
+            description: "Pagina de categorias",
           },
         ],
       },
       {
         title: "Rock in Rio e C&A",
-        subtitle: "Nome da promoção",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
+        subtitle: "Promoção Look Premiado C&A",
+        mainImage: "src/assets/images/projects/cea/main-image-cea.webp",
+        mobileImage: "src/assets/images/projects/cea/mobile-cea.webp",
+        description: `Em 2022, durante meu período na Fenix System, tive o privilégio de desenvolver o site para a promoção "Look Premiado" da marca de roupas C&A, em parceria com o Rock In Rio. O projeto foi elaborado para oferecer uma experiência única aos participantes, integrando-se diretamente com a API do aplicativo da C&A para uma participação mais eficiente.
+
+        O site simplificou o processo de cadastro, conectando-se diretamente à API do APP da C&A. Isso permitiu que os cupons fossem automaticamente registrados, proporcionando aos participantes uma experiência sem atritos.
+        
+        Na promoção, os participantes concorriam a ingressos para o Rock in Rio, além de prêmios em dinheiro, tornando a experiência ainda mais atrativa. O site incluiu uma página de ganhadores, proporcionando transparência quanto aos resultados, e uma página dedicada para cadastro e login, simplificando a participação dos interessados.`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/cea/1.webp",
+            description: "Home do Site",
+          },
+          {
+            url: "src/assets/images/projects/cea/2.webp",
+            description: "Página de Ganhadores",
+          },
+          {
+            url: "src/assets/images/projects/cea/3.webp",
+            description: "Página de Cadastro",
           },
         ],
       },
       {
         title: "Nissin",
-        subtitle: "Nome da promoção",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
+        subtitle: "Promoção seu Nissin Vira Prêmio",
+        mainImage: "src/assets/images/projects/nissin/main-image-nissin.webp",
+        mobileImage: "src/assets/images/projects/nissin/mobile-nissin.webp",
+        description: `
+        Em 2021, durante minha atuação na Fenix System, desenvolvi o site para a Promoção "Seu Nissin Vira Prêmio" da Nissin. Com uma mecânica simples, os participantes cadastravam os códigos dos produtos participantes, concorrendo assim a prêmios em dinheiro.
+        
+        O site apresentava páginas dedicadas a facilitar a participação, incluindo cadastro, login, visualização dos ganhadores e acesso ao regulamento. Notavelmente, o regulamento podia ser baixado em formato PDF ou lido diretamente no site por meio de um iframe de leitura, proporcionando transparência e acessibilidade aos participantes.
+        
+        Foi um projeto focado em simplicidade e eficiência, proporcionando uma experiência direta aos usuários interessados na promoção "Seu Nissin Vira Prêmio" da Nissin.`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/nissin/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/nissin/2.webp",
+            description: "Página de cadastro de cupom",
+          },
+          {
+            url: "src/assets/images/projects/nissin/3.webp",
+            description: "Página de ganhadores",
+          },
+          {
+            url: "src/assets/images/projects/nissin/4.webp",
+            description: "Página de regulamento",
           },
         ],
       },
       {
         title: "Sym",
-        subtitle: "Nome da promoção",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
+        subtitle: "Promoção Diga Sym pra Você",
+        mainImage: "src/assets/images/projects/sym/main-image-sym.webp",
+        mobileImage: "src/assets/images/projects/sym/mobile-sym.webp",
+        description: `
+        Em 2021, durante meu período na Fenix System, tive a oportunidade de criar o site para a promoção "Diga Sym para Você" da marca de absorventes íntimos Sym. Esta promoção inovadora oferecia aos clientes a chance de receber parte do valor gasto com absorventes de volta por meio de cashback.
+        
+        O site foi estruturado com uma página dedicada aos produtos participantes, apresentando um modal detalhado com tabelas que destacavam todos os produtos e suas pontuações para a promoção. Essa abordagem proporcionava uma visão clara e acessível dos benefícios oferecidos pela promoção.
+        
+        Uma página de ganhadores, atualizada diariamente, fornecia uma lista completa de todas as pessoas que receberam cashback por meio da promoção, juntamente com o valor total já devolvido. Isso não apenas destacava o sucesso da promoção, mas também aumentava a transparência e confiança dos participantes.
+        
+        Além disso, o site incluía uma página de regulamento, onde os detalhes poderiam ser baixados em formato PDF ou lidos diretamente no site por meio de um iframe de leitura. Esta abordagem garantia que os participantes tivessem fácil acesso às regras e diretrizes da promoção. Foi um projeto que uniu funcionalidade, transparência e interatividade para tornar a promoção "Diga Sym para Você" uma experiência envolvente e confiável para os consumidores.`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/sym/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/sym/2.webp",
+            description: "Pagina de Produtos Participantes",
+          },
+          {
+            url: "src/assets/images/projects/sym/3.webp",
+            description: "Pagina de Ganhadores",
+          },
+          {
+            url: "src/assets/images/projects/sym/4.webp",
+            description: "Pagina de Login / Cadastro",
+          },
+          {
+            url: "src/assets/images/projects/sym/5.webp",
+            description: "Pagina de Regulamento",
           },
         ],
       },
       {
-        title: "Bytz",
-        subtitle: "Nome da promoção",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
+        title: "Bitz",
+        subtitle: "Promoção Golaço Bitz",
+        mainImage: "src/assets/images/projects/bitz/main-image-bitz.webp",
+        mobileImage: "src/assets/images/projects/bitz/mobile-bitz.webp",
+        description: `
+        Em 2021, durante minha colaboração na Fenix System, tive o privilégio de desenvolver o site para a Promoção Golaço Bitz do banco digital Bitz. Nessa promoção inovadora, os usuários ganhavam números da sorte ao realizar compras com o cartão Bitz, concorrendo assim a uma TV LG de 50 polegadas.
+        
+        O site foi integralmente integrado com o aplicativo da Bitz, simplificando o processo para os usuários. O login, cadastro e a geração de números da sorte eram todos realizados diretamente no aplicativo. Essa integração proporcionou uma experiência fluida e consistente para os participantes.
+        
+        Osite incluía uma seção de números da sorte, onde os usuários podiam verificar se haviam sido sorteados. Adicionalmente, o site apresentava uma página dedicada aos ganhadores, fornecendo transparência quanto aos resultados da promoção. Outras seções importantes incluíam uma página de FAQ para esclarecimento de dúvidas e uma página de regulamento, onde os participantes podiam baixar o documento em PDF ou lê-lo diretamente no site através de um iframe de leitura. Essa abordagem garantia que os participantes tivessem fácil acesso às informações cruciais da promoção.
+        `,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/bitz/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/bitz/2.webp",
+            description: "Página de Numeros da Sorte",
+          },
+          {
+            url: "src/assets/images/projects/bitz/3.webp",
+            description: "Página de Ganhadores",
+          },
+          {
+            url: "src/assets/images/projects/bitz/4.webp",
+            description: "Página de Regulamento",
+          },
+          {
+            url: "src/assets/images/projects/bitz/5.webp",
+            description: "FAQ",
           },
         ],
       },
@@ -356,27 +461,67 @@ export const useProjectStore = defineStore("projectsList", {
       },
       {
         title: "Elma Chips",
-        subtitle: "Nome da promoção",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
+        subtitle: "Promoção Fanáticos por Sabor",
+        mainImage:
+          "src/assets/images/projects/elma-chips/main-image-elmachips.webp",
+        mobileImage:
+          "src/assets/images/projects/elma-chips/mobile-elmachips.webp",
+        description: `
+        Em 2021, durante meu tempo na Fenix System, tive a oportunidade de desenvolver o site para a Promoção "Fanáticos por Sabor" da renomada marca de salgadinhos Elma Chips. O projeto visava envolver os consumidores de maneira interativa e emocionante.
+        
+        O site foi estruturado com uma página dedicada aos produtos participantes, oferecendo uma visão clara dos itens elegíveis para a promoção. Além disso, uma página de ganhadores era atualizada diariamente, proporcionando transparência quanto aos resultados e aumentando a expectativa dos participantes.
+        
+        Para facilitar o entendimento da promoção, o site incluiu uma página de FAQ, respondendo às perguntas mais comuns dos participantes. Além disso, uma página de regulamento foi disponibilizada, permitindo que os interessados baixassem o documento em PDF ou o lessem diretamente no site por meio de um iframe de leitura. Essa abordagem assegurava que os consumidores tivessem fácil acesso às informações cruciais da promoção.`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/elma-chips/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/elma-chips/2.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/elma-chips/3.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/elma-chips/4.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/elma-chips/5.webp",
+            description: "Home do site",
           },
         ],
       },
       {
         title: "Fisk",
-        subtitle: "Nome da promoção",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
+        subtitle: "Promoção Malas Prontas para o Canadá",
+        mainImage: "src/assets/images/projects/fisk/main-image-fisk.webp",
+        mobileImage: "src/assets/images/projects/fisk/mobile-fisk.webp",
+        description: `
+        Em 2021, enquanto fazia parte da equipe da Fenix System, desenvolvi o site para a promoção "Malas Prontas para o Canadá" da Escola de Inglês FISK. Uma inovação chave foi a integração direta com a API do Portal do Aluno FISK, proporcionando aos estudantes códigos exclusivos para participação na promoção.
+        
+        A conectividade com a API do Portal do Aluno FISK tornou o processo de participação mais fluido e personalizado. Cada aluno recebia um código específico, obtido através da plataforma educacional, que era então utilizado no site da promoção para concorrer à viagem ao Canadá.
+        
+        Além disso, o site incluiu uma página de regulamento, onde os detalhes podiam ser baixados em formato PDF ou lidos diretamente no site através de um iframe de leitura. Essa abordagem garantiu transparência quanto às regras da promoção e incentivou a participação dos alunos de maneira mais acessível e informativa.`,
         images: [
           {
-            url: "",
-            description: "",
+            url: "src/assets/images/projects/fisk/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "src/assets/images/projects/fisk/2.webp",
+            description: "Página de ganhadores",
+          },
+          {
+            url: "src/assets/images/projects/fisk/3.webp",
+            description: "Pagina de cadastro / Login",
+          },
+          {
+            url: "src/assets/images/projects/fisk/4.webp",
+            description: "Pagina de regulamento",
           },
         ],
       },
@@ -410,19 +555,7 @@ export const useProjectStore = defineStore("projectsList", {
           },
         ],
       },
-      {
-        title: "Blog Dot Cosmeticos",
-        subtitle: "Blog de uma loja de cosmeticos",
-        mainImage: "",
-        mobileImage: "",
-        description: "",
-        images: [
-          {
-            url: "",
-            description: "",
-          },
-        ],
-      },
+
       {
         title: "Blog DSS",
         subtitle: "Blog de uma distribuidora sexshop",
