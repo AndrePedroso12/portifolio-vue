@@ -54,7 +54,7 @@ const selectedProject = ref({
 
 function openProject(project: any) {
   selectedProject.value = project;
-  my_modal_3.showModal();
+  my_modal_2.showModal();
 }
 </script>
 

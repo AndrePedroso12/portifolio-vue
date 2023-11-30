@@ -10,8 +10,12 @@ export const useProjectStore = defineStore("projectsList", {
           "src/assets/images/projects/growth/main-image-growth-min.jpg",
         mobileImage: "src/assets/images/projects/growth/home-growth-min.jpg",
         website: "https://www.gsuplementos.com.br",
-        description:
-          "Entre os anos de 2021 e 2023, tive a oportunidade de contribuir significativamente para o site da Growth Suplementos. O projeto foi desenvolvido na plataforma da WebArt, onde pude aplicar minhas habilidades e conhecimentos em design e desenvolvimento.Minha principal área de atuação foi na criação das páginas internas dos produtos, em colaboração estreita com a equipe de UI/UX. Busquei garantir uma experiência de usuário aprimorada, focando na apresentação clara e atrativa dos produtos oferecidos pela Growth Suplementos.Além disso, desempenhei um papel importante na configuração e criação de newsletters, aprimorando a comunicação com os clientes. A gestão das capturas de leads também esteve entre as minhas responsabilidades, visando expandir a base de usuários e fortalecer o relacionamento com a audiência.Foi uma experiência enriquecedora, onde pude aplicar minha paixão pelo design e pela interação com o usuário para contribuir para o sucesso online da Growth Suplementos.",
+        description: `Entre os anos de 2021 e 2023, tive a oportunidade de contribuir significativamente para o site da Growth Suplementos.
+        
+        O projeto foi desenvolvido na plataforma da WebArt, onde pude aplicar minhas habilidades e conhecimentos em design e desenvolvimento.Minha principal área de atuação foi na criação das páginas internas dos produtos, em colaboração estreita com a equipe de UI/UX.
+        Busquei garantir uma experiência de usuário aprimorada, focando na apresentação clara e atrativa dos produtos oferecidos pela Growth Suplementos.Além disso, desempenhei um papel importante na configuração e criação de newsletters, aprimorando a comunicação com os clientes.
+        
+        A gestão das capturas de leads também esteve entre as minhas responsabilidades, visando expandir a base de usuários e fortalecer o relacionamento com a audiência.Foi uma experiência enriquecedora, onde pude aplicar minha paixão pelo design e pela interação com o usuário para contribuir para o sucesso online da Growth Suplementos.`,
         images: [
           {
             url: "src/assets/images/projects/growth/whey-min.jpg",
@@ -41,8 +45,13 @@ export const useProjectStore = defineStore("projectsList", {
         mainImage: "src/assets/images/projects/raklog/main-image-raklog.jpg",
         mobileImage: "src/assets/images/projects/raklog/raklog-mobile.png",
         website: "http://www.raklog.com.br",
-        description:
-          "Em 2021, enquanto colaborava com a Agência Delucca, participei ativamente no desenvolvimento do site da Rak Logistics, localizada em Campinas-SP. O projeto incluiu a criação de um blog corporativo para compartilhar informações relevantes do setor logístico. Além disso, implementamos um sistema de rastreamento para proporcionar aos clientes uma experiência eficiente no monitoramento de suas remessas. A área de contato foi estrategicamente projetada para facilitar a interação dos clientes e potenciais funcionários, consolidando a presença online da Rak Logistics e aprimorando a comunicação com seu público-alvo. Foi uma colaboração gratificante, focada em fortalecer a presença digital e operacional da Rak Logistics.",
+        description: `Em 2021, enquanto colaborava com a Agência Delucca, participei ativamente no desenvolvimento do site da Rak Logistics, localizada em Campinas-SP.
+          
+          O projeto incluiu a criação de um blog corporativo para compartilhar informações relevantes do setor logístico.
+          Além disso, implementamos um sistema de rastreamento para proporcionar aos clientes uma experiência eficiente no monitoramento de suas remessas.
+
+          A área de contato foi estrategicamente projetada para facilitar a interação dos clientes e potenciais funcionários, consolidando a presença online da Rak Logistics e aprimorando a comunicação com seu público-alvo.
+          Foi uma colaboração gratificante, focada em fortalecer a presença digital e operacional da Rak Logistics.`,
         images: [
           {
             url: "src/assets/images/projects/raklog/1.jpg",
@@ -159,7 +168,13 @@ export const useProjectStore = defineStore("projectsList", {
           "src/assets/images/projects/banco-original/main-image-banco-original.jpg",
         mobileImage:
           "src/assets/images/projects/banco-original/mobile-banco-original.png",
-        description: `"Em 2021, enquanto fazia parte da equipe da Fenyx System, tive a responsabilidade de desenvolver o site para a promoção "Você na A Fazenda 14" em parceria com o Banco Original. A construção do site foi realizada de maneira completa utilizando HTML, CSS e JavaScript, destacando a solidez e eficiência da nossa abordagem técnica. O site proporcionava aos usuários uma experiência única ao integrar-se diretamente com o aplicativo do Banco Original, utilizando queries e a API do aplicativo. Ao inserir seus dados bancários, as ações realizadas na conta geravam números da sorte, oferecendo aos participantes a oportunidade de concorrer a prêmios em dinheiro. Essa integração inovadora não apenas simplificou a participação dos usuários, mas também evidenciou a capacidade tecnológica avançada da promoção. Foi um projeto emocionante, concentrado na construção de uma plataforma interativa e eficiente, proporcionando aos clientes do Banco Original uma experiência envolvente e personalizada."`,
+        description: `Em 2021, enquanto fazia parte da equipe da Fenyx System, tive a responsabilidade de desenvolver o site para a promoção "Você na A Fazenda 14" em parceria com o Banco Original.
+        
+        A construção do site foi realizada de maneira completa utilizando HTML, CSS e JavaScript, destacando a solidez e eficiência da nossa abordagem técnica.
+        O site proporcionava aos usuários uma experiência única ao integrar-se diretamente com o aplicativo do Banco Original, utilizando queries e a API do aplicativo.
+        
+        Ao inserir seus dados bancários, as ações realizadas na conta geravam números da sorte, oferecendo aos participantes a oportunidade de concorrer a prêmios em dinheiro. Essa integração inovadora não apenas simplificou a participação dos usuários, mas também evidenciou a capacidade tecnológica avançada da promoção.
+        Foi um projeto emocionante, concentrado na construção de uma plataforma interativa e eficiente, proporcionando aos clientes do Banco Original uma experiência envolvente e personalizada.`,
         images: [
           {
             url: "src/assets/images/projects/banco-original/1.jpg",
@@ -191,7 +206,11 @@ export const useProjectStore = defineStore("projectsList", {
         mainImage:
           "src/assets/images/projects/toddynho/main-image-toddynho.jpg",
         mobileImage: "src/assets/images/projects/toddynho/mobile-toddynho.jpg",
-        description: `"Em 2022, durante meu período na Fenyx System, tive a oportunidade de desenvolver o site para a promoção "Lanche Premiado da Toddynho". O projeto foi totalmente concebido em HTML, CSS e JavaScript, garantindo uma experiência interativa e responsiva para os usuários. No site, os participantes podiam cadastrar os códigos de barras dos produtos Toddynho, e o sistema gerava automaticamente cupons de participação. Após alguns dias, os participantes podiam verificar se haviam sido sorteados, concorrendo a prêmios como viagens e dinheiro. Além disso, o site contava com páginas específicas que destacavam os locais no Brasil onde ocorreram os ganhadores, proporcionando transparência e engajamento aos participantes ao mostrar os resultados da promoção em diferentes regiões do país."`,
+        description: `"Em 2022, durante meu período na Fenyx System, tive a oportunidade de desenvolver o site para a promoção "Lanche Premiado da Toddynho".
+        
+        O projeto foi totalmente concebido em HTML, CSS e JavaScript, garantindo uma experiência interativa e responsiva para os usuários. No site, os participantes podiam cadastrar os códigos de barras dos produtos Toddynho, e o sistema gerava automaticamente cupons de participação.
+        
+        Após alguns dias, os participantes podiam verificar se haviam sido sorteados, concorrendo a prêmios como viagens e dinheiro. Além disso, o site contava com páginas específicas que destacavam os locais no Brasil onde ocorreram os ganhadores, proporcionando transparência e engajamento aos participantes ao mostrar os resultados da promoção em diferentes regiões do país."`,
         images: [
           {
             url: "src/assets/images/projects/toddynho/1.jpg",
@@ -493,19 +512,19 @@ export const useProjectStore = defineStore("projectsList", {
           },
           {
             url: "src/assets/images/projects/elma-chips/2.webp",
-            description: "Home do site",
+            description: "Página de Produtos participantes",
           },
           {
             url: "src/assets/images/projects/elma-chips/3.webp",
-            description: "Home do site",
+            description: "Página de Ganhadores",
           },
           {
             url: "src/assets/images/projects/elma-chips/4.webp",
-            description: "Home do site",
+            description: "Página de FAQ",
           },
           {
             url: "src/assets/images/projects/elma-chips/5.webp",
-            description: "Home do site",
+            description: "Página de Regulamento",
           },
         ],
       },

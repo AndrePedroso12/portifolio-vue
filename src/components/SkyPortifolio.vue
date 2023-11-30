@@ -45,7 +45,7 @@
 
 .parallax {
   perspective: 100px;
-  height: 100vh;
+  height: 140vh;
   overflow-x: hidden;
   overflow-y: auto;
   position: absolute;
@@ -59,7 +59,9 @@
     rgba(68, 143, 198, 1) 0%,
     rgba(33, 93, 145, 1) 100%
   );
-
+  @media (max-width: 768px) {
+    height: 100vh;
+  }
   &__layer {
     position: absolute;
     top: 0;
@@ -83,6 +85,9 @@
       line-height: 0.9;
       bottom: 72%;
       text-transform: uppercase;
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
     }
   }
 
@@ -101,7 +106,8 @@
       background-attachment: fixed;
       position: relative;
       background-image: url("src/assets/images/parallax/cloud-mask.webp");
-      background-size: cover;
+      // background-size: cover;
+      background-repeat: no-repeat;
       background-position: bottom center;
       background-attachment: fixed;
       background-clip: text;
@@ -115,6 +121,7 @@
       line-height: 0.9;
       bottom: 84%;
       text-transform: uppercase;
+      padding: 5rem 0;
 
       &::before {
         content: "Em projetos";
@@ -152,6 +159,9 @@
   z-index: -1;
   position: sticky;
   top: 16rem;
+  @media (max-width: 768px) {
+    top: 3rem;
+  }
 }
 
 .parallax__layer__6 {

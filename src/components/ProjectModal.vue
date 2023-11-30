@@ -1,5 +1,5 @@
 <template>
-  <dialog id="my_modal_3" class="modal">
+  <dialog id="my_modal_2" class="modal">
     <div class="modal-box">
       <form method="dialog">
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -37,7 +37,9 @@
           </div>
         </div>
         <div class="text w-3/6">
-          <p class="mb-5">{{ props.selectedProject.description }}</p>
+          <p class="mb-5 whitespace-pre-line">
+            {{ props.selectedProject.description }}
+          </p>
           <a
             v-if="props.selectedProject.website"
             :href="props.selectedProject.website"
