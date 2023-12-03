@@ -77,10 +77,14 @@ onBeforeUnmount(() => {
     flex-direction: column;
     border: 4px solid var(--white);
   }
+  & .number-item:last-of-type .number::after {
+    content: "mil+";
+    font-size: medium;
+  }
   & .number {
     font-weight: 900;
     font-size: 60px;
-    margin-left: 1rem;
+    text-align: center;
     &:after {
       content: "+";
       font-weight: 400;
@@ -89,17 +93,9 @@ onBeforeUnmount(() => {
     }
   }
   & span:last-of-type {
-    @apply uppercase pl-24;
-    text-align: left;
-    width: 80%;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 10%;
-      border-top: 3px solid black;
-      width: 77px;
-    }
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
   }
 }
 </style>

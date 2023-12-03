@@ -7,44 +7,69 @@ export const useProgramingStore = defineStore("programing", {
         name: "HTML5",
         icon: "fa-html5",
         color: "#F36518",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo pharetra dictum. Donec maximus tellus elit. In venenatis, lorem sed congue tristique, lectus libero porttitor ex, sed tempor nibh metus id justo. Suspendisse gravida sed nunc id pellentesque. Morbi non hendrerit nisi. Praesent nec quam ac purus efficitur interdum. Nulla id leo eu est tincidunt fringilla vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ipsum magna, gravida at luctus ac, vestibulum nec risus. Aenean semper ex at felis ultricies euismod. Nulla ullamcorper tincidunt libero, at auctor enim auctor a. Sed sit amet lacinia mi. Donec vitae luctus dolor, in efficitur metus. Fusce auctor posuere mi eget faucibus. Sed id tristique nulla.",
+        description: `
+        O HTML5, ou HyperText Markup Language 5, é a quinta e mais recente versão da linguagem de marcação fundamental para a construção de páginas web. Lançado em outubro de 2014, o HTML5 trouxe consigo uma série de avanços e novos recursos que revolucionaram a experiência de desenvolvimento web. Sua estrutura mais semântica permite uma codificação mais clara e compreensível, enquanto suas novas tags e atributos oferecem suporte nativo para elementos multimídia, como áudio e vídeo, tornando a criação de conteúdo mais rica e dinâmica.
+        
+        No desenvolvimento front-end, o HTML5 desempenha um papel central na estruturação e organização do conteúdo de uma página web. Ele fornece a base sobre a qual os desenvolvedores constroem interfaces interativas e responsivas, facilitando a criação de layouts modernos e acessíveis. Além disso, o HTML5 trabalha em conjunto com outras tecnologias, como CSS e JavaScript, para proporcionar uma experiência de usuário mais fluida e envolvente, contribuindo assim para a evolução constante do design web e das aplicações interativas na internet.`,
       },
       {
         name: "CSS3",
         icon: "fa-css3-alt",
         color: "#264DE4",
-        description: "lorem ipsum",
+        description: `O CSS3, ou Cascading Style Sheets 3, representa a terceira e mais avançada iteração da linguagem de estilo fundamental para o desenvolvimento web. Lançado para complementar o HTML5, o CSS3 foi introduzido para proporcionar aos desenvolvedores web maior controle e flexibilidade sobre o design e a apresentação das páginas. Suas características inovadoras incluem seletores avançados, transições suaves, sombras, gradientes e animações, oferecendo uma gama ampliada de ferramentas para a criação de interfaces esteticamente atraentes e altamente interativas.
+
+        No contexto do front-end, o CSS3 desempenha um papel crucial na estilização e no layout das páginas web. Ao permitir a definição de estilos para diferentes dispositivos e resoluções, o CSS3 contribui para a criação de designs responsivos que se adaptam harmoniosamente a uma variedade de tamanhos de tela. Além disso, suas capacidades de animação e transformação proporcionam uma experiência de usuário mais envolvente, elevando o nível de interatividade e sofisticação visual nas aplicações online. Em conjunto com o HTML5 e o JavaScript, o CSS3 forma a tríade essencial para o desenvolvimento front-end moderno, capacitando os desenvolvedores a criar interfaces web visualmente atraentes e funcionalmente poderosas.`,
       },
+      {
+        name: "SASS",
+        icon: "fa-sass",
+        color: "#cf649a",
+        description: `
+        O SASS, ou Syntactically Awesome Stylesheets, representa uma extensão poderosa e flexível da linguagem CSS. Desenvolvido para simplificar e aprimorar a autoria de estilos em folhas de estilo, o SASS introduz conceitos como variáveis, aninhamento, mixins, e operadores, oferecendo aos desenvolvedores uma abordagem mais modular e eficiente na criação e manutenção de estilos complexos. Com uma sintaxe mais amigável e expressiva, o SASS permite uma codificação mais limpa e organizada, facilitando a gestão de estilos em projetos de larga escala.
+        
+        No cenário de desenvolvimento front-end, o SASS é amplamente adotado para melhorar a legibilidade e a manutenção de código CSS. Suas funcionalidades avançadas, como a capacidade de reutilização de código por meio de mixins e a definição de variáveis para propriedades comuns, resultam em um fluxo de trabalho mais eficiente. Além disso, o SASS suporta a criação de folhas de estilo mais dinâmicas e adaptáveis, permitindo a geração de estilos personalizados com base em lógica condicional. Integrado a projetos web, o SASS otimiza o desenvolvimento de estilos, proporcionando uma abordagem mais modular, escalável e fácil de manter no contexto do front-end.`,
+      },
+
       {
         name: "Vue Js",
         icon: "fa-vuejs",
         color: "#41B883",
-        description: "lorem ipsum",
+        description: `O Vue.js é um framework JavaScript progressivo, voltado para o desenvolvimento de interfaces de usuário interativas e dinâmicas. Criado por Evan You e lançado em 2014, o Vue.js destaca-se por sua abordagem incremental, o que significa que pode ser adotado de maneira flexível, seja para aprimorar partes específicas de uma aplicação existente ou para desenvolver projetos totalmente novos. Com uma curva de aprendizado suave e uma documentação abrangente, o Vue.js tornou-se uma escolha popular entre desenvolvedores web.
+
+        No contexto do desenvolvimento front-end, o Vue.js permite a criação de componentes reutilizáveis, promovendo a modularidade do código e facilitando a manutenção. Sua reatividade bidirecional simplifica a manipulação do DOM (Document Object Model), garantindo uma interface de usuário responsiva e eficiente. O Vue.js também oferece diretivas customizadas, como v-if e v-for, que simplificam a manipulação e exibição dinâmica de dados. Além disso, a integração fácil com outras bibliotecas ou frameworks e sua capacidade de escalar conforme necessário fazem do Vue.js uma escolha versátil para projetos de diferentes tamanhos.
+        `,
       },
       {
         name: "React",
         icon: "fa-react",
         color: "#4AD5FF",
-        description: "lorem ipsum",
+        description: `O React.js, desenvolvido e mantido pelo Facebook, é uma biblioteca JavaScript de código aberto amplamente utilizada para construir interfaces de usuário dinâmicas e eficientes. Lançado em 2013, o React rapidamente ganhou popularidade devido à sua abordagem inovadora de construir componentes reutilizáveis e à sua eficiente manipulação do DOM (Document Object Model). Essa biblioteca é especialmente conhecida por sua virtual DOM, que otimiza as atualizações de interface, resultando em um desempenho notável em aplicações web complexas.
+
+        No desenvolvimento front-end, o React promove a construção modular de UIs por meio de componentes, que encapsulam lógica e apresentação de forma isolada. Isso facilita a manutenção e a escalabilidade do código. Além disso, o React utiliza o conceito de um fluxo unidirecional de dados, o que simplifica a compreensão e o rastreamento do estado da aplicação. Sua flexibilidade também se destaca, permitindo a integração fácil com outras bibliotecas e frameworks, adaptando-se a diferentes requisitos e ecossistemas de desenvolvimento.`,
       },
       {
         name: "JavaScript",
         icon: "fa-square-js",
         color: "#F7DF1E",
-        description: "lorem ipsum",
+        description: `O JavaScript é uma linguagem de programação amplamente utilizada no desenvolvimento web, sendo essencial para a construção de interfaces interativas e dinâmicas. Criada inicialmente pela Netscape em 1995, a linguagem tornou-se uma peça fundamental para o front-end, permitindo que desenvolvedores criem experiências de usuário envolventes e responsivas. Além disso, o JavaScript é suportado por todos os principais navegadores, garantindo sua ubiquidade na construção de aplicações web.
+
+        No desenvolvimento front-end, o JavaScript possibilita a manipulação do DOM (Document Object Model), o que permite a interação dinâmica com elementos da página. Ele também é frequentemente utilizado para realizar requisições assíncronas, facilitando a comunicação com servidores e a atualização de conteúdo sem a necessidade de recarregar a página. A introdução de frameworks como React, Angular e Vue.js impulsionou ainda mais o uso do JavaScript, simplificando o desenvolvimento de aplicações mais complexas por meio da organização modular e reativa do código.`,
       },
       {
         name: "Wordpress",
         icon: "fa-wordpress",
         color: "#21759B",
-        description: "lorem ipsum",
+        description: `O WordPress é uma plataforma de gerenciamento de conteúdo (CMS) extremamente popular que simplifica a criação e manutenção de sites, blogs e lojas online. Lançado em 2003, o WordPress evoluiu de uma ferramenta de blogs para uma solução robusta, permitindo que usuários criem e personalizem seus sites com facilidade, mesmo sem conhecimento avançado em programação. O ecossistema do WordPress é alimentado por uma comunidade ativa de desenvolvedores que contribuem com temas e plugins, ampliando as funcionalidades da plataforma.
+
+        No front end, o WordPress desempenha um papel crucial na experiência do usuário. Através de uma ampla variedade de temas responsivos, os desenvolvedores podem personalizar o design e a aparência dos sites para atender às necessidades específicas. Além disso, o WordPress permite a criação de páginas dinâmicas usando uma interface amigável, possibilitando aos usuários finais editar e atualizar conteúdo sem depender de habilidades técnicas. Sua flexibilidade, escalabilidade e a capacidade de integração com diversas ferramentas fazem do WordPress uma escolha popular no desenvolvimento front end, oferecendo uma solução eficiente para criar websites visualmente atraentes e funcionais.`,
       },
       {
         name: "Loja Integrada",
         icon: "fa-uikit",
         color: "#2BC4C2",
-        description: "lorem ipsum",
+        description: `A Loja Integrada é uma plataforma de e-commerce brasileira que se destaca pela simplicidade e eficácia na criação de lojas online. Fundada em 2011, a plataforma oferece uma solução completa, desde a configuração inicial até a gestão de produtos e transações. O sistema da Loja Integrada é construído integralmente com tecnologias web modernas, sendo baseado no trio poderoso de JQuery, CSS3 e HTML5. Essa base tecnológica proporciona uma experiência de usuário fluida e responsiva, garantindo que as lojas desenvolvidas na plataforma sejam visualmente atraentes e altamente funcionais.
+
+        O uso de JQuery, uma biblioteca JavaScript, permite a criação de interatividade dinâmica nas páginas da loja, enquanto o CSS3 oferece opções avançadas de estilização, incluindo animações e layout responsivo. O HTML5, por sua vez, proporciona uma estrutura semântica e moderna para a construção das páginas. Essa combinação de tecnologias web de ponta confere à Loja Integrada a capacidade de fornecer aos comerciantes online uma presença digital robusta, adaptável e esteticamente agradável, destacando-se como uma opção popular para empreendedores que buscam uma plataforma intuitiva e eficiente para o comércio eletrônico no Brasil.`,
       },
     ],
   }),

@@ -49,7 +49,6 @@ function darkMode() {
 header {
   position: fixed;
   right: 30px;
-  z-index: 3;
   display: flex;
   align-items: center;
   top: 50%;
@@ -57,12 +56,29 @@ header {
   transition: opacity 0.3s;
   -webkit-transition: opacity 0.3s;
   transform: translateY(-50%);
-  z-index: 3;
+  z-index: 10;
+  @media (max-width: 768px) {
+    left: 0;
+    right: auto;
+    bottom: 0;
+    top: auto;
+    transform: none;
+    width: 100%;
+    display: block;
+    background: #2b2a2a;
+    padding: 8px;
+    z-index: 10;
+  }
   & ul.nav-bar {
     margin: 0;
     padding: 0;
     border: none;
     display: block;
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
   }
   & .icon-box {
     @apply flex;
@@ -77,6 +93,12 @@ header {
     justify-content: center;
     background: var(--gray79);
     cursor: pointer;
+    @media (max-width: 768px) {
+      margin: 0;
+      width: 45px;
+      height: 45px;
+      background: #444;
+    }
     &.active {
       background-color: var(--primary);
       color: var(--background);
@@ -97,18 +119,20 @@ header {
       height: 50px;
       margin: 0;
     }
-    &:hover p {
-      opacity: 1;
-      right: 27px;
-      margin: 0;
-      text-align: center;
-      border-radius: 30px 0 0 30px;
-      background-color: var(--primary);
-      color: var(--background);
-    }
-    &:hover {
-      background-color: var(--primary);
-      color: var(--background);
+    @media (min-width: 768px) {
+      &:hover p {
+        opacity: 1;
+        right: 27px;
+        margin: 0;
+        text-align: center;
+        border-radius: 30px 0 0 30px;
+        background-color: var(--primary);
+        color: var(--background);
+      }
+      &:hover {
+        background-color: var(--primary);
+        color: var(--background);
+      }
     }
   }
 }

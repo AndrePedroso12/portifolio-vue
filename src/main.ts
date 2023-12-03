@@ -46,6 +46,7 @@ import {
   faJsSquare,
   faUikit,
   faWordpress,
+  faSass,
 } from "@fortawesome/free-brands-svg-icons";
 library.add(
   faUserSecret,
@@ -65,7 +66,8 @@ library.add(
   faReact,
   faJsSquare,
   faUikit,
-  faWordpress
+  faWordpress,
+  faSass
 );
 
 /* import font awesome icon component */

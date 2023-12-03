@@ -2,8 +2,10 @@
   <div class="flex justify-end">
     <div class="overlay"></div>
     <div class="home-description">
-      <h1>André Pedroso <span>Dev Front-end</span></h1>
-      <p class="open-sans-font">
+      <h1 v-motion-slide-left :delay="1900">
+        André Pedroso <span>Dev Front-end</span>
+      </h1>
+      <p class="open-sans-font" v-motion-slide-right :delay="2100">
         Meu nome é André Luiz Pedroso, sou Desenvolvedor Front-End com mais de 8
         anos de experiência, concentrando-me principalmente no desenvolvimento
         de lojas online, websites empresariais e landing pages.
@@ -14,6 +16,8 @@
           role="link"
           title="Saiba Mais"
           :icon="'fa-arrow-right'"
+          v-motion-slide-bottom
+          :delay="2400"
         />
       </router-link>
     </div>
@@ -38,12 +42,16 @@ import Button from "@/components/Button.vue";
 }
 .picture {
   z-index: 1;
-  border-radius: 30px;
   left: 38%;
   bottom: 0;
   position: absolute;
   flex: 0 0 auto;
   width: 33.33333333%;
+  @media (max-width: 768px) {
+    left: 17%;
+    position: absolute;
+    width: 76%;
+  }
 }
 
 .halo {
@@ -60,6 +68,14 @@ import Button from "@/components/Button.vue";
   bottom: 8%;
   display: block;
   animation: text-flicker 3s linear infinite;
+  @media (max-width: 768px) {
+    box-shadow: 0px 0px 34px 3px rgba(45, 255, 196, 0.43);
+    border: 2px solid #00ffa8;
+    width: 80vw;
+    height: 80vw;
+    left: 5%;
+    bottom: 9%;
+  }
   &:after {
     content: "";
     -webkit-box-shadow: inset 0px 0px 34px 3px rgba(45, 255, 196, 0.43);
@@ -73,6 +89,10 @@ import Button from "@/components/Button.vue";
     left: -3%;
     bottom: -3%;
     display: block;
+    @media (max-width: 768px) {
+      box-shadow: inset 0px 0px 34px 3px rgba(45, 255, 196, 0.43);
+      border: 17px solid #00ffa8;
+    }
   }
 }
 
@@ -84,6 +104,11 @@ import Button from "@/components/Button.vue";
   right: auto;
   left: 42%;
   z-index: 3;
+  @media (max-width: 768px) {
+    top: 64%;
+    right: auto;
+    left: 27%;
+  }
   & h1 {
     @apply uppercase;
     font-size: 51px;
@@ -99,9 +124,23 @@ import Button from "@/components/Button.vue";
     border-right: 9px solid var(--primary);
     left: -110%;
     top: -23rem;
+    @media (max-width: 768px) {
+      font-size: 35px;
+      line-height: 32px;
+      padding-bottom: 11px;
+      padding-right: 0;
+      border-bottom: 7px solid var(--primary);
+      border-right: none;
+      left: -20%;
+      top: -23rem;
+      text-align: center;
+    }
 
     & span:first-of-type {
       color: var(--primary);
+      @media (max-width: 768px) {
+        font-size: 30px;
+      }
     }
   }
   & p {
@@ -113,6 +152,13 @@ import Button from "@/components/Button.vue";
     position: absolute;
     right: -27%;
     bottom: -84%;
+    @media (max-width: 768px) {
+      bottom: auto;
+      top: -234%;
+      right: 11%;
+      text-align: center;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -126,6 +172,29 @@ import Button from "@/components/Button.vue";
   left: 0;
   z-index: 2;
   animation: animateGrain 8s steps(10) infinite;
+}
+
+@media (max-width: 768px) {
+  button {
+    bottom: -69%;
+    right: 50%;
+    left: auto;
+    font-size: 12px;
+  }
+  button svg {
+    background-color: var(--primary);
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    bottom: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
 }
 
 @keyframes animateGrain {

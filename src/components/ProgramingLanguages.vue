@@ -16,17 +16,27 @@
       </div>
     </div>
 
-    <div class="description" v-motion-slide-visible-right :delay="700">
-      <p class="title" v-if="title">
+    <div class="description">
+      <p class="title" v-if="title" v-motion-slide-visible-right :delay="700">
         {{ title }}
       </p>
-      <p class="title" v-else>
+      <p class="title" v-else v-motion-slide-visible-right :delay="700">
         {{ initialTitle }}
       </p>
-      <p class="LanguageDescription" v-if="LanguageDescription">
+      <p
+        class="LanguageDescription"
+        v-if="LanguageDescription"
+        v-motion-slide-visible-right
+        :delay="900"
+      >
         {{ LanguageDescription }}
       </p>
-      <p class="LanguageDescription" v-else>
+      <p
+        class="LanguageDescription"
+        v-else
+        v-motion-slide-visible-right
+        :delay="900"
+      >
         {{ initialLanguageDescription }}
       </p>
     </div>
@@ -62,13 +72,13 @@ function onHover(name: string, description: string) {
   justify-content: space-between;
   justify-items: stretch;
   align-content: center;
-  padding: 4rem;
+  padding: 4rem 13rem;
 }
 .icon_box {
   @apply grid grid-cols-3 gap-4 rounded-3xl;
   border: 1px solid #45474a;
   background: #212121;
-  width: 43vw;
+  width: 32vw;
   padding: 32px 19px 32px 32px;
   align-items: flex-start;
   align-content: flex-start;
@@ -111,6 +121,14 @@ function onHover(name: string, description: string) {
 
       &:before {
         background: linear-gradient(64deg, #264de4 21.64%, #c0d1f9 69.31%);
+      }
+    }
+    &.SASS {
+      box-shadow: 10px 10px 13px 0px rgba(255, 255, 255, 0.1) inset,
+        0px -5px 25px 0px rgb(241 41 203 / 35%) inset;
+
+      &:before {
+        background: linear-gradient(64deg, #cf649a 21.64%, #ffb4da 69.31%);
       }
     }
     &.Vue {
@@ -177,7 +195,7 @@ function onHover(name: string, description: string) {
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
-    text-transform: uppercase;
+    white-space-collapse: preserve-breaks;
   }
 }
 </style>

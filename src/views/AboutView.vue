@@ -1,8 +1,6 @@
 <template>
   <div class="about">
     <section id="section1" class="hero fullpage">
-      <Title title="Sobre " title_white="mim" back-text="currículo" />
-
       <div class="video-wrap">
         <video autoplay playsinline loop muted id="video-bg">
           <source
@@ -36,7 +34,7 @@
         </div>
         <div class="description" v-motion-slide-visible-right :delay="900">
           <h3>André Pedroso <span>Dev Front-end</span></h3>
-          <p class="glass-text">
+          <!-- <p class="glass-text">
             Meu nome é André Luiz Pedroso, e iniciei minha carreira como
             Desenvolvedor Front-End em 2015, atuando em uma pequena agência de
             publicidade em Jaguariúna, SP. Ao longo dos anos, evoluí minha
@@ -54,6 +52,26 @@
             implementação de websites empresariais. Estou comprometido em
             continuar me aprimorando e explorando novas tecnologias para
             oferecer soluções inovadoras aos meus clientes.
+          </p> -->
+
+          <p class="glass-text">
+            Me chamo André Luiz Pedroso e comecei como Desenvolvedor Front-End
+            em 2015, na área de publicidade em Jaguariúna, SP. Ao longo dos
+            anos, ampliei minha atuação, colaborando atualmente com agências e
+            clientes de grande e médio porte, tanto no Brasil quanto
+            internacionalmente. Possuo ampla experiência em linguagens e
+            frameworks como Vue, React, Bootstrap, Tailwind, Javascript, HTML5,
+            CSS3, Wordpress e Loja Integrada, aliada a um sólido conhecimento em
+            Design UI/UX, garantindo eficiência e uma experiência visualmente
+            atraente em meus projetos.
+            <br />
+            <br />
+            Com mais de oito anos dedicados ao desenvolvimento Front-End, minha
+            abordagem versátil me permite enfrentar diversos desafios, desde a
+            criação de lojas online até o design e implementação de websites
+            empresariais. Meu compromisso é continuar aprimorando-me e
+            explorando novas tecnologias para oferecer soluções inovadoras aos
+            clientes.
           </p>
         </div>
       </div>
@@ -72,7 +90,7 @@
         </div>
         <div class="note-image">
           <img
-            src="src/assets/images/notebook-mockup.png"
+            src="src/assets/images/notebook-mockup.webp"
             alt=""
             v-motion-slide-visible-bottom
             :delay="500"
@@ -252,6 +270,9 @@ onBeforeUnmount(() => {
     font-size: 8vw;
     line-height: 1em;
     font-weight: 900;
+    @media (max-width: 768px) {
+      font-size: 12vw;
+    }
   }
   & .blend {
     mix-blend-mode: difference !important;
@@ -296,17 +317,34 @@ onBeforeUnmount(() => {
     width: 75%;
     margin-top: 15%;
     & .glass-text {
-      border-radius: 7px;
+      border-radius: 12px;
+      position: relative;
       background: rgba(255, 255, 255, 0.01);
-      box-shadow: 0px 1px 40px 0px rgba(13, 207, 172, 0.2) inset,
-        0px 4px 18px 0px rgba(8, 88, 64, 0.3) inset,
-        0px 98px 100px -48px rgba(0, 253, 192, 0.3) inset,
-        0px -82px 68px -64px rgba(14, 114, 96, 0.3) inset,
-        0px 7px 11px -4px #fff inset,
-        0px 39px 56px -36px rgba(255, 255, 255, 0.5) inset;
-      backdrop-filter: blur(12.5px);
-      padding: 1rem;
+      padding: 3rem;
+      font-size: 15px;
       color: white;
+      box-shadow: 0 0 0 1px transparent, 0 2px 4px transparent,
+        0 12px 24px transparent;
+      &::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        padding: 1px;
+        background: radial-gradient(
+          75% 75% at 25% 15%,
+          #fff 0,
+          rgba(255, 255, 255, 0.3) 100%
+        );
+        -webkit-mask: linear-gradient(#000, #000) content-box,
+          linear-gradient(#000, #000);
+        mask: linear-gradient(#000, #000) content-box,
+          linear-gradient(#000, #000);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.5;
+        pointer-events: none;
+      }
     }
 
     & h3 {
@@ -337,12 +375,17 @@ onBeforeUnmount(() => {
     content: "";
     background-color: var(--primary);
     position: absolute;
-    top: -24vh;
+    top: -50vh;
     z-index: 0;
     left: 0;
-    width: 15vw;
-    height: 15vw;
+    width: 100vw;
+    height: 35vw;
   }
+  & div {
+    margin: auto;
+    margin-top: 10%;
+  }
+
   & .description {
     margin: auto;
     & p {
@@ -369,6 +412,22 @@ onBeforeUnmount(() => {
       }
     }
   }
+  & .note-image {
+    max-width: 38rem;
+    animation: float 6s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
 
 #section4 {
@@ -380,11 +439,11 @@ onBeforeUnmount(() => {
     content: "";
     background-color: var(--black);
     position: absolute;
-    top: -24vh;
+    top: -32vh;
     z-index: 0;
     right: 0;
-    width: 15vw;
-    height: 15vw;
+    width: 100vw;
+    height: 22vw;
   }
   & .description {
     margin: auto;
@@ -443,9 +502,10 @@ onBeforeUnmount(() => {
 
 .sections-menu {
   position: fixed;
-  right: 1rem;
+  left: 3rem;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 10;
 
   & .menu-point {
     width: 10px;
