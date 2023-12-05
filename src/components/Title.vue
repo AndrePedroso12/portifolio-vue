@@ -15,7 +15,7 @@ const props = defineProps<{
 }>();
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .title-section {
   margin: 0 auto;
   width: 100%;
@@ -42,6 +42,9 @@ const props = defineProps<{
     transform: translateY(-50%);
     color: var(--black);
     opacity: 0.1;
+    @media (max-width: 768px) {
+      font-size: 16vw;
+    }
   }
 }
 </style>

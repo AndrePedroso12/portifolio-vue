@@ -1,8 +1,8 @@
 <template>
-  <div class="darkmode">
+  <div class="darkmode" v-show="!isMobile">
     <font-awesome-icon icon="fa-solid fa-lightbulb" @click="darkMode()" />
   </div>
-  <header class="header">
+  <header class="header" v-show="!isMobile">
     <ul class="nav-bar">
       <li
         class="icon-box"
@@ -15,6 +15,43 @@
       </li>
     </ul>
   </header>
+
+  <div class="drawer menu__toggle" v-show="isMobile">
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      <!-- Page content here -->
+      <label for="my-drawer" class="btn drawer-button"
+        ><svg viewBox="0 0 100 80" width="40" height="40">
+          <rect width="100" height="20"></rect>
+          <rect y="30" width="100" height="20"></rect>
+          <rect y="60" width="100" height="20"></rect>
+        </svg>
+      </label>
+    </div>
+    <div class="drawer-side">
+      <label
+        for="my-drawer"
+        aria-label="close sidebar"
+        class="drawer-overlay"
+      ></label>
+
+      <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+        <div class="darkmode">
+          <font-awesome-icon icon="fa-solid fa-lightbulb" @click="darkMode()" />
+        </div>
+        <!-- Sidebar content here -->
+        <li
+          class="icon-box"
+          v-for="menuItem in menuIcons"
+          :class="{ active: isCurrentPage(menuItem.name) }"
+          @click="redirectTo(menuItem.name)"
+        >
+          <p :v-show="isCurrentPage(menuItem.name)">{{ menuItem.name }}</p>
+          <font-awesome-icon :icon="['fa-solid', menuItem.icon]" />
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -22,9 +59,12 @@ import { menuIcons } from "@/assets/menuIcons";
 import router from "@/router";
 import { useRoute } from "vue-router";
 import { useColor } from "@/assets/color";
+import { isMobile as mobileView } from "@/static/js/Screen";
+
 const route = useRoute();
 const colorsComposable = useColor();
 const currentPage = computed(() => route.name?.toString());
+const isMobile = computed(() => mobileView());
 
 const emit = defineEmits(["isRedirecting"]);
 
@@ -57,28 +97,12 @@ header {
   -webkit-transition: opacity 0.3s;
   transform: translateY(-50%);
   z-index: 10;
-  @media (max-width: 768px) {
-    left: 0;
-    right: auto;
-    bottom: 0;
-    top: auto;
-    transform: none;
-    width: 100%;
-    display: block;
-    background: #2b2a2a;
-    padding: 8px;
-    z-index: 10;
-  }
+
   & ul.nav-bar {
     margin: 0;
     padding: 0;
     border: none;
     display: block;
-    @media (max-width: 768px) {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-    }
   }
   & .icon-box {
     @apply flex;
@@ -158,6 +182,31 @@ header {
     padding: 10px;
     cursor: pointer !important;
     text-decoration: none;
+  }
+}
+
+.menu__toggle {
+  /* background: green; */
+  position: fixed;
+  bottom: -20px;
+  z-index: 999;
+  border-radius: 100%;
+}
+
+.drawer-content {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+}
+
+.drawer-button {
+  border-radius: 100%;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--primary);
+  border: none;
+  & svg {
+    fill: var(--black);
   }
 }
 </style>

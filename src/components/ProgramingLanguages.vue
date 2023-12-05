@@ -17,7 +17,7 @@
     </div>
 
     <div class="description">
-      <p class="title" v-if="title" v-motion-slide-visible-right :delay="700">
+      <p class="title" v-if="title" v-motion-slide-right :delay="700">
         {{ title }}
       </p>
       <p class="title" v-else v-motion-slide-visible-right :delay="700">
@@ -26,7 +26,7 @@
       <p
         class="LanguageDescription"
         v-if="LanguageDescription"
-        v-motion-slide-visible-right
+        v-motion-slide-right
         :delay="900"
       >
         {{ LanguageDescription }}
@@ -70,18 +70,16 @@ function onHover(name: string, description: string) {
   display: grid;
   align-items: start;
   justify-content: space-between;
-  justify-items: stretch;
+  justify-items: center;
   align-content: center;
-  padding: 4rem 13rem;
+  padding: 4rem 6rem;
 }
 .icon_box {
   @apply grid grid-cols-3 gap-4 rounded-3xl;
-  border: 1px solid #45474a;
-  background: #212121;
-  width: 32vw;
-  padding: 32px 19px 32px 32px;
-  align-items: flex-start;
+  align-items: center;
   align-content: flex-start;
+  justify-items: center;
+
   & .icon_item {
     @apply flex flex-col rounded-3xl uppercase;
     overflow: hidden;
@@ -91,9 +89,10 @@ function onHover(name: string, description: string) {
     font-family: Open Sans;
     font-size: 17px;
     font-weight: 700;
-    background: rgba(255, 255, 255, 0.01);
     backdrop-filter: blur(15px);
     transition: 0.5s;
+    background: #0c0b0e;
+
     &:hover {
       transform: rotate(-11deg) translate(-11px, -48px) scale(1.1, 1.1);
     }
@@ -187,7 +186,7 @@ function onHover(name: string, description: string) {
     text-transform: uppercase;
     color: var(--white);
     font-weight: 700;
-    font-size: xxx-large;
+    font-size: xx-large;
   }
   & .LanguageDescription {
     color: var(--white);

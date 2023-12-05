@@ -64,6 +64,13 @@ function openProject(project: any) {
   display: grid;
   grid-gap: 3vw;
   grid-template-columns: 1fr 1fr;
+  @media (max-width: 768px) {
+    display: flex;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+  }
 }
 
 .project-item {
@@ -74,6 +81,9 @@ function openProject(project: any) {
   overflow: hidden;
   border-radius: 6px;
   transition: filter 0.3s ease-out, opacity 0.3s ease-out;
+  @media (max-width: 768px) {
+    height: 45vh;
+  }
 }
 
 .projects:nth-of-type(1) {
@@ -81,10 +91,16 @@ function openProject(project: any) {
     &:nth-child(n + 3) {
       grid-column: span 2;
       height: clamp(30vh, 45vh, 50vh);
+      @media (max-width: 768px) {
+        height: 45vh;
+      }
     }
     &:nth-child(1) {
       grid-row: 1/3;
       height: 100%;
+      @media (max-width: 768px) {
+        height: 45vh;
+      }
     }
 
     &:nth-child(3n) {
@@ -100,6 +116,13 @@ function openProject(project: any) {
 
   gap: 20px;
   height: 100%;
+  @media (max-width: 768px) {
+    display: flex;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+  }
   & .project-item {
     &:nth-child(1) {
       background-color: #7da999;
@@ -125,6 +148,9 @@ function openProject(project: any) {
       grid-row-end: 3;
       grid-column-end: 5;
       height: 100%;
+      @media (max-width: 768px) {
+        height: 45vh;
+      }
     }
     &:nth-child(4) {
       background-color: #8e9e5c;

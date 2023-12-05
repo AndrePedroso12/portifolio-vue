@@ -1,10 +1,12 @@
 <template>
+  <Lines />
   <div class="flex justify-end">
     <div class="overlay"></div>
     <div class="home-description">
-      <h1 v-motion-slide-left :delay="1900">
+      <!-- <h1 v-motion-slide-left :delay="1900">
         André Pedroso <span>Dev Front-end</span>
-      </h1>
+      </h1> -->
+
       <p class="open-sans-font" v-motion-slide-right :delay="2100">
         Meu nome é André Luiz Pedroso, sou Desenvolvedor Front-End com mais de 8
         anos de experiência, concentrando-me principalmente no desenvolvimento
@@ -21,6 +23,12 @@
         />
       </router-link>
     </div>
+    <div class="headline-container">
+      <div id="text-behind">Dev<br />Front-End</div>
+      <div id="text-behind-blur">Dev<br />Front-End</div>
+      <div id="text-front">Dev<br />Front-End</div>
+    </div>
+
     <img class="logo" src="src/assets/images/logo_lines.svg" />
     <img class="picture" src="src/assets/images/dev_alone.png" />
     <div class="halo"></div>
@@ -50,7 +58,8 @@ import Button from "@/components/Button.vue";
   @media (max-width: 768px) {
     left: 17%;
     position: absolute;
-    width: 76%;
+    width: 135%;
+    max-width: none;
   }
 }
 
@@ -97,17 +106,20 @@ import Button from "@/components/Button.vue";
 }
 
 .home-description {
-  max-width: 550px;
   position: absolute;
-  bottom: auto;
-  top: 58%;
+  bottom: 4rem;
   right: auto;
-  left: 42%;
+  left: 50%;
   z-index: 3;
+  width: 21rem;
+
   @media (max-width: 768px) {
-    top: 64%;
+    bottom: 10%;
     right: auto;
-    left: 27%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   & h1 {
     @apply uppercase;
@@ -145,13 +157,9 @@ import Button from "@/components/Button.vue";
   }
   & p {
     color: var(--black);
-    margin: 15px 0 28px;
     font-size: 12px;
     line-height: 22px;
-    width: 21rem;
-    position: absolute;
-    right: -27%;
-    bottom: -84%;
+
     @media (max-width: 768px) {
       bottom: auto;
       top: -234%;
@@ -174,27 +182,8 @@ import Button from "@/components/Button.vue";
   animation: animateGrain 8s steps(10) infinite;
 }
 
-@media (max-width: 768px) {
-  button {
-    bottom: -69%;
-    right: 50%;
-    left: auto;
-    font-size: 12px;
-  }
-  button svg {
-    background-color: var(--primary);
-    position: absolute;
-    right: -1px;
-    top: -1px;
-    bottom: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    display: flex;
-    padding: 1rem;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
+button {
+  margin-top: 2rem;
 }
 
 @keyframes animateGrain {
@@ -276,5 +265,61 @@ import Button from "@/components/Button.vue";
   100% {
     opacity: 0.9;
   }
+}
+
+.headline-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  @media (max-width: 768px) {
+    top: 35vh;
+    bottom: auto;
+  }
+}
+
+#text-behind,
+#text-front,
+#text-behind-blur {
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  text-align: center;
+  // font-size: clamp(24px, 20vw, 195px);
+  font-size: 7vw;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 10px;
+  line-height: 0.8;
+  @media (max-width: 768px) {
+    font-size: 15vw;
+    text-align: left;
+    line-height: 4rem;
+  }
+}
+
+#text-behind {
+  color: var(--black);
+  z-index: 1;
+}
+
+#text-behind-blur {
+  color: var(--black);
+  filter: blur(7.5px);
+  -webkit-filter: blur(7.5px);
+  z-index: 0;
+}
+
+#text-front {
+  /*  Set text-color to transparent to only show the outline  */
+  color: transparent;
+  text-stroke: 2px var(--black);
+  -webkit-text-stroke: 2px var(--black);
+  z-index: 3;
+  opacity: 0.1;
 }
 </style>

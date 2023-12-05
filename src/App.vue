@@ -1,5 +1,9 @@
 <template>
-  <div id="main" class="w-[100vw] h-[100vh]">
+  <div
+    id="main"
+    class="w-[100vw] h-[100vh]"
+    :style="{ overflowY: currentRoute === 'Contato' ? 'scroll' : 'hidden' }"
+  >
     <Menu @is-redirecting="handleTransition()" />
     <Transition name="slide">
       <div v-if="isTransitioning" class="transition-block"></div>
@@ -13,9 +17,12 @@
 <script setup lang="ts">
 import Menu from "@/components/Menu.vue";
 import { useColor } from "./assets/color";
+import { useRoute } from "vue-router";
 
 const colorsComposable = useColor();
 const isTransitioning = ref(false);
+const route = useRoute();
+const currentRoute = computed(() => route.name);
 
 function handleTransition() {
   isTransitioning.value = true;

@@ -122,6 +122,9 @@
       bottom: 84%;
       text-transform: uppercase;
       padding: 5rem 0;
+      @media (max-width: 768px) {
+        font-size: xxx-large;
+      }
 
       &::before {
         content: "Em projetos";
@@ -144,6 +147,9 @@
 
 .parallax__layer__2 {
   transform: translateZ(-200px) translateY(-32rem) scale(3);
+  @media (max-width: 768px) {
+    transform: translateZ(-200px) translateY(-97rem) scale(3);
+  }
 }
 
 .parallax__layer__3 {
@@ -152,6 +158,10 @@
 
 .parallax__layer__4 {
   transform: translateZ(-100px) scale(2);
+  @media (max-width: 768px) {
+    transform: translateZ(-115px) translateY(-48rem) scale(3);
+    z-index: -1;
+  }
 }
 
 .parallax__layer__5 {
@@ -166,5 +176,13 @@
 
 .parallax__layer__6 {
   transform: translateZ(0px) scale(1);
+}
+
+@media (max-width: 768px) {
+  .parallax__layer__0,
+  .parallax__layer__1,
+  .parallax__layer__3 {
+    transform: translateZ(-200px) translateY(-54rem) scale(5);
+  }
 }
 </style>

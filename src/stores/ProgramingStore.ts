@@ -7,8 +7,7 @@ export const useProgramingStore = defineStore("programing", {
         name: "HTML5",
         icon: "fa-html5",
         color: "#F36518",
-        description: `
-        O HTML5, ou HyperText Markup Language 5, é a quinta e mais recente versão da linguagem de marcação fundamental para a construção de páginas web. Lançado em outubro de 2014, o HTML5 trouxe consigo uma série de avanços e novos recursos que revolucionaram a experiência de desenvolvimento web. Sua estrutura mais semântica permite uma codificação mais clara e compreensível, enquanto suas novas tags e atributos oferecem suporte nativo para elementos multimídia, como áudio e vídeo, tornando a criação de conteúdo mais rica e dinâmica.
+        description: `O HTML5, ou HyperText Markup Language 5, é a quinta e mais recente versão da linguagem de marcação fundamental para a construção de páginas web. Lançado em outubro de 2014, o HTML5 trouxe consigo uma série de avanços e novos recursos que revolucionaram a experiência de desenvolvimento web. Sua estrutura mais semântica permite uma codificação mais clara e compreensível, enquanto suas novas tags e atributos oferecem suporte nativo para elementos multimídia, como áudio e vídeo, tornando a criação de conteúdo mais rica e dinâmica.
         
         No desenvolvimento front-end, o HTML5 desempenha um papel central na estruturação e organização do conteúdo de uma página web. Ele fornece a base sobre a qual os desenvolvedores constroem interfaces interativas e responsivas, facilitando a criação de layouts modernos e acessíveis. Além disso, o HTML5 trabalha em conjunto com outras tecnologias, como CSS e JavaScript, para proporcionar uma experiência de usuário mais fluida e envolvente, contribuindo assim para a evolução constante do design web e das aplicações interativas na internet.`,
       },
@@ -24,8 +23,7 @@ export const useProgramingStore = defineStore("programing", {
         name: "SASS",
         icon: "fa-sass",
         color: "#cf649a",
-        description: `
-        O SASS, ou Syntactically Awesome Stylesheets, representa uma extensão poderosa e flexível da linguagem CSS. Desenvolvido para simplificar e aprimorar a autoria de estilos em folhas de estilo, o SASS introduz conceitos como variáveis, aninhamento, mixins, e operadores, oferecendo aos desenvolvedores uma abordagem mais modular e eficiente na criação e manutenção de estilos complexos. Com uma sintaxe mais amigável e expressiva, o SASS permite uma codificação mais limpa e organizada, facilitando a gestão de estilos em projetos de larga escala.
+        description: `O SASS, ou Syntactically Awesome Stylesheets, representa uma extensão poderosa e flexível da linguagem CSS. Desenvolvido para simplificar e aprimorar a autoria de estilos em folhas de estilo, o SASS introduz conceitos como variáveis, aninhamento, mixins, e operadores, oferecendo aos desenvolvedores uma abordagem mais modular e eficiente na criação e manutenção de estilos complexos. Com uma sintaxe mais amigável e expressiva, o SASS permite uma codificação mais limpa e organizada, facilitando a gestão de estilos em projetos de larga escala.
         
         No cenário de desenvolvimento front-end, o SASS é amplamente adotado para melhorar a legibilidade e a manutenção de código CSS. Suas funcionalidades avançadas, como a capacidade de reutilização de código por meio de mixins e a definição de variáveis para propriedades comuns, resultam em um fluxo de trabalho mais eficiente. Além disso, o SASS suporta a criação de folhas de estilo mais dinâmicas e adaptáveis, permitindo a geração de estilos personalizados com base em lógica condicional. Integrado a projetos web, o SASS otimiza o desenvolvimento de estilos, proporcionando uma abordagem mais modular, escalável e fácil de manter no contexto do front-end.`,
       },
@@ -91,8 +89,11 @@ export const useWebDesingStore = defineStore("desing", {
         height: "79",
         viewBox: "0 0 54 79",
         color: "#0ACF83",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec commodo pharetra dictum. Donec maximus tellus elit. In venenatis, lorem sed congue tristique, lectus libero porttitor ex, sed tempor nibh metus id justo. Suspendisse gravida sed nunc id pellentesque. Morbi non hendrerit nisi. Praesent nec quam ac purus efficitur interdum. Nulla id leo eu est tincidunt fringilla vel sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ipsum magna, gravida at luctus ac, vestibulum nec risus. Aenean semper ex at felis ultricies euismod. Nulla ullamcorper tincidunt libero, at auctor enim auctor a. Sed sit amet lacinia mi. Donec vitae luctus dolor, in efficitur metus. Fusce auctor posuere mi eget faucibus. Sed id tristique nulla.",
+        description: `O Figma é um programa de design de interface web baseado na web que é usado por designers, desenvolvedores e gerentes de produto para criar, colaborar e prototipar interfaces de usuário. É um programa poderoso e versátil que oferece uma ampla gama de recursos para criar designs de alta qualidade.
+        
+        Um dos principais recursos do Figma é sua colaboração em tempo real. Isso permite que os designers trabalhem juntos em um mesmo projeto, mesmo que estejam em locais diferentes. O Figma também oferece um sistema de revisão integrado que permite aos revisores fornecer feedback e comentários em um projeto.
+        
+        Outro recurso importante do Figma é sua capacidade de prototipagem. O Figma permite que os designers criem protótipos interativos de seus designs, o que ajuda a testar e validar seus conceitos. Os protótipos do Figma podem ser compartilhados com usuários externos para obter feedback.`,
       },
       {
         name: "adobe xd",
@@ -104,7 +105,12 @@ export const useWebDesingStore = defineStore("desing", {
         height: "79",
         viewBox: "0 0 116 79",
         color: "#FF61F6",
-        description: "lorem ipsum",
+        description: `O Adobe XD é um programa de design de experiência do usuário baseado em vetores para aplicativos da web e aplicativos móveis, desenvolvido e publicado pela Adobe Inc. Foi lançado em 2016 e é uma ferramenta popular entre designers, desenvolvedores e gerentes de produto.
+
+        O Adobe XD oferece uma ampla gama de recursos para criar designs de alta qualidade. Ele inclui ferramentas para desenhar elementos de interface do usuário, aplicar estilos e criar protótipos interativos.
+        
+        Outro recurso importante do Adobe XD é sua capacidade de colaboração. O programa permite que os designers trabalhem juntos em um mesmo projeto, mesmo que estejam em locais diferentes. O Adobe XD também oferece um sistema de revisão integrado que permite aos revisores fornecer feedback e comentários em um projeto.
+        `,
       },
       {
         name: "photoshop",
@@ -116,7 +122,9 @@ export const useWebDesingStore = defineStore("desing", {
         height: "74",
         viewBox: "0 0 98 74",
         color: "#31A8FF",
-        description: "lorem ipsum",
+        description: `O Adobe Photoshop é um programa de edição de imagens que pode ser usado para criar imagens de alta qualidade para uso em sites e aplicativos. O Photoshop pode ser usado para criar logotipos, ícones, imagens de fundo e outros elementos visuais que ajudam a criar uma experiência de usuário atraente.
+        
+        O Photoshop não é uma ferramenta de desenvolvimento web, mas pode ser usado em conjunto com outras ferramentas para criar projetos de front-end completos.`,
       },
       {
         name: "illustrator",
@@ -128,7 +136,11 @@ export const useWebDesingStore = defineStore("desing", {
         height: "78",
         viewBox: "0 0 91 78",
         color: "#FF9A00",
-        description: "lorem ipsum",
+        description: `O Adobe Illustrator é um programa de design gráfico que pode ser usado para criar imagens vetoriais. As imagens vetoriais são compostas de linhas, curvas e formas, o que as torna redimensionáveis sem perda de qualidade.
+
+        No front-end, o Adobe Illustrator é usado principalmente para criar elementos em SVG, um formato de imagem vetorial que é amplamente suportado por navegadores da web.
+        
+        Os elementos em SVG criados no Adobe Illustrator podem ser usados para criar uma variedade de elementos visuais para sites e aplicativos, como logotipos, ícones, ilustrações e gráficos.`,
       },
       {
         name: "premiere pro",
@@ -140,7 +152,9 @@ export const useWebDesingStore = defineStore("desing", {
         height: "79",
         viewBox: "0 0 102 79",
         color: "#8EA0FA",
-        description: "lorem ipsum",
+        description: `O Adobe Premiere Pro é uma poderosa e abrangente ferramenta de edição de vídeo profissional desenvolvida pela Adobe Systems. Lançado pela primeira vez em 2003, o Premiere Pro tornou-se uma referência na indústria cinematográfica e de produção de vídeo, sendo amplamente utilizado por profissionais em todo o mundo. Projetado para atender desde iniciantes até editores experientes, o software oferece uma gama impressionante de recursos e ferramentas para editar, cortar, corrigir cores, adicionar efeitos visuais e sonoros, entre outras funcionalidades.
+        
+        O Premiere Pro suporta uma variedade de formatos de arquivo, desde vídeos em alta definição até produções cinematográficas, e integra-se perfeitamente com outros aplicativos da Adobe, como o After Effects e o Photoshop. Sua interface intuitiva e fluxo de trabalho eficiente permitem que os usuários editem vídeos de maneira rápida e precisa. Além disso, recursos como a linha do tempo dinâmica e a capacidade de trabalhar com projetos em equipe facilitam a colaboração e a produção de conteúdo de alta qualidade. Seja para produções cinematográficas, vídeos para a web ou projetos corporativos, o Adobe Premiere Pro se destaca como uma ferramenta essencial para profissionais que buscam excelência na edição de vídeo.`,
       },
       {
         name: "after effects",
@@ -152,7 +166,9 @@ export const useWebDesingStore = defineStore("desing", {
         height: "74",
         viewBox: "0 0 122 74",
         color: "#8D95F2",
-        description: "lorem ipsum",
+        description: `O Adobe After Effects é uma poderosa ferramenta de pós-produção para criação de efeitos visuais e motion graphics. Desenvolvido pela Adobe Systems, o After Effects é amplamente utilizado na indústria do cinema, televisão e produção de vídeos online para criar composições visuais impressionantes e animações envolventes. Lançado pela primeira vez em 1993, o software evoluiu para se tornar uma referência na manipulação de elementos visuais em movimento.
+
+        O After Effects oferece uma ampla gama de recursos, incluindo ferramentas avançadas de animação, composição em camadas, rastreamento de movimento, correção de cor e integração com outros aplicativos da Adobe. Os profissionais utilizam o software para criar desde simples gráficos animados até efeitos visuais complexos em produções cinematográficas. Sua interface intuitiva e a capacidade de trabalhar em conjunto com outros aplicativos da Adobe, como o Photoshop e o Premiere Pro, permitem uma integração suave em fluxos de trabalho de produção de vídeo. Com sua versatilidade e robustez, o Adobe After Effects se destaca como uma ferramenta essencial para aqueles que buscam elevar a qualidade visual de suas produções audiovisuais.`,
       },
     ],
   }),

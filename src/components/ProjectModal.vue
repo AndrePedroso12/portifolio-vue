@@ -113,6 +113,12 @@ button.btn {
   padding: 5rem;
   display: flex;
   flex-direction: row;
+  @media (max-width: 768px) {
+    padding: 1rem;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    align-content: stretch;
+  }
   & .phone-1 {
     position: relative;
     background-position-y: 0;
@@ -124,6 +130,9 @@ button.btn {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
+    @media (max-width: 768px) {
+      font-size: x-small;
+    }
   }
   & a {
     background-color: var(--primary);

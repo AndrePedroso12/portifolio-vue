@@ -1,7 +1,12 @@
 <template>
-  <button>
-    <span>{{ props.title }}</span>
-    <font-awesome-icon :icon="['fa-solid', props.icon]" />
+  <button class="mt-2=1">
+    <span>
+      <span class="highlight-bg"></span>
+      <span class="button-text">
+        {{ props.title }}
+        <font-awesome-icon :icon="['fa-solid', props.icon]" />
+      </span>
+    </span>
   </button>
 </template>
 
@@ -14,60 +19,79 @@ const props = defineProps<{
 
 <style lang="scss" scoped>
 button {
-  border: 1px solid var(--primary);
-  overflow: hidden;
-  display: inline-block;
-  line-height: 1.4;
-  border-radius: 35px;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: center;
-  cursor: pointer;
-  vertical-align: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  transition: all 0.25s ease-in-out;
-  text-transform: uppercase;
-  position: absolute;
-  z-index: 1;
-  padding: 16px 70px 16px 35px;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--black);
-  background-color: transparent;
-  bottom: -110%;
+  border: 0;
+  position: relative;
+  border-radius: 12px;
+  color: #fff;
+  background: #000;
+  padding: 0 16px;
+  box-shadow: 0 0 0 1px 0 0 0 1px rgba(255, 255, 255, 0.14);
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+  transition-property: border-color, background, color, transform, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+  font-size: 16px;
+  line-height: 50px;
+  height: 50px;
+  width: 100%;
+  max-width: 250px;
+  transition: 0.25s;
+}
 
-  & :before {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform: translateX(100%);
-    transition: all 0.3s ease-out;
-    background-color: var(--primary);
+.highlight-bg {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  left: 1px;
+  background: inherit;
+  border-radius: 12px;
+  // background: linear-gradient(-90deg, #007cf0, #00dfd8, #ff0080, #007cf0);
+  background: linear-gradient(-90deg, #00f049, #00dfd8, #76ffbd, #00f06a);
+  background-size: 400% 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  animation: background-anim 8s ease-in-out infinite;
+}
+
+.button-text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.highlight-bg:after {
+  content: "";
+  position: absolute;
+  background-size: inherit;
+  background-image: inherit;
+  animation: inherit;
+  left: 0;
+  right: 0;
+  top: 2px;
+  height: 100%;
+  filter: blur(0.5rem);
+  transition: 0.25s;
+}
+
+@keyframes background-anim {
+  50% {
+    background-position: 140% 50%;
+    transform: skew(-2deg);
   }
-  &:hover {
-    :before {
-      transform: translateX(0);
-    }
-  }
-  & svg {
-    background-color: var(--primary);
-    position: absolute;
-    right: -1px;
-    top: -1px;
-    bottom: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-    display: flex;
-    padding: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  }
+}
+
+svg {
+  margin-left: 1rem;
 }
 </style>

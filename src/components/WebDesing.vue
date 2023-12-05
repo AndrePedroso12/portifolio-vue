@@ -64,27 +64,26 @@ function onHover(name: string, description: string) {
   display: grid;
   align-items: start;
   justify-content: space-between;
-  justify-items: stretch;
+  justify-items: center;
   align-content: center;
-  padding: 4rem;
+  padding: 4rem 6rem;
 }
 .icon_box {
   @apply grid grid-cols-3 gap-4 rounded-3xl;
-  border: 1px solid #45474a;
-  background: #212121;
-  width: 43vw;
-  padding: 32px 19px 32px 32px;
-  align-items: flex-start;
+  align-items: center;
   align-content: flex-start;
+  justify-items: center;
+
   & .icon_item {
     @apply flex flex-col rounded-3xl uppercase;
     overflow: hidden;
     width: 9rem;
+    cursor: pointer;
     text-align: center;
     font-family: Open Sans;
     font-size: 17px;
     font-weight: 700;
-    background: rgba(255, 255, 255, 0.01);
+    background: #0c0b0e;
     backdrop-filter: blur(15px);
     transition: 0.5s;
     &:hover {
@@ -172,7 +171,7 @@ function onHover(name: string, description: string) {
     text-transform: uppercase;
     color: var(--white);
     font-weight: 700;
-    font-size: xxx-large;
+    font-size: xx-large;
   }
   & .LanguageDescription {
     color: var(--white);
@@ -180,7 +179,7 @@ function onHover(name: string, description: string) {
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
-    text-transform: uppercase;
+    white-space-collapse: preserve-breaks;
   }
 }
 </style>

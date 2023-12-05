@@ -21,14 +21,6 @@
           <a href="">+55 19 99816-1087</a>
         </div>
       </div>
-
-      <ul class="social">
-        <li>
-          <a href="">
-            <font-awesome-icon icon="fa-brands fa-github" />
-          </a>
-        </li>
-      </ul>
     </div>
 
     <div class="form">
@@ -64,19 +56,35 @@ import Button from "@/components/Button.vue";
   color: var(--black);
   display: flex;
   flex-wrap: nowrap;
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+    flex-direction: column;
+    align-items: stretch;
+  }
   & .description {
     width: 34%;
+    @media (max-width: 768px) {
+      width: 100%;
+      padding: 0 1rem;
+    }
     & h2 {
       text-transform: uppercase;
       font-weight: 500;
       font-size: 30px;
       margin-bottom: 15px;
+      @media (max-width: 768px) {
+        font-size: 21px;
+      }
+    }
+    & p {
+      font-size: 15px;
     }
     & .contact-button {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       margin: 1rem 0;
+
       & svg {
         font-size: 2rem;
         color: var(--primary);
@@ -107,12 +115,23 @@ import Button from "@/components/Button.vue";
   & .form {
     width: 60%;
     margin-left: 3rem;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 1rem auto 3rem;
+    }
     & form {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(4, 1fr);
       grid-column-gap: 0px;
       grid-row-gap: 0px;
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        align-content: flex-start;
+      }
     }
 
     & .div1 {
@@ -131,6 +150,16 @@ import Button from "@/components/Button.vue";
     & .div5 {
       grid-area: 5 / 2 / 6 / 3;
     }
+    & .div1,
+    .div2,
+    .div3,
+    .div4,
+    .div5 {
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
     & input,
     textarea {
       border: 1px solid #111;
@@ -149,15 +178,22 @@ import Button from "@/components/Button.vue";
   }
 
   & button {
-    top: auto;
-    bottom: auto;
-    right: 8%;
     margin-top: 2rem;
+    @media (max-width: 768px) {
+      margin: 0 0 3rem 0;
+      right: 0;
+    }
     & deep:svg {
       width: 1.5rem;
       height: 1.5rem;
       padding: 1rem;
     }
+  }
+}
+
+#main {
+  @media (max-width: 768px) {
+    overflow-y: scroll;
   }
 }
 </style>

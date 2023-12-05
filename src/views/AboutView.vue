@@ -23,7 +23,9 @@
       </div>
     </section>
     <section id="section2" class="fullpage">
-      <div class="grid grid-cols-2">
+      <Lines />
+
+      <div class="main-row">
         <div class="dev-image">
           <img
             src="src/assets/images/sobre-mim.png"
@@ -34,26 +36,6 @@
         </div>
         <div class="description" v-motion-slide-visible-right :delay="900">
           <h3>André Pedroso <span>Dev Front-end</span></h3>
-          <!-- <p class="glass-text">
-            Meu nome é André Luiz Pedroso, e iniciei minha carreira como
-            Desenvolvedor Front-End em 2015, atuando em uma pequena agência de
-            publicidade em Jaguariúna, SP. Ao longo dos anos, evoluí minha
-            carreira e, atualmente, colaboro com agências e clientes de grande e
-            médio porte, tanto no Brasil quanto internacionalmente.<br /><br />
-            Tenho uma vasta experiência em diversas linguagens e frameworks de
-            programação, incluindo Vue, React, Bootstrap, Tailwind, Javascript,
-            HTML5, CSS3, Wordpress e Loja Integrada. Além disso, cultivo um
-            sólido conhecimento em Design UI/UX, garantindo que meus projetos
-            não apenas funcionem eficientemente, mas também ofereçam uma
-            experiência visualmente atraente e intuitiva para os usuários.<br /><br />
-            Com mais de oito anos dedicados ao desenvolvimento Front-End, minha
-            abordagem versátil e adaptável me permite enfrentar uma variedade de
-            desafios, desde a criação de lojas online até o design e
-            implementação de websites empresariais. Estou comprometido em
-            continuar me aprimorando e explorando novas tecnologias para
-            oferecer soluções inovadoras aos meus clientes.
-          </p> -->
-
           <p class="glass-text">
             Me chamo André Luiz Pedroso e comecei como Desenvolvedor Front-End
             em 2015, na área de publicidade em Jaguariúna, SP. Ao longo dos
@@ -86,7 +68,11 @@
         >
           <p>Experiência</p>
           <NumbersAbout v-if="targetIsVisible" />
-          <Button title="Enviar Email" icon="fa-paper-plane" />
+          <Button
+            title="Enviar Email"
+            icon="fa-paper-plane"
+            @click="redirectTo()"
+          />
         </div>
         <div class="note-image">
           <img
@@ -99,6 +85,7 @@
       </div>
     </section>
     <section id="section4" class="fullpage">
+      <Lines :color="'#00000014'" />
       <div class="description">
         <p v-motion-slide-visible-left>Conhecimentos em programação</p>
         <ProgramingLanguages />
@@ -125,13 +112,25 @@
 </template>
 
 <script setup lang="ts">
-import Title from "@/components/Title.vue";
 import Button from "@/components/Button.vue";
 import NumbersAbout from "@/components/NumbersAbout.vue";
 import ProgramingLanguages from "@/components/ProgramingLanguages.vue";
 import WebDesing from "@/components/WebDesing.vue";
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useElementVisibility } from "@vueuse/core";
+import router from "@/router";
+import Lines from "@/components/Lines.vue";
+
+const emit = defineEmits(["isRedirecting"]);
+
+function redirectTo() {
+  emit("isRedirecting");
+  router.push({
+    path: "/Contato",
+    name: "Contato",
+  });
+}
+
 const target = ref(null);
 const targetIsVisible = useElementVisibility(target);
 
@@ -304,18 +303,36 @@ onBeforeUnmount(() => {
   border-bottom-left-radius: 15vw;
   z-index: 3;
   background-color: var(--white);
+  & .main-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
   & .dev-image {
     & img {
       bottom: 1px;
       position: absolute;
       margin-left: 10%;
       width: 40vw;
+      @media (max-width: 768px) {
+        margin-left: 0;
+        width: 74vw;
+        z-index: 1;
+        right: -12px;
+      }
     }
   }
 
   & .description {
-    width: 75%;
-    margin-top: 15%;
+    width: 85%;
+    margin-top: 6%;
+    @media (max-width: 768px) {
+      width: 81%;
+    }
     & .glass-text {
       border-radius: 12px;
       position: relative;
@@ -325,6 +342,10 @@ onBeforeUnmount(() => {
       color: white;
       box-shadow: 0 0 0 1px transparent, 0 2px 4px transparent,
         0 12px 24px transparent;
+      @media (max-width: 768px) {
+        padding: 1.5rem;
+        font-size: x-small;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -358,6 +379,11 @@ onBeforeUnmount(() => {
       flex-direction: column;
       color: var(--black);
       border-left: 9px solid var(--primary);
+      @media (max-width: 768px) {
+        font-size: 34px;
+        line-height: 40px;
+        padding-left: 20px;
+      }
 
       & span:first-of-type {
         color: var(--primary);
@@ -400,16 +426,7 @@ onBeforeUnmount(() => {
     }
 
     & button {
-      color: var(--white);
-      bottom: -18%;
-      border-color: var(--white);
-      & deep:svg {
-        background-color: var(--white);
-        color: var(--black);
-        width: 1.5rem;
-        height: 1.5rem;
-        padding: 1rem;
-      }
+      margin-top: 3rem;
     }
   }
   & .note-image {
@@ -457,10 +474,9 @@ onBeforeUnmount(() => {
       font-size: 51px;
       line-height: 62px;
       font-weight: 700;
-      margin: 0 0 25px;
-      padding-left: 4rem;
+      margin: 3rem 0 0px;
+      text-align: center;
       color: var(--white);
-      text-decoration-line: underline;
     }
   }
 }
@@ -474,11 +490,11 @@ onBeforeUnmount(() => {
     content: "";
     background-color: var(--primary);
     position: absolute;
-    top: -24vh;
+    top: -32vh;
     z-index: 0;
     left: 0;
-    width: 15vw;
-    height: 15vw;
+    width: 100vw;
+    height: 20vw;
   }
   & .description {
     margin: auto;
@@ -492,10 +508,9 @@ onBeforeUnmount(() => {
       font-size: 51px;
       line-height: 62px;
       font-weight: 700;
-      margin: 0 0 25px;
-      padding-left: 4rem;
+      margin: 0 auto;
+      text-align: center;
       color: var(--white);
-      text-decoration-line: underline;
     }
   }
 }
@@ -506,6 +521,9 @@ onBeforeUnmount(() => {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   & .menu-point {
     width: 10px;
