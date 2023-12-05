@@ -35,7 +35,7 @@
         class="drawer-overlay"
       ></label>
 
-      <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+      <ul class="menu p-4 w-80 min-h-full text-base-content">
         <div class="darkmode">
           <font-awesome-icon icon="fa-solid fa-lightbulb" @click="darkMode()" />
         </div>
@@ -207,6 +207,16 @@ header {
   border: none;
   & svg {
     fill: var(--black);
+  }
+}
+.text-base-content {
+  background: var(--primary);
+  & .icon-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    color: var(--white);
+    font-size: x-large;
   }
 }
 </style>
