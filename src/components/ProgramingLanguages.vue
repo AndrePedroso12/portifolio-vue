@@ -3,9 +3,9 @@
     <div class="icon_box" v-motion-pop-visible :delay="500">
       <div
         class="icon_item"
-        :class="languages.name"
+        :class="[{ active: activeLanguage === languages.name }, languages.name]"
         v-for="languages in Programings"
-        @click="onHover(languages.name, languages.description)"
+        @click="onIconClick(languages.name, languages.description)"
       >
         <span class="icon">
           <font-awesome-icon
@@ -49,17 +49,16 @@ import { useProgramingStore } from "@/stores";
 const ProgramingStore = useProgramingStore();
 const Programings = ProgramingStore.$state.programing;
 
-const title = ref("");
-const LanguageDescription = ref("");
+const title = ref(Programings[0].name);
+const LanguageDescription = ref(Programings[0].description);
 
-const initialTitle = ref("Clique em qualquer icone ao lado para saber mais");
-const initialLanguageDescription = ref(
-  "Ao clicar em qualquer um dos icones ao lado, vera uma descrição e alguns projetos que trabalhei usando a linguagem / framework"
-);
+const activeLanguage = ref(Programings[0].name);
 
-function onHover(name: string, description: string) {
+function onIconClick(name: string, description: string) {
+  activeLanguage.value = name;
   title.value = name;
   LanguageDescription.value = description;
+  // Your existing logic for updating title and LanguageDescription
 }
 </script>
 
@@ -95,6 +94,7 @@ function onHover(name: string, description: string) {
 
     &:hover {
       transform: rotate(-11deg) translate(-11px, -48px) scale(1.1, 1.1);
+      animation: none;
     }
     &:before {
       content: "";
@@ -106,6 +106,9 @@ function onHover(name: string, description: string) {
       right: auto;
       left: 35%;
       bottom: -2rem;
+    }
+    &.active {
+      animation: 1s jump ease infinite alternate;
     }
     &.HTML5 {
       box-shadow: 10px 10px 15px 0px rgba(255, 255, 255, 0.1) inset,
@@ -195,6 +198,17 @@ function onHover(name: string, description: string) {
     font-weight: 400;
     line-height: 25px;
     white-space-collapse: preserve-breaks;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
 }
 </style>

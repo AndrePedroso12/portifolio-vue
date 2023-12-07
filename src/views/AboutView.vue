@@ -74,14 +74,15 @@
             @click="redirectTo()"
           />
         </div>
-        <div class="note-image">
+        <!-- <div class="note-image">
           <img
             src="src/assets/images/notebook-mockup.webp"
             alt=""
             v-motion-slide-visible-bottom
             :delay="500"
           />
-        </div>
+        </div> -->
+        <Video class="note-image" />
       </div>
     </section>
     <section id="section4" class="fullpage">
@@ -120,6 +121,7 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useElementVisibility } from "@vueuse/core";
 import router from "@/router";
 import Lines from "@/components/Lines.vue";
+import Video from "@/components/Video.vue";
 
 const emit = defineEmits(["isRedirecting"]);
 
@@ -402,7 +404,7 @@ onBeforeUnmount(() => {
     background-color: var(--primary);
     position: absolute;
     top: -50vh;
-    z-index: 0;
+    z-index: -1;
     left: 0;
     width: 100vw;
     height: 35vw;
@@ -411,7 +413,9 @@ onBeforeUnmount(() => {
     margin: auto;
     margin-top: 10%;
   }
-
+  & .grid {
+    padding-top: 2%;
+  }
   & .description {
     margin: auto;
     & p {
@@ -430,8 +434,13 @@ onBeforeUnmount(() => {
     }
   }
   & .note-image {
-    max-width: 38rem;
+    max-width: 49rem;
     animation: float 6s ease-in-out infinite;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+    margin: 0 auto auto -40%;
+    z-index: -1;
   }
 }
 
