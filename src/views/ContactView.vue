@@ -24,21 +24,43 @@
     </div>
 
     <div class="form">
-      <form>
+      <form @submit.prevent="sendEmail">
         <div class="div1">
-          <input type="text" name="name" placeholder="Seu Nome" />
+          <input
+            type="text"
+            name="name"
+            v-model="formData.name"
+            placeholder="Seu Nome"
+            required
+          />
         </div>
         <div class="div2">
-          <input type="text" name="name" placeholder="E-mail" />
+          <input
+            type="text"
+            name="email"
+            v-model="formData.email"
+            placeholder="E-mail"
+            required
+          />
         </div>
         <div class="div3">
-          <input type="text" name="name" placeholder="Assunto" />
+          <input
+            type="text"
+            name="subject"
+            v-model="formData.subject"
+            placeholder="Assunto"
+          />
         </div>
         <div class="div4">
-          <textarea type="text" name="name" placeholder="Mensagem" />
+          <textarea
+            type="text"
+            name="message"
+            v-model="formData.message"
+            placeholder="Mensagem"
+          />
         </div>
         <div class="div5">
-          <Button title="Enviar Email" icon="fa-paper-plane" />
+          <Button title="Enviar Email" icon="fa-paper-plane" type="submit" />
         </div>
       </form>
     </div>
@@ -48,6 +70,46 @@
 <script setup lang="ts">
 import Title from "@/components/Title.vue";
 import Button from "@/components/Button.vue";
+</script>
+
+<script>
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      formData: {
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      },
+    };
+  },
+  methods: {
+    sendEmail() {
+      // Validate form data before sending the email (add your own validation logic)
+
+      // Send data to the server
+      axios
+        .post("/api/send-email", this.formData)
+        .then((response) => {
+          console.log(response.data);
+          // Reset form after successful submission
+          this.formData = {
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          };
+        })
+        .catch((error) => {
+          console.error("Error sending email:", error);
+          // Handle error (e.g., show an error message to the user)
+        });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

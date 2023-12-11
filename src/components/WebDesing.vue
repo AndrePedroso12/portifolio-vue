@@ -4,22 +4,17 @@
       <p class="title" v-if="title">
         {{ title }}
       </p>
-      <p class="title" v-else>
-        {{ initialTitle }}
-      </p>
+
       <p class="LanguageDescription" v-if="LanguageDescription">
         {{ LanguageDescription }}
-      </p>
-      <p class="LanguageDescription" v-else>
-        {{ initialLanguageDescription }}
       </p>
     </div>
     <div class="icon_box" v-motion-pop-visible :delay="500">
       <div
         class="icon_item"
-        :class="desing.name"
+        :class="[{ active: activeLanguage === desing.name }, desing.name]"
         v-for="desing in Desings"
-        @click="onHover(desing.name, desing.description)"
+        @click="onIconClick(desing.name, desing.description)"
       >
         <span class="icon">
           <svg
@@ -43,15 +38,13 @@ import { useWebDesingStore } from "@/stores";
 const DesingStore = useWebDesingStore();
 const Desings = DesingStore.$state.desing;
 
-const title = ref("");
-const LanguageDescription = ref("");
+const title = ref(Desings[0].name);
+const LanguageDescription = ref(Desings[0].description);
 
-const initialTitle = ref("Clique em qualquer icone ao lado para saber mais");
-const initialLanguageDescription = ref(
-  "Ao clicar em qualquer um dos icones ao lado, vera uma descrição e alguns projetos que trabalhei usando a linguagem / framework"
-);
+const activeLanguage = ref(Desings[0].name);
 
-function onHover(name: string, description: string) {
+function onIconClick(name: string, description: string) {
+  activeLanguage.value = name;
   title.value = name;
   LanguageDescription.value = description;
 }
@@ -100,6 +93,10 @@ function onHover(name: string, description: string) {
       left: 35%;
       bottom: -2rem;
     }
+    &.active {
+      animation: 1s jump ease infinite alternate;
+    }
+
     &.figma {
       box-shadow: 10px 10px 15px 0px rgba(255, 255, 255, 0.1) inset,
         0px -5px 25px 0px #ff7262 inset;
@@ -180,6 +177,15 @@ function onHover(name: string, description: string) {
     font-weight: 400;
     line-height: 25px;
     white-space-collapse: preserve-breaks;
+  }
+}
+
+@keyframes jump {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.05;
   }
 }
 </style>

@@ -31,9 +31,7 @@
                 'background-image':
                   'url(' + props.selectedProject.mobileImage + ')',
               }"
-            >
-              <!-- <img :src="props.selectedProject.mobileImage" alt="" /> -->
-            </div>
+            ></div>
           </div>
         </div>
         <div class="text w-3/6">
@@ -52,6 +50,7 @@
         <div
           class="mockup-window border bg-base-300"
           v-for="image in selectedProject.images"
+          @click="openImageModal(image)"
         >
           <div class="mockup-window-toolbar"></div>
           <div class="flex justify-center bg-base-200 relative h-full">
@@ -61,13 +60,30 @@
         </div>
       </div>
     </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
   </dialog>
+
+  <image-modal :selectedImage="selectedImage" />
 </template>
 
 <script setup lang="ts">
+import ImageModal from "@/components/ImageModal.vue";
 const props = defineProps<{
   selectedProject: any;
 }>();
+
+const selectedImage = ref({
+  title: "",
+  image: "",
+});
+
+function openImageModal(image: any) {
+  selectedImage.value.title = image.description;
+  selectedImage.value.image = image.url;
+  imageModal.showModal();
+}
 </script>
 
 <style scoped lang="scss">
@@ -173,6 +189,7 @@ button.btn {
   }
   & .mockup-window {
     height: 20rem;
+    cursor: pointer;
     :hover p {
       opacity: 1;
     }

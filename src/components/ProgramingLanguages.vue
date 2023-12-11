@@ -20,9 +20,7 @@
       <p class="title" v-if="title" v-motion-slide-right :delay="700">
         {{ title }}
       </p>
-      <p class="title" v-else v-motion-slide-visible-right :delay="700">
-        {{ initialTitle }}
-      </p>
+
       <p
         class="LanguageDescription"
         v-if="LanguageDescription"
@@ -30,14 +28,6 @@
         :delay="900"
       >
         {{ LanguageDescription }}
-      </p>
-      <p
-        class="LanguageDescription"
-        v-else
-        v-motion-slide-visible-right
-        :delay="900"
-      >
-        {{ initialLanguageDescription }}
       </p>
     </div>
   </div>
@@ -58,7 +48,6 @@ function onIconClick(name: string, description: string) {
   activeLanguage.value = name;
   title.value = name;
   LanguageDescription.value = description;
-  // Your existing logic for updating title and LanguageDescription
 }
 </script>
 
@@ -203,12 +192,10 @@ function onIconClick(name: string, description: string) {
 
 @keyframes jump {
   0% {
-    transform: scale(1);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    scale: 1;
   }
   50% {
-    transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    scale: 1.05;
   }
 }
 </style>
