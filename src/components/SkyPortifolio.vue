@@ -1,42 +1,55 @@
 <template>
-  <div class="parallax" ref="listEl">
-    <div class="parallax__layer parallax__layer__0">
-      <img src="src/assets/images/parallax/mountBg.webp" />
-    </div>
-    <div class="parallax__layer parallax__layer__1">
-      <img src="src/assets/images/parallax/mountMg.webp" />
-    </div>
-    <div class="parallax__layer parallax__layer__2">
-      <img src="src/assets/images/parallax/cloud2.webp" />
-    </div>
-    <div class="parallax__layer parallax__layer__3">
-      <img src="src/assets/images/parallax/mountFg.webp" />
-    </div>
-    <div class="parallax__layer parallax__layer__4">
-      <img src="src/assets/images/parallax/cloud3.webp" />
-    </div>
-    <div class="parallax__layer parallax__layer__5">
-      <p>Transformando<br />Ideias</p>
-    </div>
-    <div class="parallax__layer parallax__layer__6">
-      <img src="src/assets/images/parallax/cloud1.webp" />
-    </div>
-
-    <div class="parallax__cover">
-      <div
-        class="parallax__cover-text"
-        v-motion-fade-visible
-        :delay="500"
-        style="transform: none"
-      >
-        <p>Em projetos</p>
+  <Simplebar>
+    <div class="parallax" ref="listEl">
+      <div class="parallax__layer parallax__layer__0">
+        <img src="src/assets/images/parallax/mountBg.webp" />
       </div>
-      <slot name="text"> </slot>
+      <div class="parallax__layer parallax__layer__1">
+        <img src="src/assets/images/parallax/mountMg.webp" />
+      </div>
+      <div class="parallax__layer parallax__layer__2">
+        <img src="src/assets/images/parallax/cloud2.webp" />
+      </div>
+      <div class="parallax__layer parallax__layer__3">
+        <img src="src/assets/images/parallax/mountFg.webp" />
+      </div>
+      <div class="parallax__layer parallax__layer__4">
+        <img src="src/assets/images/parallax/cloud3.webp" />
+      </div>
+      <div class="parallax__layer parallax__layer__5">
+        <p>Transformando<br />Ideias</p>
+        <ScrollIcon :target="'projetos'" />
+      </div>
+      <div class="parallax__layer parallax__layer__6">
+        <img src="src/assets/images/parallax/cloud1.webp" />
+      </div>
+
+      <div class="parallax__cover">
+        <div
+          class="parallax__cover-text"
+          v-motion-fade-visible
+          :delay="500"
+          style="transform: none"
+        >
+          <p id="projetos">Em projetos</p>
+        </div>
+        <slot name="text"> </slot>
+      </div>
     </div>
-  </div>
+  </Simplebar>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts">
+import simplebar from "simplebar-vue";
+import "simplebar-vue/dist/simplebar.min.css";
+import ScrollIcon from "@/components/ScrollIcon.vue";
+export default {
+  name: "App",
+  components: {
+    simplebar,
+  },
+};
+</script>
 
 <style scoped lang="scss">
 * {

@@ -20,6 +20,7 @@
           <br />
           &amp; Estrategia
         </h1>
+        <ScrollIcon :target="'section2'" :cornered="false" />
       </div>
     </section>
     <section id="section2" class="fullpage">
@@ -74,14 +75,7 @@
             @click="redirectTo()"
           />
         </div>
-        <!-- <div class="note-image">
-          <img
-            src="src/assets/images/notebook-mockup.webp"
-            alt=""
-            v-motion-slide-visible-bottom
-            :delay="500"
-          />
-        </div> -->
+
         <Video class="note-image" />
       </div>
     </section>
@@ -122,6 +116,7 @@ import { useElementVisibility } from "@vueuse/core";
 import router from "@/router";
 import Lines from "@/components/Lines.vue";
 import Video from "@/components/Video.vue";
+import ScrollIcon from "@/components/ScrollIcon.vue";
 
 const emit = defineEmits(["isRedirecting"]);
 
@@ -503,7 +498,7 @@ onBeforeUnmount(() => {
     z-index: 0;
     left: 0;
     width: 100vw;
-    height: 20vw;
+    height: 30vw;
   }
   & .description {
     margin: auto;

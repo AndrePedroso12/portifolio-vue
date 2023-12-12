@@ -26,28 +26,16 @@
     <div class="form">
       <form @submit.prevent="sendEmail">
         <div class="div1">
-          <input
-            type="text"
-            name="name"
-            v-model="formData.name"
-            placeholder="Seu Nome"
-            required
-          />
+          <input type="text" name="name" placeholder="Seu Nome" required />
         </div>
         <div class="div2">
-          <input
-            type="text"
-            name="email"
-            v-model="formData.email"
-            placeholder="E-mail"
-            required
-          />
+          <input type="text" name="email" placeholder="E-mail" required />
         </div>
         <div class="div3">
           <input
             type="text"
             name="subject"
-            v-model="formData.subject"
+            v-model="subject"
             placeholder="Assunto"
           />
         </div>
@@ -55,7 +43,7 @@
           <textarea
             type="text"
             name="message"
-            v-model="formData.message"
+            v-model="message"
             placeholder="Mensagem"
           />
         </div>
@@ -67,46 +55,25 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
 import Title from "@/components/Title.vue";
 import Button from "@/components/Button.vue";
-</script>
-
-<script>
-import axios from "axios";
 
 export default {
   data() {
     return {
-      formData: {
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      },
+      subject: "",
+      message: "",
     };
   },
   methods: {
     sendEmail() {
-      // Validate form data before sending the email (add your own validation logic)
+      const email = "editorcle@gmail.com";
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+        this.subject
+      )}&body=${encodeURIComponent(this.message)}`;
 
-      // Send data to the server
-      axios
-        .post("/api/send-email", this.formData)
-        .then((response) => {
-          console.log(response.data);
-          // Reset form after successful submission
-          this.formData = {
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-          };
-        })
-        .catch((error) => {
-          console.error("Error sending email:", error);
-          // Handle error (e.g., show an error message to the user)
-        });
+      window.location.href = mailtoLink;
     },
   },
 };

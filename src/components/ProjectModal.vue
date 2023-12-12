@@ -19,6 +19,7 @@
             <small>{{ props.selectedProject.subtitle }}</small>
           </p>
         </div>
+        <ScrollIcon :target="'description'" :cornered="true" />
       </div>
 
       <div class="description">
@@ -34,7 +35,8 @@
             ></div>
           </div>
         </div>
-        <div class="text w-3/6">
+        <div class="divider divider-horizontal"></div>
+        <div class="text w-3/6" id="description">
           <p class="mb-5 whitespace-pre-line">
             {{ props.selectedProject.description }}
           </p>
@@ -45,6 +47,7 @@
           >
         </div>
       </div>
+      <div class="divider">Algumas imagens do projeto</div>
 
       <div class="images">
         <div
@@ -70,6 +73,8 @@
 
 <script setup lang="ts">
 import ImageModal from "@/components/ImageModal.vue";
+import ScrollIcon from "@/components/ScrollIcon.vue";
+
 const props = defineProps<{
   selectedProject: any;
 }>();
@@ -140,14 +145,26 @@ button.btn {
     background-position-y: 0;
     background-size: cover;
     animation: autoScroll-phone-mobile 15s ease-out infinite;
+    @media (max-width: 768px) {
+      width: 240px;
+      height: 440px;
+    }
+  }
+
+  & .mockup-phone {
+    @media (max-width: 768px) {
+      margin: 2rem auto 0;
+    }
   }
   & .text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
+    margin: 0 auto;
     @media (max-width: 768px) {
       font-size: x-small;
+      width: 100%;
     }
   }
   & a {
@@ -173,6 +190,10 @@ button.btn {
   grid-column-gap: 1rem;
   grid-row-gap: 2rem;
   padding: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
   & p {
     position: absolute;
     width: 100%;
@@ -285,28 +306,4 @@ button.btn {
     bottom: auto;
   }
 }
-// @keyframes autoScroll-phone-desktop {
-//   0% {
-//     top: 48px;
-//   }
-//   20% {
-//     top: 48px;
-//   }
-//   25% {
-//     transform: translate(0%, -500px);
-//   }
-//   50% {
-//     transform: translate(0%, -1000px);
-//   }
-//   75% {
-//     transform: translate(0%, -1500px);
-//   }
-//   90% {
-//     transform: none;
-//     bottom: -300px;
-//   }
-//   100% {
-//     top: 48px;
-//   }
-// }
 </style>
