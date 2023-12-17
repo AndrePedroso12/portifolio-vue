@@ -20,12 +20,8 @@
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
     <div class="drawer-content">
       <!-- Page content here -->
-      <label for="my-drawer" class="btn drawer-button"
-        ><svg viewBox="0 0 100 80" width="40" height="40">
-          <rect width="100" height="20"></rect>
-          <rect y="30" width="100" height="20"></rect>
-          <rect y="60" width="100" height="20"></rect>
-        </svg>
+      <label for="my-drawer" class="btn drawer-button">
+        <span class="hamburguer" :class="{ active: drawerStatus }"></span>
       </label>
     </div>
     <div class="drawer-side">
@@ -35,9 +31,24 @@
         class="drawer-overlay"
       ></label>
 
-      <ul class="menu p-4 w-80 min-h-full text-base-content">
-        <div class="darkmode">
-          <font-awesome-icon icon="fa-solid fa-lightbulb" @click="darkMode()" />
+      <ul
+        class="menu p-4 min-h-full text-base-content"
+        :class="{ active: !menuWidth }"
+        @click="toggleMobileMenuWidth()"
+      >
+        <img
+          class="logo"
+          src="src/assets/images/logo_lines.svg"
+          style="filter: brightness(0)"
+        />
+        <div
+          class="darkmode"
+          :class="{ active: !menuWidth }"
+          @click="darkMode()"
+        >
+          <font-awesome-icon icon="fa-solid fa-lightbulb" />
+          <p v-if="darkModeState" :class="{ hidden: menuWidth }">Dark Mode</p>
+          <p v-else :class="{ hidden: menuWidth }">Light Mode</p>
         </div>
         <!-- Sidebar content here -->
         <li
@@ -46,8 +57,8 @@
           :class="{ active: isCurrentPage(menuItem.name) }"
           @click="redirectTo(menuItem.name)"
         >
-          <p :v-show="isCurrentPage(menuItem.name)">{{ menuItem.name }}</p>
           <font-awesome-icon :icon="['fa-solid', menuItem.icon]" />
+          <p :class="{ hidden: menuWidth }">{{ menuItem.name }}</p>
         </li>
       </ul>
     </div>
@@ -65,6 +76,10 @@ const route = useRoute();
 const colorsComposable = useColor();
 const currentPage = computed(() => route.name?.toString());
 const isMobile = computed(() => mobileView());
+const menuWidth = ref(false);
+const drawerStatus = computed(() => getStatus());
+
+const darkModeState = ref(colorsComposable.darkModeState);
 
 const emit = defineEmits(["isRedirecting"]);
 
@@ -73,6 +88,7 @@ const isCurrentPage = (itemName: string) => {
 };
 
 function redirectTo(page: string) {
+  uncheckDrawerLabel();
   emit("isRedirecting");
   router.push({
     path: "/" + page.toLocaleLowerCase(),
@@ -82,6 +98,23 @@ function redirectTo(page: string) {
 
 function darkMode() {
   colorsComposable.toggleDarkMode();
+  uncheckDrawerLabel();
+}
+
+function toggleMobileMenuWidth(close?: boolean) {
+  if (close) menuWidth.value = false;
+  else menuWidth.value = !menuWidth.value;
+}
+
+function uncheckDrawerLabel() {
+  toggleMobileMenuWidth(true);
+  const input = document.querySelector("#my-drawer");
+  input.checked = false;
+}
+
+function getStatus() {
+  const input = document.querySelector("#my-drawer");
+  if (input) return input.checked;
 }
 </script>
 
@@ -173,6 +206,22 @@ header {
   align-items: center;
   justify-content: center;
   z-index: 99;
+
+  @media (max-width: 768px) {
+    top: auto;
+    bottom: 2rem;
+    right: auto;
+    left: 2rem;
+    &.active {
+      width: 72%;
+      height: 59px;
+      border-radius: 12px;
+      padding: 1rem 2rem 1rem 0;
+      text-align: left;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
   & svg {
     color: var(--background);
     display: flex;
@@ -208,7 +257,52 @@ header {
   & svg {
     fill: var(--black);
   }
+  .hamburguer {
+    display: block;
+    width: 40px;
+    height: 5px;
+    border-radius: 2px;
+    background: #333;
+    position: relative;
+    // left: 80%;
+    // top: 30px;
+    transition: 0.5s ease-in-out;
+    display: flex;
+
+    &:before {
+      top: -10px;
+    }
+
+    &:after {
+      bottom: -10px;
+    }
+
+    &:after,
+    &:before {
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: #333;
+      position: absolute;
+      transition: 0.5s ease-in-out;
+    }
+
+    &.active {
+      transform: rotate(45deg) ease-in-out 0.5s;
+    }
+  }
+
+  input:checked ~ [for="my-drawer"] .hamburguer:before {
+    transform: rotate(90deg) ease-in-out 0.5s;
+    top: 0;
+  }
+
+  input:checked ~ [for="my-drawer"] .hamburguer:after {
+    transform: rotate(90deg) ease-in-out 0.5s;
+    bottom: 0;
+  }
 }
+
 .text-base-content {
   background: var(--primary);
   & .icon-box {
@@ -217,6 +311,28 @@ header {
     justify-content: flex-start;
     color: var(--white);
     font-size: x-large;
+    width: fit-content;
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 70vh;
+  padding-bottom: 13rem;
+  width: 26vw;
+  transition: 0.6s;
+  &.active {
+    width: 58vw;
+    align-items: flex-start;
+  }
+
+  li.icon-box.active {
+    color: var(--black);
+    background-color: var(--white);
+    border-radius: 9px;
+    padding: 0.5rem 0;
   }
 }
 </style>

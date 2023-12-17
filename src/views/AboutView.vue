@@ -260,6 +260,9 @@ onBeforeUnmount(() => {
 .fullpage {
   height: 100vh;
   width: 100%;
+  @media (max-width: 768px) {
+    height: 99vh;
+  }
 }
 #section1 {
   & .hero-title {
@@ -300,9 +303,11 @@ onBeforeUnmount(() => {
   border-bottom-left-radius: 15vw;
   z-index: 3;
   background-color: var(--white);
+
   & .main-row {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+
     @media (max-width: 768px) {
       display: flex;
       flex-direction: column;

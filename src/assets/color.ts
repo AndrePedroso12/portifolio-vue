@@ -47,6 +47,12 @@ export const useColor = () => {
     setDarkMode(value);
     setColors();
   }
+  const darkModeState = computed(() => getDarkMode());
 
-  return { init, getByName, toggleDarkMode };
+  function getDarkMode() {
+    const value = store.getDarkMode;
+    return value;
+  }
+
+  return { init, getByName, toggleDarkMode, darkModeState };
 };

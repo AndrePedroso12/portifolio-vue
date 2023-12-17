@@ -90,9 +90,10 @@ const props = defineProps<{
   letter-spacing: 2px;
   margin-top: 10%;
   text-decoration: none;
-  overflow: hidden;
+  // overflow: hidden;
   position: absolute;
   right: 50%;
+
   @media (max-width: 768px) {
     right: 43%;
   }
@@ -109,6 +110,16 @@ const props = defineProps<{
     box-sizing: border-box;
     border: 3px solid #fff;
     border-radius: 23px;
+    transition: 0.6s;
+    &:hover {
+      background: white;
+      border: 3px solid #000;
+      outline: 1px solid #fff;
+      outline-offset: 3px;
+      .mouse-movement {
+        background: #000;
+      }
+    }
 
     // Scroll Indicator
     .mouse-movement {
@@ -152,6 +163,15 @@ const props = defineProps<{
     right: 41%;
     bottom: auto;
     top: 10%;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>
