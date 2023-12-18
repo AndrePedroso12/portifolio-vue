@@ -117,6 +117,7 @@ import router from "@/router";
 import Lines from "@/components/Lines.vue";
 import Video from "@/components/Video.vue";
 import ScrollIcon from "@/components/ScrollIcon.vue";
+import { isMobile } from "@/static/js/Screen";
 
 const emit = defineEmits(["isRedirecting"]);
 
@@ -214,6 +215,10 @@ const scrollToSection = (id: number, force = false) => {
 const touchStart = (e: Event) => {
   e.preventDefault();
   touchStartY.value = e.touches[0].clientY;
+
+  if (e.target.className === "about") {
+    inMove.value = true;
+  }
 };
 
 // Handles the 'touchmove' event on mobile devices
@@ -235,13 +240,13 @@ const touchMove = (e: Event) => {
 
 // mounted() hook executes after page load and calls the section offset calculation and registers all events
 onMounted(() => {
-  calculateSectionOffsets();
+  if (!isMobile()) {
+    calculateSectionOffsets();
 
-  window.addEventListener("DOMMouseScroll", handleMouseWheelDOM); // Mozilla Firefox
-  window.addEventListener("mousewheel", handleMouseWheel, { passive: false }); // Other browsers
-
-  window.addEventListener("touchstart", touchStart, { passive: false }); // mobile devices
-  window.addEventListener("touchmove", touchMove, { passive: false }); // mobile devices
+    window.addEventListener("DOMMouseScroll", handleMouseWheelDOM); // Mozilla Firefox
+    window.addEventListener("mousewheel", handleMouseWheel, { passive: false });
+  }
+  // Other browsers
 });
 
 // destroyed() hook executes on page destroy and removes all registered event listeners
@@ -250,9 +255,6 @@ onBeforeUnmount(() => {
   window.removeEventListener("mousewheel", handleMouseWheel, {
     passive: false,
   }); // Other browsers
-
-  window.removeEventListener("touchstart", touchStart); // mobile devices
-  window.removeEventListener("touchmove", touchMove); // mobile devices
 });
 </script>
 
@@ -262,6 +264,7 @@ onBeforeUnmount(() => {
   width: 100%;
   @media (max-width: 768px) {
     height: 99vh;
+    scroll-snap-align: start;
   }
 }
 #section1 {
@@ -408,6 +411,9 @@ onBeforeUnmount(() => {
     left: 0;
     width: 100vw;
     height: 35vw;
+    @media (max-width: 768px) {
+      top: -11vh;
+    }
   }
   & div {
     margin: auto;
@@ -470,6 +476,9 @@ onBeforeUnmount(() => {
     right: 0;
     width: 100vw;
     height: 22vw;
+    @media (max-width: 768px) {
+      top: -9vh;
+    }
   }
   & .description {
     margin: auto;
@@ -478,6 +487,9 @@ onBeforeUnmount(() => {
     justify-content: center;
     flex-wrap: nowrap;
     height: 100%;
+    @media (max-width: 768px) {
+      justify-content: space-evenly;
+    }
     & p {
       @apply uppercase;
       font-size: 51px;
@@ -486,6 +498,11 @@ onBeforeUnmount(() => {
       margin: 3rem 0 0px;
       text-align: center;
       color: var(--white);
+      @media (max-width: 768px) {
+        font-size: 31px;
+        line-height: 1;
+        margin: 0 auto;
+      }
     }
   }
 }
@@ -504,6 +521,9 @@ onBeforeUnmount(() => {
     left: 0;
     width: 100vw;
     height: 30vw;
+    @media (max-width: 768px) {
+      top: -11vh;
+    }
   }
   & .description {
     margin: auto;
@@ -512,6 +532,10 @@ onBeforeUnmount(() => {
     justify-content: center;
     flex-wrap: nowrap;
     height: 100%;
+    @media (max-width: 768px) {
+      justify-content: space-evenly;
+    }
+
     & p {
       @apply uppercase;
       font-size: 51px;
@@ -520,6 +544,11 @@ onBeforeUnmount(() => {
       margin: 0 auto;
       text-align: center;
       color: var(--white);
+      @media (max-width: 768px) {
+        font-size: 31px;
+        line-height: 1;
+        margin: 0 auto;
+      }
     }
   }
 }

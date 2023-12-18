@@ -2,7 +2,12 @@
   <div
     id="main"
     class="w-[100vw] h-[100vh]"
-    :style="{ overflowY: currentRoute === 'Contato' ? 'scroll' : 'hidden' }"
+    :style="{
+      overflowY:
+        currentRoute === 'Contato' || (currentRoute === 'Sobre' && isMobile())
+          ? 'scroll'
+          : 'hidden',
+    }"
   >
     <Menu @is-redirecting="handleTransition()" />
     <Transition name="slide">
@@ -18,6 +23,7 @@
 import Menu from "@/components/Menu.vue";
 import { useColor } from "./assets/color";
 import { useRoute } from "vue-router";
+import { isMobile } from "./static/js/Screen";
 
 const colorsComposable = useColor();
 const isTransitioning = ref(false);
