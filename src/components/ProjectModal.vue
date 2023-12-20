@@ -96,6 +96,7 @@ function openImageModal(image: any) {
   padding: 0;
   max-width: none;
   max-height: none;
+  background-color: var(--modalBG);
 }
 button.btn {
   z-index: 9999;

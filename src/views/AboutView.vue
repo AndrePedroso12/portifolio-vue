@@ -60,7 +60,7 @@
       </div>
     </section>
     <section id="section3" class="fullpage">
-      <div class="grid grid-cols-2">
+      <div class="division">
         <div
           class="description"
           ref="target"
@@ -80,7 +80,7 @@
       </div>
     </section>
     <section id="section4" class="fullpage">
-      <Lines :color="'#00000014'" />
+      <Lines :color="'var(--linesBlack)'" />
       <div class="description">
         <p v-motion-slide-visible-left>Conhecimentos em programação</p>
         <ProgramingLanguages />
@@ -278,7 +278,7 @@ onBeforeUnmount(() => {
   }
   & .blend {
     mix-blend-mode: difference !important;
-    color: var(--black);
+    color: white;
     position: relative;
     z-index: 2;
   }
@@ -344,7 +344,7 @@ onBeforeUnmount(() => {
       background: rgba(255, 255, 255, 0.01);
       padding: 3rem;
       font-size: 15px;
-      color: white;
+      color: var(--black);
       box-shadow: 0 0 0 1px transparent, 0 2px 4px transparent,
         0 12px 24px transparent;
       @media (max-width: 768px) {
@@ -418,9 +418,18 @@ onBeforeUnmount(() => {
   & div {
     margin: auto;
     margin-top: 10%;
+    @media (max-width: 768px) {
+      margin-top: 0;
+    }
   }
-  & .grid {
+  & .division {
     padding-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+    }
   }
   & .description {
     margin: auto;
@@ -437,6 +446,9 @@ onBeforeUnmount(() => {
 
     & button {
       margin-top: 3rem;
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
   }
   & .note-image {
@@ -447,6 +459,15 @@ onBeforeUnmount(() => {
     top: 0;
     margin: 0 auto auto -40%;
     z-index: -1;
+    @media (max-width: 768px) {
+      right: 0;
+      margin: -7px auto auto -29%;
+    }
+    & video {
+      @media (max-width: 768px) {
+        height: 48vh;
+      }
+    }
   }
 }
 

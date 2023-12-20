@@ -33,7 +33,7 @@ const props = defineProps<{
   align-items: center;
   position: sticky;
   top: 0;
-  background: #14181d;
+  background-color: var(--modalBG);
   &:before {
     content: "";
     display: block;

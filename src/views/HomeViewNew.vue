@@ -3,10 +3,6 @@
   <div class="flex justify-end">
     <div class="overlay"></div>
     <div class="home-description">
-      <!-- <h1 v-motion-slide-left :delay="1900">
-        André Pedroso <span>Dev Front-end</span>
-      </h1> -->
-
       <p class="open-sans-font" v-motion-slide-right :delay="2100">
         Meu nome é André Luiz Pedroso, sou Desenvolvedor Front-End com mais de 8
         anos de experiência, concentrando-me principalmente no desenvolvimento
@@ -156,7 +152,7 @@ import Button from "@/components/Button.vue";
     }
   }
   & p {
-    color: var(--black);
+    color: var(--gray97);
     font-size: 12px;
     line-height: 22px;
 

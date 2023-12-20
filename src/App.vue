@@ -1,13 +1,20 @@
 <template>
+  <Intro />
   <div
     id="main"
     class="w-[100vw] h-[100vh]"
-    :style="{
-      overflowY:
-        currentRoute === 'Contato' || (currentRoute === 'Sobre' && isMobile())
-          ? 'scroll'
-          : 'hidden',
-    }"
+    :style="[
+      {
+        overflowY:
+          currentRoute === 'Contato' || (currentRoute === 'Sobre' && isMobile())
+            ? 'scroll'
+            : 'hidden',
+      },
+      {
+        scrollSnapType:
+          currentRoute === 'Sobre' && isMobile() ? 'y mandatory' : '',
+      },
+    ]"
   >
     <Menu @is-redirecting="handleTransition()" />
     <Transition name="slide">
@@ -21,6 +28,7 @@
 
 <script setup lang="ts">
 import Menu from "@/components/Menu.vue";
+import Intro from "@/components/Intro.vue";
 import { useColor } from "./assets/color";
 import { useRoute } from "vue-router";
 import { isMobile } from "./static/js/Screen";
@@ -51,7 +59,7 @@ onBeforeMount(() => {
 .transition-block {
   position: absolute;
   height: 200%;
-  width: 100%;
+  width: 100vw;
   transform: translateX(-120%) rotate(-15deg);
   top: -50%;
   background-color: var(--primary);

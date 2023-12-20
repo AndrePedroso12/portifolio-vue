@@ -71,11 +71,17 @@ onBeforeUnmount(() => {
 .number-board {
   @apply grid grid-cols-2 gap-4 rounded-3xl p-7;
   border: 4px solid var(--white);
+  @media (max-width: 768px) {
+    border: none;
+  }
   & .number-item {
     @apply flex rounded-3xl p-5;
     color: var(--white);
     flex-direction: column;
     border: 4px solid var(--white);
+    @media (max-width: 768px) {
+      padding: 1rem 0.3rem;
+    }
   }
   & .number-item:last-of-type .number::after {
     content: "mil+";
@@ -85,6 +91,9 @@ onBeforeUnmount(() => {
     font-weight: 900;
     font-size: 60px;
     text-align: center;
+    @media (max-width: 768px) {
+      font-size: 31px;
+    }
     &:after {
       content: "+";
       font-weight: 400;
@@ -96,6 +105,9 @@ onBeforeUnmount(() => {
     text-transform: uppercase;
     text-align: center;
     font-size: 20px;
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
   }
 }
 </style>

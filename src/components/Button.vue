@@ -22,8 +22,8 @@ button {
   border: 0;
   position: relative;
   border-radius: 12px;
-  color: #fff;
-  background: #000;
+  color: var(--black);
+  background: var(--white);
   padding: 0 16px;
   box-shadow: 0 0 0 1px 0 0 0 1px rgba(255, 255, 255, 0.14);
   max-width: 100%;
@@ -63,7 +63,7 @@ button {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #000;
+  background: var(--white);
   border-radius: 12px;
   display: flex;
   justify-content: center;

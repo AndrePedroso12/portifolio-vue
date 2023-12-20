@@ -73,6 +73,7 @@ function onIconClick(name: string, description: string) {
   justify-items: center;
   @media (max-width: 768px) {
     width: 100%;
+    padding-bottom: 3rem;
   }
 
   & .icon_item {

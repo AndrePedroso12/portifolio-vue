@@ -56,7 +56,7 @@ const props = defineProps<{
   display: inline-block;
   height: 100%;
   width: 1px;
-  background-color: rgba(196, 196, 196, 0.1);
+  background-color: var(--lines);
 }
 
 @media (max-width: 768px) {
