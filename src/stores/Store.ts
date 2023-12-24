@@ -5,7 +5,7 @@ export const useStore = defineStore("store", {
   state: () => ({
     // Your initial state here
     settings: {
-      darkMode: false, // Example state property
+      darkMode: true, // Example state property
     },
   }),
 
