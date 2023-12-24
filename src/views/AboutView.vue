@@ -70,7 +70,7 @@
           <p>Experiência</p>
           <NumbersAbout v-if="targetIsVisible" />
           <Button
-            title="Enviar Email"
+            title="Enviar mensagem"
             icon="fa-paper-plane"
             @click="redirectTo()"
           />

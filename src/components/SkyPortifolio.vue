@@ -69,6 +69,9 @@ export default {
   @media (max-width: 768px) {
     height: 100vh;
   }
+  @media (min-height: 819px) and (min-width: 768px) {
+    height: 155vh;
+  }
   &__layer {
     position: absolute;
     top: 0;
@@ -108,6 +111,10 @@ export default {
     height: fit-content;
     z-index: 2;
     box-shadow: 0px -20px 20px 20px #fff;
+    @media (min-height: 819px) and (min-width: 768px) {
+      padding-bottom: 32rem;
+    }
+
     & p {
       top: 0;
       background-attachment: fixed;

@@ -26,19 +26,24 @@
     <div class="form">
       <form @submit.prevent="sendEmail">
         <div class="div1">
-          <input type="text" name="name" placeholder="Seu Nome" required />
-        </div>
-        <div class="div2">
-          <input type="text" name="email" placeholder="E-mail" required />
-        </div>
-        <div class="div3">
           <input
             type="text"
-            name="subject"
-            v-model="subject"
-            placeholder="Assunto"
+            name="name"
+            v-model="name"
+            placeholder="Seu Nome"
+            required
           />
         </div>
+        <div class="div2">
+          <input
+            type="text"
+            name="company"
+            v-model="company"
+            placeholder="Empresa"
+            required
+          />
+        </div>
+
         <div class="div4">
           <textarea
             type="text"
@@ -48,7 +53,7 @@
           />
         </div>
         <div class="div5">
-          <Button title="Enviar Email" icon="fa-paper-plane" type="submit" />
+          <Button title="Enviar mensagem" icon="fa-paper-plane" type="submit" />
         </div>
       </form>
     </div>
@@ -62,16 +67,21 @@ import Button from "@/components/Button.vue";
 export default {
   data() {
     return {
-      subject: "",
+      company: "",
       message: "",
+      name: "",
     };
   },
+
   methods: {
     sendEmail() {
-      const email = "editorcle@gmail.com";
-      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
-        this.subject
-      )}&body=${encodeURIComponent(this.message)}`;
+      const message = `Olá, meu nome é: ${encodeURIComponent(
+        this.name
+      )}, \n Empresa: ${encodeURIComponent(
+        this.company
+      )},  \n ${encodeURIComponent(this.message)}`;
+
+      const mailtoLink = `https://api.whatsapp.com/send/?phone=5519998161087&text=${message}&type=phone_number&app_absent=0`;
 
       window.location.href = mailtoLink;
     },
@@ -170,11 +180,9 @@ export default {
     & .div2 {
       grid-area: 1 / 2 / 2 / 3;
     }
-    & .div3 {
-      grid-area: 2 / 1 / 3 / 3;
-    }
+
     & .div4 {
-      grid-area: 3 / 1 / 5 / 3;
+      grid-area: 2 / 1 / 5 / 3;
     }
     & .div5 {
       grid-area: 5 / 2 / 6 / 3;
@@ -208,6 +216,7 @@ export default {
 
   & button {
     margin-top: 2rem;
+    float: right;
     @media (max-width: 768px) {
       margin: 0 0 3rem 0;
       right: 0;
