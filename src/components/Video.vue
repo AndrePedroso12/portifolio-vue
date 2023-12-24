@@ -10,8 +10,7 @@
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
 
-// Replace 'your_video.webm' with the actual path to your video file
-const videoSource = ref("src/assets/videos/Comp 1.webm");
+const videoSource = ref("/src/assets/videos/Comp 1.webm");
 
 const videoRef = ref(null);
 

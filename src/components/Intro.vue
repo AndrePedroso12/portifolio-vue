@@ -13,7 +13,7 @@
   z-index: 9;
   background-color: var(--primary);
   opacity: 1;
-  background-image: url(src/assets/images/bg-intro.png);
+  background-image: url(/src/assets/images/bg-intro.png);
   animation-delay: 1s;
   &_shadow-black {
     z-index: 8;
