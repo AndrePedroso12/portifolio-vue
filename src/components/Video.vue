@@ -10,7 +10,7 @@
 <script lang="ts" setup>
 import { ref, watchEffect } from "vue";
 
-const videoSource = ref("/public/videos/phone-video.webm");
+const videoSource = ref("/videos/phone-video.webm");
 
 const videoRef = ref(null);
 
