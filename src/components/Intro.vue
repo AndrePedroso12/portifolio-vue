@@ -1,6 +1,6 @@
 <template>
   <div class="splash-screen">
-    <img class="logo" src="src/assets/images/logo_full.svg" />
+    <img class="logo" src="/src/assets/images/logo_full.svg" />
   </div>
   <div class="splash-screen_shadow-black"></div>
   <div class="splash-screen_shadow-white"></div>

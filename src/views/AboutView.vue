@@ -29,7 +29,7 @@
       <div class="main-row">
         <div class="dev-image">
           <img
-            src="src/assets/images/sobre-mim.png"
+            src="/src/assets/images/sobre-mim.png"
             alt=""
             v-motion-slide-visible-once-bottom
             :delay="700"

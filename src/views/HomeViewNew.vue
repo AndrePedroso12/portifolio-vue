@@ -25,8 +25,8 @@
       <div id="text-front">Dev<br />Front-End</div>
     </div>
 
-    <img class="logo" src="src/assets/images/logo_lines.svg" />
-    <img class="picture" src="src/assets/images/dev_alone.png" />
+    <img class="logo" src="/src/assets/images/logo_lines.svg" />
+    <img class="picture" src="/src/assets/images/dev_alone.png" />
     <div class="halo"></div>
   </div>
 </template>

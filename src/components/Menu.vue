@@ -38,7 +38,7 @@
       >
         <img
           class="logo"
-          src="src/assets/images/logo_full.svg"
+          src="/src/assets/images/logo_full.svg"
           style="filter: brightness(0)"
         />
         <div

@@ -1,26 +1,26 @@
 <template>
   <div class="parallax" ref="listEl">
     <div class="parallax__layer parallax__layer__0">
-      <img src="src/assets/images/parallax/mountBg.webp" />
+      <img src="/src/assets/images/parallax/mountBg.webp" />
     </div>
     <div class="parallax__layer parallax__layer__1">
-      <img src="src/assets/images/parallax/mountMg.webp" />
+      <img src="/src/assets/images/parallax/mountMg.webp" />
     </div>
     <div class="parallax__layer parallax__layer__2">
-      <img src="src/assets/images/parallax/cloud2.webp" />
+      <img src="/src/assets/images/parallax/cloud2.webp" />
     </div>
     <div class="parallax__layer parallax__layer__3">
-      <img src="src/assets/images/parallax/mountFg.webp" />
+      <img src="/src/assets/images/parallax/mountFg.webp" />
     </div>
     <div class="parallax__layer parallax__layer__4">
-      <img src="src/assets/images/parallax/cloud3.webp" />
+      <img src="/src/assets/images/parallax/cloud3.webp" />
     </div>
     <div class="parallax__layer parallax__layer__5">
       <p>Transformando<br />Ideias</p>
       <ScrollIcon :target="'projetos'" />
     </div>
     <div class="parallax__layer parallax__layer__6">
-      <img src="src/assets/images/parallax/cloud1.webp" />
+      <img src="/src/assets/images/parallax/cloud1.webp" />
     </div>
 
     <div class="parallax__cover">
