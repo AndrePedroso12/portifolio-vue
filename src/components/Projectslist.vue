@@ -70,6 +70,8 @@ function openProject(project: any) {
     flex-direction: column;
     justify-content: space-evenly;
     flex-wrap: nowrap;
+    padding: 0.7rem 3vw;
+    grid-gap: 20px;
   }
 }
 

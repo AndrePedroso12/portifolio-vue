@@ -47,6 +47,7 @@ const props = defineProps<{
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 1.75rem;
+    color: var(--black);
     @media (max-width: 768px) {
       font-size: small;
       width: 44%;
@@ -70,6 +71,7 @@ const props = defineProps<{
 
 .btn-circle {
   background: var(--black);
+  color: var(--white);
   border: none;
 }
 </style>

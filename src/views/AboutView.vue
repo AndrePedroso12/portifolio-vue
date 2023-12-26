@@ -88,7 +88,7 @@
     </section>
     <section id="section5" class="fullpage">
       <div class="description">
-        <p v-motion-slide-visible-left>Conhecimentos em Web Desing</p>
+        <p v-motion-slide-visible-left>Conhecimentos em web design</p>
         <WebDesing />
       </div>
     </section>
@@ -264,7 +264,7 @@ onBeforeUnmount(() => {
   width: 100%;
   @media (max-width: 768px) {
     height: 99vh;
-    scroll-snap-align: start;
+    scroll-snap-align: start none;
   }
 }
 #section1 {

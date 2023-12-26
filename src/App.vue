@@ -57,7 +57,7 @@ onBeforeMount(() => {
 }
 
 .transition-block {
-  position: absolute;
+  position: fixed;
   height: 200%;
   width: 100vw;
   transform: translateX(-120%) rotate(-15deg);

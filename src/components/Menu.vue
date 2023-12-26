@@ -221,6 +221,9 @@ header {
       display: flex;
       justify-content: space-between;
     }
+    & p {
+      color: var(--white);
+    }
   }
   & svg {
     color: var(--background);

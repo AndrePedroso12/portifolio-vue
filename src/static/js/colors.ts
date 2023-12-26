@@ -7,6 +7,7 @@ export const colors = {
     lines: "rgba(0, 0, 0, 0.1)",
     linesBlack: "rgba(196, 196, 196, 0.1)",
     modalBG: "#fff",
+    modalBG2: "#1d232a",
     gray79: "#e9e9e9",
     gray97: "#ababab",
   },

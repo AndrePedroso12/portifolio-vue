@@ -101,6 +101,8 @@ function openImageModal(image: any) {
 button.btn {
   z-index: 9999;
   border: 1px solid white;
+  background: var(--black);
+  color: var(--white);
 }
 
 .title {
@@ -163,6 +165,7 @@ button.btn {
     align-items: flex-start;
     justify-content: space-evenly;
     margin: 0 auto;
+    color: var(--black);
     @media (max-width: 768px) {
       font-size: x-small;
       width: 100%;
@@ -218,9 +221,10 @@ button.btn {
     &:before {
       z-index: 4;
       position: absolute;
+      color: #a6adba;
     }
     &-toolbar {
-      background: #1d232a;
+      background: var(--modalBG2);
       position: absolute;
       z-index: 1;
       width: 100%;
