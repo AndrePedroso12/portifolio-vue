@@ -42,6 +42,7 @@ const props = defineProps<{
     border-radius: 9999px;
     opacity: 0.3;
     box-shadow: 1.4em 0, 2.8em 0, 4.2em 0;
+    color: #a6adba;
   }
   & .title {
     font-weight: 700;
