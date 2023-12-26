@@ -11,14 +11,17 @@
         <font-awesome-icon icon="fa-solid fa-envelope" />
         <div>
           <p>E-mail</p>
-          <a href="">editorcle@gmail.com</a>
+          <a href="mailto:editorcle@gmail.com">editorcle@gmail.com</a>
         </div>
       </div>
       <div class="contact-button">
         <font-awesome-icon icon="fa-brands fa-whatsapp" />
         <div>
           <p>Whatsapp</p>
-          <a href="">+55 19 99816-1087</a>
+          <a
+            href="https://api.whatsapp.com/send/?phone=5519998161087&type=phone_number&app_absent=0"
+            >+55 19 99816-1087</a
+          >
         </div>
       </div>
     </div>
@@ -194,6 +197,7 @@ export default {
     .div5 {
       @media (max-width: 768px) {
         width: 100%;
+        padding: 0;
       }
     }
 
@@ -220,6 +224,7 @@ export default {
     @media (max-width: 768px) {
       margin: 0 0 3rem 0;
       right: 0;
+      float: left;
     }
     & deep:svg {
       width: 1.5rem;

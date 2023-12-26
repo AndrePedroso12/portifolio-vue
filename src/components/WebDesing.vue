@@ -64,6 +64,7 @@ function onIconClick(name: string, description: string) {
     display: flex;
     flex-direction: column-reverse;
     padding: 0 2rem;
+    margin-top: -4rem;
   }
 }
 .icon_box {
@@ -73,7 +74,6 @@ function onIconClick(name: string, description: string) {
   justify-items: center;
   @media (max-width: 768px) {
     width: 100%;
-    padding-bottom: 3rem;
   }
 
   & .icon_item {
@@ -90,12 +90,16 @@ function onIconClick(name: string, description: string) {
     transition: 0.5s;
     @media (max-width: 768px) {
       width: 5rem;
-      height: 5rem;
+      height: 5.5rem;
       font-size: small;
       border-radius: 14px;
     }
     &:hover {
       transform: rotate(-11deg) translate(-11px, -48px) scale(1.1, 1.1);
+      animation: none;
+      @media (max-width: 768px) {
+        transform: translateY(-22px) scale(1.3, 1.3);
+      }
     }
     &:before {
       content: "";
@@ -180,13 +184,14 @@ function onIconClick(name: string, description: string) {
     & span:last-of-type {
       margin-bottom: 0.5rem;
       @media (max-width: 768px) {
-        font-size: x-small;
+        font-size: xx-small;
+        padding-top: 0.8rem;
       }
     }
     &:last-of-type .icon svg {
       width: 6rem;
       @media (max-width: 768px) {
-        width: 2rem;
+        width: 2.5rem;
       }
     }
   }

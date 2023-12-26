@@ -215,6 +215,7 @@ button.btn {
   & .mockup-window {
     height: 20rem;
     cursor: pointer;
+    border-color: var(--black);
     :hover p {
       opacity: 1;
     }
@@ -246,6 +247,10 @@ button.btn {
   animation: appear 1.5s ease !important;
   position: absolute;
   height: 100%;
+}
+
+.divider {
+  color: var(--black);
 }
 
 @keyframes appear {

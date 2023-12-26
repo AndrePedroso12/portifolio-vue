@@ -91,13 +91,16 @@ function onIconClick(name: string, description: string) {
     @media (max-width: 768px) {
       width: 5rem;
       height: 5rem;
-      font-size: small;
+      font-size: xx-small;
       border-radius: 14px;
     }
 
     &:hover {
       transform: rotate(-11deg) translate(-11px, -48px) scale(1.1, 1.1);
       animation: none;
+      @media (max-width: 768px) {
+        transform: translateY(-22px) scale(1.3, 1.3);
+      }
     }
     &:before {
       content: "";
@@ -189,6 +192,9 @@ function onIconClick(name: string, description: string) {
     }
     & span:last-of-type {
       margin-bottom: 0.5rem;
+      @media (max-width: 768px) {
+        padding-top: 0.5rem;
+      }
     }
   }
 }

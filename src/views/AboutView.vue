@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <section id="section1" class="hero fullpage">
+      <div class="snap-margin"></div>
       <div class="video-wrap">
         <video autoplay playsinline loop muted id="video-bg">
           <source
@@ -25,7 +26,7 @@
     </section>
     <section id="section2" class="fullpage">
       <Lines />
-
+      <div class="snap-margin"></div>
       <div class="main-row">
         <div class="dev-image">
           <img
@@ -60,6 +61,7 @@
       </div>
     </section>
     <section id="section3" class="fullpage">
+      <div class="snap-margin"></div>
       <div class="division">
         <div
           class="description"
@@ -81,12 +83,14 @@
     </section>
     <section id="section4" class="fullpage">
       <Lines :color="'var(--linesBlack)'" />
+      <div class="snap-margin"></div>
       <div class="description">
         <p v-motion-slide-visible-left>Conhecimentos em programação</p>
         <ProgramingLanguages />
       </div>
     </section>
     <section id="section5" class="fullpage">
+      <div class="snap-margin"></div>
       <div class="description">
         <p v-motion-slide-visible-left>Conhecimentos em web design</p>
         <WebDesing />
@@ -263,8 +267,13 @@ onBeforeUnmount(() => {
   height: 100vh;
   width: 100%;
   @media (max-width: 768px) {
-    height: 99vh;
-    scroll-snap-align: start none;
+    height: 110dvh;
+    scroll-snap-align: end;
+  }
+  &.hero {
+    @media (max-width: 768px) {
+      height: 100vh;
+    }
   }
 }
 #section1 {
@@ -533,6 +542,7 @@ onBeforeUnmount(() => {
   position: relative;
   border-bottom-right-radius: 15vw;
   z-index: 0;
+
   &:before {
     content: "";
     background-color: var(--primary);
@@ -542,6 +552,7 @@ onBeforeUnmount(() => {
     left: 0;
     width: 100vw;
     height: 30vw;
+
     @media (max-width: 768px) {
       top: -11vh;
     }
@@ -555,6 +566,7 @@ onBeforeUnmount(() => {
     height: 100%;
     @media (max-width: 768px) {
       justify-content: space-evenly;
+      margin-top: -2rem;
     }
 
     & p {
