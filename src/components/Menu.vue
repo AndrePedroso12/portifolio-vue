@@ -47,8 +47,8 @@
           @click="darkMode()"
         >
           <font-awesome-icon icon="fa-solid fa-lightbulb" />
-          <p v-if="darkModeState" :class="{ hidden: menuWidth }">Dark Mode</p>
-          <p v-else :class="{ hidden: menuWidth }">Light Mode</p>
+          <p v-if="darkModeState" :class="{ hidden: menuWidth }">Light Mode</p>
+          <p v-else :class="{ hidden: menuWidth }">Dark Mode</p>
         </div>
         <!-- Sidebar content here -->
         <li
