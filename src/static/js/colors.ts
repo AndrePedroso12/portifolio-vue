@@ -3,6 +3,7 @@ export const colors = {
     background: "#000",
     black: "#ffff",
     white: "#111111",
+    primary: "#52fdd1",
     lines: "rgba(196, 196, 196, 0.1)",
     linesBlack: "rgba(0, 0, 0, 0.1)",
     modalBG: "#1d232a",
