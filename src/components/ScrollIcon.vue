@@ -14,7 +14,7 @@
 <script setup lang="ts">
 const props = defineProps<{
   target: string;
-  cornered: boolean;
+  cornered?: boolean;
 }>();
 </script>
 

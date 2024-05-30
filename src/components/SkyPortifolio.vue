@@ -1,5 +1,5 @@
 <template>
-  <div class="parallax" ref="listEl">
+  <div class="parallax" ref="listEl" :class="{ topUnset: isEntering }">
     <div class="parallax__layer parallax__layer__0">
       <img src="/src/assets/images/parallax/mountBg.webp" />
     </div>
@@ -17,7 +17,7 @@
     </div>
     <div class="parallax__layer parallax__layer__5">
       <p>Transformando<br />Ideias</p>
-      <ScrollIcon :target="'projetos'" />
+      <ScrollIcon :target="target" />
     </div>
     <div class="parallax__layer parallax__layer__6">
       <img src="/src/assets/images/parallax/cloud1.webp" />
@@ -37,12 +37,18 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import ScrollIcon from "@/components/ScrollIcon.vue";
 
-export default {
-  name: "App",
-};
+const isEntering = ref(false);
+const target = ref("projetos");
+
+onMounted(() => {
+  isEntering.value = true;
+  setTimeout(() => {
+    isEntering.value = false;
+  }, 500);
+});
 </script>
 
 <style scoped lang="scss">
@@ -68,6 +74,9 @@ export default {
   );
   @media (max-width: 768px) {
     height: 100vh;
+  }
+  @media (max-height: 820px) {
+    height: 180vh;
   }
   @media (min-height: 819px) and (min-width: 768px) {
     height: 155vh;
