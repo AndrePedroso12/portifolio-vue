@@ -81,6 +81,9 @@ onMounted(() => {
   @media (min-height: 819px) and (min-width: 768px) {
     height: 155vh;
   }
+  &.topUnset {
+    top: unset;
+  }
   &__layer {
     position: absolute;
     top: 0;
