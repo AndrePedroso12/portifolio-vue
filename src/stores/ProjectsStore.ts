@@ -66,7 +66,7 @@ export const useProjectStore = defineStore("projectsList", {
           },
           {
             url: "/projects/raklog/4.jpg",
-            description: "Sobre a Emrpesa",
+            description: "Sobre a Empresa",
           },
           {
             url: "/projects/raklog/5.jpg",
@@ -222,6 +222,41 @@ export const useProjectStore = defineStore("projectsList", {
           },
         ],
       },
+      {
+        title: "Elma Chips",
+        subtitle: "Promoção Fanáticos por Sabor",
+        mainImage: "/projects/elma-chips/main-image-elmachips.webp",
+        mobileImage: "/projects/elma-chips/mobile-elmachips.webp",
+        description: `
+        Em 2021, durante meu tempo na Fenix System, tive a oportunidade de desenvolver o site para a Promoção "Fanáticos por Sabor" da renomada marca de salgadinhos Elma Chips. O projeto visava envolver os consumidores de maneira interativa e emocionante.
+        
+        O site foi estruturado com uma página dedicada aos produtos participantes, oferecendo uma visão clara dos itens elegíveis para a promoção. Além disso, uma página de ganhadores era atualizada diariamente, proporcionando transparência quanto aos resultados e aumentando a expectativa dos participantes.
+        
+        Para facilitar o entendimento da promoção, o site incluiu uma página de FAQ, respondendo às perguntas mais comuns dos participantes. Além disso, uma página de regulamento foi disponibilizada, permitindo que os interessados baixassem o documento em PDF ou o lessem diretamente no site por meio de um iframe de leitura. Essa abordagem assegurava que os consumidores tivessem fácil acesso às informações cruciais da promoção.`,
+        images: [
+          {
+            url: "/projects/elma-chips/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "/projects/elma-chips/2.webp",
+            description: "Página de Produtos participantes",
+          },
+          {
+            url: "/projects/elma-chips/3.webp",
+            description: "Página de Ganhadores",
+          },
+          {
+            url: "/projects/elma-chips/4.webp",
+            description: "Página de FAQ",
+          },
+          {
+            url: "/projects/elma-chips/5.webp",
+            description: "Página de Regulamento",
+          },
+        ],
+      },
+
       {
         title: "Liquigás",
         subtitle: "Promoção Copa na Cozinha",
@@ -407,41 +442,6 @@ export const useProjectStore = defineStore("projectsList", {
         ],
       },
       {
-        title: "Bitz",
-        subtitle: "Promoção Golaço Bitz",
-        mainImage: "/projects/bitz/main-image-bitz.webp",
-        mobileImage: "/projects/bitz/mobile-bitz.webp",
-        description: `
-        Em 2021, durante minha colaboração na Fenix System, tive o privilégio de desenvolver o site para a Promoção Golaço Bitz do banco digital Bitz. Nessa promoção inovadora, os usuários ganhavam números da sorte ao realizar compras com o cartão Bitz, concorrendo assim a uma TV LG de 50 polegadas.
-        
-        O site foi integralmente integrado com o aplicativo da Bitz, simplificando o processo para os usuários. O login, cadastro e a geração de números da sorte eram todos realizados diretamente no aplicativo. Essa integração proporcionou uma experiência fluida e consistente para os participantes.
-        
-        Osite incluía uma seção de números da sorte, onde os usuários podiam verificar se haviam sido sorteados. Adicionalmente, o site apresentava uma página dedicada aos ganhadores, fornecendo transparência quanto aos resultados da promoção. Outras seções importantes incluíam uma página de FAQ para esclarecimento de dúvidas e uma página de regulamento, onde os participantes podiam baixar o documento em PDF ou lê-lo diretamente no site através de um iframe de leitura. Essa abordagem garantia que os participantes tivessem fácil acesso às informações cruciais da promoção.
-        `,
-        images: [
-          {
-            url: "/projects/bitz/1.webp",
-            description: "Home do site",
-          },
-          {
-            url: "/projects/bitz/2.webp",
-            description: "Página de Numeros da Sorte",
-          },
-          {
-            url: "/projects/bitz/3.webp",
-            description: "Página de Ganhadores",
-          },
-          {
-            url: "/projects/bitz/4.webp",
-            description: "Página de Regulamento",
-          },
-          {
-            url: "/projects/bitz/5.webp",
-            description: "FAQ",
-          },
-        ],
-      },
-      {
         title: "Claro Brasil",
         subtitle: "Promoção Ta na Claro ta na Copa",
         mainImage: "/projects/claro/main-image-claro.jpg",
@@ -482,39 +482,108 @@ export const useProjectStore = defineStore("projectsList", {
         ],
       },
       {
-        title: "Elma Chips",
-        subtitle: "Promoção Fanáticos por Sabor",
-        mainImage: "/projects/elma-chips/main-image-elmachips.webp",
-        mobileImage: "/projects/elma-chips/mobile-elmachips.webp",
+        title: "Armazem Recife",
+        subtitle: "SexShop em Recife",
+        mainImage: "/projects/armazem-recife/main-image-armazem-recife.webp",
+        mobileImage: "/projects/armazem-recife/mobile-armazem-recife.webp",
         description: `
-        Em 2021, durante meu tempo na Fenix System, tive a oportunidade de desenvolver o site para a Promoção "Fanáticos por Sabor" da renomada marca de salgadinhos Elma Chips. O projeto visava envolver os consumidores de maneira interativa e emocionante.
+        Em 2024, tive a oportunidade de criar e lançar o site Amazem Recife, um E-commerce Sexshop com foco em entregas rápidas através de motoboy na região do Recife. Todo o processo de desenvolvimento do site, desde a criação da interface do usuário (UI) até a produção de banners e imagens, foi executado por mim, garantindo uma identidade visual atraente e funcional.
         
-        O site foi estruturado com uma página dedicada aos produtos participantes, oferecendo uma visão clara dos itens elegíveis para a promoção. Além disso, uma página de ganhadores era atualizada diariamente, proporcionando transparência quanto aos resultados e aumentando a expectativa dos participantes.
-        
-        Para facilitar o entendimento da promoção, o site incluiu uma página de FAQ, respondendo às perguntas mais comuns dos participantes. Além disso, uma página de regulamento foi disponibilizada, permitindo que os interessados baixassem o documento em PDF ou o lessem diretamente no site por meio de um iframe de leitura. Essa abordagem assegurava que os consumidores tivessem fácil acesso às informações cruciais da promoção.`,
+        O Amazem Recife foi construído utilizando a plataforma Woocommerce como base, aproveitando sua flexibilidade e robustez para gerenciar o catálogo de produtos e o sistema de compras online. Além disso, desenvolvi uma aplicação exclusiva para o site, que introduz uma funcionalidade inovadora: stories no canto inferior esquerdo da página. Semelhantes aos do Instagram e Facebook, esses stories destacam as novas promoções e incluem vídeos de demonstração dos produtos, proporcionando uma experiência de compra mais envolvente e informativa.`,
         images: [
           {
-            url: "/projects/elma-chips/1.webp",
+            url: "/projects/armazem-recife/1.webp",
             description: "Home do site",
           },
           {
-            url: "/projects/elma-chips/2.webp",
-            description: "Página de Produtos participantes",
+            url: "/projects/armazem-recife/2.webp",
+            description: "Página interna do produto",
           },
           {
-            url: "/projects/elma-chips/3.webp",
-            description: "Página de Ganhadores",
+            url: "/projects/armazem-recife/3.webp",
+            description: "Página de produto",
           },
           {
-            url: "/projects/elma-chips/4.webp",
-            description: "Página de FAQ",
+            url: "/projects/armazem-recife/4.webp",
+            description: "Carrinho lateral flutuante",
           },
           {
-            url: "/projects/elma-chips/5.webp",
-            description: "Página de Regulamento",
+            url: "/projects/armazem-recife/5.webp",
+            description: "Finalização de compra",
           },
         ],
       },
+      {
+        title: "Bitz",
+        subtitle: "Promoção Golaço Bitz",
+        mainImage: "/projects/bitz/main-image-bitz.webp",
+        mobileImage: "/projects/bitz/mobile-bitz.webp",
+        description: `
+        Em 2021, durante minha colaboração na Fenix System, tive o privilégio de desenvolver o site para a Promoção Golaço Bitz do banco digital Bitz. Nessa promoção inovadora, os usuários ganhavam números da sorte ao realizar compras com o cartão Bitz, concorrendo assim a uma TV LG de 50 polegadas.
+        
+        O site foi integralmente integrado com o aplicativo da Bitz, simplificando o processo para os usuários. O login, cadastro e a geração de números da sorte eram todos realizados diretamente no aplicativo. Essa integração proporcionou uma experiência fluida e consistente para os participantes.
+        
+        Osite incluía uma seção de números da sorte, onde os usuários podiam verificar se haviam sido sorteados. Adicionalmente, o site apresentava uma página dedicada aos ganhadores, fornecendo transparência quanto aos resultados da promoção. Outras seções importantes incluíam uma página de FAQ para esclarecimento de dúvidas e uma página de regulamento, onde os participantes podiam baixar o documento em PDF ou lê-lo diretamente no site através de um iframe de leitura. Essa abordagem garantia que os participantes tivessem fácil acesso às informações cruciais da promoção.
+        `,
+        images: [
+          {
+            url: "/projects/bitz/1.webp",
+            description: "Home do site",
+          },
+          {
+            url: "/projects/bitz/2.webp",
+            description: "Página de Numeros da Sorte",
+          },
+          {
+            url: "/projects/bitz/3.webp",
+            description: "Página de Ganhadores",
+          },
+          {
+            url: "/projects/bitz/4.webp",
+            description: "Página de Regulamento",
+          },
+          {
+            url: "/projects/bitz/5.webp",
+            description: "FAQ",
+          },
+        ],
+      },
+
+      {
+        title: "Izabelly Francatti",
+        subtitle: "Imobiliaria de Jaguariuna-SP",
+        mainImage:
+          "/projects/izabelly-francati/main-image-izabelly-francati.webp",
+        mobileImage:
+          "/projects/izabelly-francati/izabelly-francati-mobile.webp",
+        website: "imobiliriafrancatti.com.br",
+        description: `Em 2024, fui o responsavel pela criação do site para a Imobiliária Izabelly Francatti, utilizando Vue 3 para o front-end e Laravel para o back-end, desenvolvido por uma empresa contratada. O site permite aos usuários ver imóveis disponíveis para compra e aluguel, e facilita o contato para venda de propriedades. Com uma interface simples e direta, os imóveis são exibidos com detalhes completos. A página de pesquisa avançada oferece filtros variados, como número de quartos, banheiros, vagas, preço e localização.
+
+        Além das funcionalidades voltadas aos clientes, o site possui um painel administrativo robusto, onde os funcionários podem cadastrar, gerenciar e alterar imóveis, atualizar credenciais e criar novos usuários. Esta combinação de uma interface moderna com um sistema de gestão eficiente garante uma plataforma eficaz para atender tanto clientes quanto funcionários da Imobiliária Izabelly Francatti.`,
+        images: [
+          {
+            url: "/projects/izabelly-francati/1.webp",
+            description: "Home do Site",
+          },
+          {
+            url: "/projects/izabelly-francati/2.webp",
+            description: "Pagina interna dos imóveis",
+          },
+          {
+            url: "/projects/izabelly-francati/3.webp",
+            description: "Pagina de pesquisa",
+          },
+          {
+            url: "/projects/izabelly-francati/4.webp",
+            description: "Login do sistema interno",
+          },
+          {
+            url: "/projects/izabelly-francati/5.webp",
+            description: "Painel do adiministrador",
+          },
+        ],
+      },
+
       {
         title: "Fisk",
         subtitle: "Promoção Malas Prontas para o Canadá",
